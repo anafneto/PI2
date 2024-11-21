@@ -19,44 +19,46 @@ body {
 
 /* Basic styling for navbar */
 .navbar {
-  padding: 20px;
-}
+    padding: 20px;
+  }
+  
+  /* Logo styling */
+  .logo {
+    height: 26px;
+    float: left;
+  }
+  
+  /* Icons container styling */
+  .icons {
+    float: right;
+  }
+  
+  /* Styling individual icons */
+  .icon {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
 
-/* Logo styling */
-.logo {
-  height: 26px;
-  float: left;
-}
-
-/* Icons container styling */
-.icons {
-  float: right;
-}
-
-/* Styling individual icons */
-.icon {
-  display: inline-block;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-
+.search{
+    width: 100%;
+    background: transparent;
+    text-align: center;
 .search {
   width: 100%;
   text-align: center;
 }
 
 .search-container {
-  width: 100%;
-  height: 30px;
-  display: inline-block;
-  margin-top: 15px;
-  border-radius: 5px;
-  border: 0.5px solid #DBDADA;
-  background: #F1F1F1;
-  box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
-  position: relative;
-
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 0.5px solid #DBDADA;
+    box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
+    position: relative;
 }
 
 .search-container img {
@@ -112,4 +114,3 @@ p {
 .date-button:hover {
   background-color: #ddd;
 }
-
