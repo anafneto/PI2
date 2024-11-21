@@ -1,3 +1,3 @@
 function changeContent(newContent) {
-    document.getElementById('content').textContent = newContent;
+    document.getElementById('changethis').innertext = newContent;
 }
