@@ -1,6 +1,8 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Montserrat;
+
 }
 
 .body {
@@ -17,9 +19,8 @@
 /* Basic styling for navbar */
 .navbar {
     position: relative;
-    width: 100%;
     background-color: #f4f4f4;
-    padding: 10px;
+    padding: 20px;
   }
   
   /* Logo styling */
@@ -77,4 +78,21 @@
     outline: none;
     background: transparent;
     height: 100%;
+}
+
+.imagemHero {
+  width: 100%;
+}
+
+p {
+color: #565656;
+font-size: 16px;
+line-height: 1.3; 
+text-align: justify;
+word-wrap: break-word
+}
+
+.descricaoEunice {
+margin: 20px 0;
+padding: 10px 15px;
 }
