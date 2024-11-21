@@ -98,10 +98,12 @@ p {
 .date-buttons {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
 .date-button {
   padding: 10px 20px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f0f0f0;
