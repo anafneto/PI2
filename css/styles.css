@@ -19,7 +19,7 @@ body {
 
 /* Basic styling for navbar */
 .navbar {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 /* Logo styling */
@@ -92,7 +92,7 @@ p {
 
 .descricaoEunice {
   margin: 20px 0;
-  padding: 10px 15px;
+
 }
 
 .date-buttons {
