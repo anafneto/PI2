@@ -9,6 +9,8 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+  display: block;
+  text-align: center;
 }
 
 .header__grey {
@@ -96,19 +98,19 @@ p {
 }
 
 .date-buttons {
-  display: flex;
-  gap: 10px;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .date-button {
-  padding: 10px 20px;
-  width: 100%;
+  width: 70px;
+  height: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f0f0f0;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
 }
 
 .date-button:hover {
@@ -116,6 +118,6 @@ p {
 }
 
 .date-button.selected {
-  background-color: #5a4a4a;
+  background-color: #54595E;
   color: white;
 }
