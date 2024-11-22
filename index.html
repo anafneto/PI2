@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="author" content="Grupo 6 TDM 2º ano, 2024/25">
     <meta name="description" content="Landing page for Eunice General Assembly 2025">
     <meta name="keywords" content="EUNICE, General Assembly">
-    
+    <link rel="stylesheet" href="css/styles.css">
     <title>Projeto de PI2</title>
     
     <link rel="stylesheet" href="css/styles.css">
@@ -22,13 +22,22 @@
 <body>
     <header class="header__grey">
         <div class="navbar">
-            <img class="logo" src="svg/Logotipo.svg" alt="logo">
+            <img id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
 
             <div class="icons">
-                <img class="icon" src="svg/Accesibility.svg" alt="Icon Accesibility">
-                <img class="icon" src="svg/PT.svg" alt="Icon Translation">
-                <img class="icon" src="svg/hamburger.svg" alt="Icon hamburger">
+                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility" />
+                <img class="icon" src="svg/PT.svg" alt="Language Icon">
+                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
             </div>
+        </div>
+        <div id="accessibilityBar" class="mobile-menu hidden">
+            <button onclick="activateTextToSpeech()">Text-to-Speech</button>
+            <button onclick="increaseFontSize()">Font Size</button>
+            <button onclick="toggleDarkMode()">Black Mode</button> 
+        </div>
+        <div id="hamburgerMenu" class="mobile-menu hidden">
+            <button onclick="redirectTo('viajar.html')">Travel</button>
+            <button onclick="redirectTo('visitar.html')">Visit</button>
         </div>
         <div class="search">
             <div class="search-container">
@@ -38,10 +47,22 @@
         </div>
     </header>
 
-    <br>
-    <br>
+  
 
+    <br>
+    <br>
+    
     <img src="images/Design_1501x817.png" class="imagemHero" alt="Imagem Herói Eunice">
+
+    <div class="imagemHeroDesktop">
+        <div class="containerParagrafo">    
+            <p>
+                The General Assembly of <strong>EUNICE European University </strong> will gather partner universities, in the <strong>Polytechnic of Viseu </strong>, to analyse the progress of the alliance and chart future developments.
+            </p>
+        </div>
+            <img src="images/Design_1501x817.png" alt="Imagem Herói Eunice">
+        </div>
+
     <p class="descricaoEunice">The General Assembly of <b>EUNICE European University</b> will gather partner
         universities, in the <strong>Polytechnic of Viseu</strong>, to analyse the progress of the alliance and chart
         future developments.</p>
@@ -50,10 +71,13 @@
                 <button class="date-button" onclick="changeContent('1')">31 Mar</button>
                 <button class="date-button" onclick="changeContent('2')">01 Apr</button>
                 <button class="date-button" onclick="changeContent('3')">02 Apr</button>
-                <button class="date-button" onclick="changeContent()">03 Apr</button>
+                <button class="da§ntent()">03 Apr</button>
             </div>
             <div id="content" style="visibility: hidden;">Selecione um dia.</div>
-            <div></div>
+            <div class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div>
         </body>
-
 </html>

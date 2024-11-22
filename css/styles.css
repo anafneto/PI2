@@ -9,8 +9,15 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
-  display: block;
-  text-align: center;
+  
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
 }
 
 .header__grey {
@@ -73,8 +80,8 @@ body {
 .searchbar {
   width: 90%;
   border: none;
-  outline: none;
   background: transparent;
+  outline: none;
   height: 100%;
   float: left;
   padding-left: 5px;
@@ -84,20 +91,52 @@ body {
   width: 100%;
 }
 
-p {
-  color: #565656;
-  font-size: 16px;
-  line-height: 1.3;
-  text-align: justify;
-  word-wrap: break-word
+.imagemHeroDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .imagemHero , .descricaoEunice {
+    display: none;
+  }
+    
+  .imagemHeroDesktop {
+    font-size: 0;
+    display: block;
+    margin: 40px 0;
+  }
+
+  .containerParagrafo{
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    vertical-align: middle;
+  }
+  
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18% 40px;
+  }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;  
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .descricaoEunice {
   margin: 20px 0;
-
 }
 
-.date-buttons {
+.date-buttons, .button-group {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -113,11 +152,28 @@ p {
   font-size: 16px;
 }
 
-.date-button:hover {
+.date-button:hover{
   background-color: #ddd;
 }
 
-.date-button.selected {
+.date-button.selected{
   background-color: #54595E;
   color: white;
 }
+
+.location-button,
+.travel-button {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.location-button:hover,
+.travel-button:hover {
+  background-color: #ddd;
+}
+
