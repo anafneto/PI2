@@ -9,7 +9,22 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+}
 
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
 }
 
 .header__grey {
@@ -83,13 +98,6 @@ body {
   width: 100%;
 }
 
-p {
-  color: #565656;
-  font-size: 16px;
-  line-height: 1.3;
-  text-align: justify;
-  word-wrap: break-word
-}
 
 .descricaoEunice {
   margin: 20px 0;
@@ -170,3 +178,18 @@ p {
   margin-right: 10px;
   fill: currentColor;
 }
+
+
+.cardsPrograma {
+  box-shadow: 0 0 0 0.25px #54595e;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+
+}
+
+.cardsPrograma h6, h3 {
+  color: #565656;
+}
+
