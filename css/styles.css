@@ -9,8 +9,7 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
-  display: block;
-  text-align: center;
+
 }
 
 .header__grey {
@@ -113,11 +112,61 @@ p {
   font-size: 16px;
 }
 
-.date-button:hover {
+.date-button:hover{
   background-color: #ddd;
 }
 
-.date-button.selected {
+.date-button.selected{
   background-color: #54595E;
   color: white;
+}
+
+
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.location-button,
+.travel-button {
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.location-button:hover,
+.travel-button:hover {
+  background-color: #ddd;
+}
+
+.location-button.selected,
+.travel-button.selected {
+  background-color: #54595E;
+  color: white;
+}
+
+.info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  fill: currentColor;
 }
