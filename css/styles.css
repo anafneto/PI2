@@ -9,6 +9,25 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+<<<<<<< HEAD
+=======
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
+>>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .header__grey {
@@ -19,6 +38,7 @@ body {
 
 /* Basic styling for navbar */
 .navbar {
+<<<<<<< HEAD
   padding: 20px;
 }
 
@@ -44,6 +64,35 @@ body {
 .search {
   width: 100%;
   text-align: center;
+=======
+  padding-top: 20px;
+}
+
+/* Logo styling */
+.logo {
+  height: 26px;
+  float: left;
+}
+
+/* Icons container styling */
+.icons {
+  float: right;
+}
+
+/* Styling individual icons */
+.icon {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+
+.search {
+  width: 100%;
+  background: transparent;
+  text-align: center;
+
+>>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .search-container {
@@ -53,10 +102,15 @@ body {
   margin-top: 15px;
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
+<<<<<<< HEAD
   background: #F1F1F1;
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
 
+=======
+  box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
+  position: relative;
+>>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .search-container img {
@@ -82,6 +136,7 @@ body {
   width: 100%;
 }
 
+<<<<<<< HEAD
 p {
 color: #565656;
 font-size: 16px;
@@ -185,3 +240,100 @@ margin-top: 16px;
   font-size: 15px;
   padding-left: 4px; 
 }
+=======
+
+.descricaoEunice {
+  margin: 20px 0;
+
+}
+
+.date-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.date-button {
+  width: 70px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.date-button:hover{
+  background-color: #ddd;
+}
+
+.date-button.selected{
+  background-color: #54595E;
+  color: white;
+}
+
+
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.location-button,
+.travel-button {
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.location-button:hover,
+.travel-button:hover {
+  background-color: #ddd;
+}
+
+.location-button.selected,
+.travel-button.selected {
+  background-color: #54595E;
+  color: white;
+}
+
+.info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+
+.cardsPrograma {
+  box-shadow: 0 0 0 0.25px #54595e;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+
+}
+
+.cardsPrograma h6, h3 {
+  color: #565656;
+}
+
+>>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
