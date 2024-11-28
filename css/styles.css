@@ -9,6 +9,7 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+  
 }
 
 p {
@@ -79,8 +80,8 @@ p {
 .searchbar {
   width: 90%;
   border: none;
-  outline: none;
   background: transparent;
+  outline: none;
   height: 100%;
   float: left;
   padding-left: 5px;
@@ -90,10 +91,49 @@ p {
   width: 100%;
 }
 
+.imagemHeroDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .imagemHero , .descricaoEunice {
+    display: none;
+  }
+    
+  .imagemHeroDesktop {
+    font-size: 0;
+    display: block;
+    margin: 40px 0;
+  }
+
+  .containerParagrafo{
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    vertical-align: middle;
+  }
+  
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18% 40px;
+  }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;  
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
+}
 
 .descricaoEunice {
   margin: 20px 0;
-
 }
 
 .date-buttons, .button-group {
@@ -135,46 +175,5 @@ p {
 .location-button:hover,
 .travel-button:hover {
   background-color: #ddd;
-}
-
-.location-button.selected,
-.travel-button.selected {
-  background-color: #54595E;
-  color: white;
-}
-
-.info {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.info div {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  fill: currentColor;
-}
-
-
-.cardsPrograma {
-  box-shadow: 0 0 0 0.25px #54595e;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  padding: 16px 24px;
-
-}
-
-.cardsPrograma h6, h3 {
-  color: #565656;
 }
 
