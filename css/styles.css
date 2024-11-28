@@ -22,6 +22,7 @@ p {
   display: inline-block;
   width: 100%;
   height: 70px;
+  margin-top: 15px;
 }
 
 navbar {
@@ -35,6 +36,7 @@ navbar {
 
 .icons {
   float: right;
+  cursor: pointer;
 }
 
 .search {
@@ -92,10 +94,45 @@ navbar {
   width: 100%;
 }
 
+.imagemHeroDesktop {
+  display: none;
+}
 
-.descricaoEunice {
-  margin: 20px 0;
-  padding: 10px 15px;
+@media only screen and (min-width: 768px) {
+  .imagemHero , .descricaoEunice {
+    display: none;
+  }
+    
+  .imagemHeroDesktop {
+    font-size: 0;
+    display: block;
+    margin: 40px 0;
+  }
+
+  .containerParagrafo{
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    vertical-align: middle;
+  }
+  
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18% 40px;
+  }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;  
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .cardsVisit {
@@ -245,7 +282,7 @@ navbar {
 #accessibilityBar {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 50px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
@@ -306,7 +343,7 @@ body.dark-mode .date-button:hover {
 #hamburgerMenu {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 50px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
