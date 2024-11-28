@@ -9,88 +9,186 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+  
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
+}
+
+p {
+  color: #565656;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: justify;
+  word-wrap: break-word
 }
 
 .header__grey {
-    display: inline-block;
-    width: 100%;
-    height: 70px;
+  display: inline-block;
+  width: 100%;
+  height: 70px;
 }
 
 /* Basic styling for navbar */
 .navbar {
-    padding: 20px;  
-  }
-  
-  /* Logo styling */
-  .logo {
-    height: 26px;
-    float: left;
-  }
-  
-  /* Icons container styling */
-  .icons {
-    float: right;
-  }
-  
-  /* Styling individual icons */
-  .icon {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-  }
-  
+  padding-top: 20px;
+}
 
-.search{
-    width: 100%;
-    text-align: center;
+/* Logo styling */
+.logo {
+  height: 26px;
+  float: left;
+}
+
+/* Icons container styling */
+.icons {
+  float: right;
+}
+
+/* Styling individual icons */
+.icon {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+
+.search {
+  width: 100%;
+  background: transparent;
+  text-align: center;
+
 }
 
 .search-container {
-    width: 100%;
-    height: 30px;
-    display: inline-block;
-    margin-top: 15px;
-    border-radius: 5px;
-    border: 0.5px solid #DBDADA;
-    background: #F1F1F1;
-    box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
-    position: relative;
-    
+  width: 100%;
+  height: 30px;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 0.5px solid #DBDADA;
+  box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
+  position: relative;
 }
 
 .search-container img {
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .searchbar {
-    width: 90%;
-    border: none;
-    outline: none;
-    background: transparent;
-    height: 100%;
-    float: left;
-    padding-left: 5px;
+  width: 90%;
+  border: none;
+  background: transparent;
+  outline: none;
+  height: 100%;
+  float: left;
+  padding-left: 5px;
 }
 
 .imagemHero {
   width: 100%;
 }
 
-p {
-color: #565656;
-font-size: 16px;
-line-height: 1.3; 
-text-align: justify;
-word-wrap: break-word
+.imagemHeroDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .imagemHero , .descricaoEunice {
+    display: none;
+  }
+    
+  .imagemHeroDesktop {
+    font-size: 0;
+    display: block;
+    margin: 40px 0;
+  }
+
+  .containerParagrafo{
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    vertical-align: middle;
+  }
+  
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18% 40px;
+  }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;  
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .descricaoEunice {
-margin: 20px 0;
-padding: 10px 15px;
+  margin: 20px 0;
 }
+
+.date-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.date-button {
+  width: 70px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.date-button:hover{
+  background-color: #ddd;
+}
+
+.date-button.selected{
+  background-color: #54595E;
+  color: white;
+}
+
+
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.location-button,
+.travel-button {
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.location-button:hover,
+.travel-button:hover {
+  background-color: #ddd;
+}
+
