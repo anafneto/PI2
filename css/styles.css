@@ -24,7 +24,7 @@ p {
   height: 70px;
 }
 
-navbar {
+.navbar {
   padding: 20px;
 }
 
@@ -63,8 +63,6 @@ navbar {
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
   background: #F1F1F1;
-  box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
-  position: relative;
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
 }
@@ -194,53 +192,19 @@ navbar {
   margin: 20px 0;
 }
 
-.date-buttons {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.cardsPrograma {
+  box-shadow: 0 0 0 0.25px #54595e;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+
 }
 
-.date-button {
-  width: 70px;
-  height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 16px;
+.cardsPrograma h6, h3 {
+  color: #565656;
 }
 
-.date-button:hover {
-  background-color: #ddd;
-}
-
-.date-button.selected {
-  background-color: #54595E;
-  color: white;
-}
-
-
-
-.button-group {
-  margin-bottom: 20px;
-}
-
-.location-button,
-.travel-button {
-  width: 120px;
-  height: 40px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 16px;
-}
-
-.location-button:hover,
-.travel-button:hover {
-  background-color: #ddd;
-}
 
 #accessibilityBar {
   display: none;
@@ -345,3 +309,66 @@ body.dark-mode #hamburgerMenu button {
 body.dark-mode #hamburgerMenu button:hover {
   color: #dddddd;
 }
+ 
+
+.date-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.date-button {
+  width: 70px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.date-button:hover{
+  background-color: #ddd;
+}
+
+.date-button.selected{
+  background-color: #54595E;
+  color: white;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.location-button,
+.travel-button {
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.location-button:hover,
+.travel-button:hover {
+  background-color: #ddd;
+}
+
+.location-button.selected,
+.travel-button.selected {
+  background-color: #54595E;
+  color: white;
+}
+
+.PortoBus, .LisboaBus, .PortoTransfer, .LisboaTransfer{
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
