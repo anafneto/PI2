@@ -8,9 +8,11 @@
     <meta name="description" content="Landing page for Eunice General Assembly 2025">
     <meta name="keywords" content="EUNICE, General Assembly">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/general.js" defer></script>
     <title>Projeto de PI2</title>
-
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/general.js" defer></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -49,18 +51,33 @@
 
     <br>
     <br>
-
+    
     <img src="images/Design_1501x817.png" class="imagemHero" alt="Imagem Herói Eunice">
+
+    <div class="imagemHeroDesktop">
+        <div class="containerParagrafo">    
+            <p>
+                The General Assembly of <strong>EUNICE European University </strong> will gather partner universities, in the <strong>Polytechnic of Viseu </strong>, to analyse the progress of the alliance and chart future developments.
+            </p>
+        </div>
+            <img src="images/Design_1501x817.png" alt="Imagem Herói Eunice">
+        </div>
+
     <p class="descricaoEunice">The General Assembly of <b>EUNICE European University</b> will gather partner
         universities, in the <strong>Polytechnic of Viseu</strong>, to analyse the progress of the alliance and chart
         future developments.</p>
 
-    <div class="date-buttons"> 
-        <button class="date-button" onclick="selectDate(this)">31 Mar</button> 
-        <button class="date-button" onclick="selectDate(this)">01 Apr</button> 
-        <button class="date-button" onclick="selectDate(this)">02 Apr</button> 
-        <button class="date-button" onclick="selectDate(this)">03 Apr</button>
-    </div>
-</body>
-
+            <div class="date-buttons">
+                <button class="date-button" onclick="changeContent('1')">31 Mar</button>
+                <button class="date-button" onclick="changeContent('2')">01 Apr</button>
+                <button class="date-button" onclick="changeContent('3')">02 Apr</button>
+                <button class="da§ntent()">03 Apr</button>
+            </div>
+            <div id="content" style="visibility: hidden;">Selecione um dia.</div>
+            <div class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div>
+        </body>
 </html>
