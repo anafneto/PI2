@@ -55,21 +55,6 @@ function toggleDarkMode() {
  
 }
 
-    document.getElementById('changethis').innertext = newContent;
-}
-
-
-function hideContent() {
-    document.getElementById('content').style.visibility = 'hidden';
-}
-
-
-function hideContent() {
-    document.getElementById('content').style.visibility = 'hidden';
-}
-
-
-
 // Butoes de date (index)
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.date-button');
