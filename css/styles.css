@@ -87,8 +87,8 @@ p {
 .searchbar {
   width: 90%;
   border: none;
-  outline: none;
   background: transparent;
+  outline: none;
   height: 100%;
   float: left;
   padding-left: 5px;
@@ -98,10 +98,49 @@ p {
   width: 100%;
 }
 
+.imagemHeroDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .imagemHero , .descricaoEunice {
+    display: none;
+  }
+    
+  .imagemHeroDesktop {
+    font-size: 0;
+    display: block;
+    margin: 40px 0;
+  }
+
+  .containerParagrafo{
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    vertical-align: middle;
+  }
+  
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18% 40px;
+  }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;  
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
+}
 
 .descricaoEunice {
   margin: 20px 0;
-
 }
 
 .date-buttons {
@@ -191,5 +230,6 @@ p {
 
 .cardsPrograma h6, h3 {
   color: #565656;
+  line-height: 1.6;
 }
 
