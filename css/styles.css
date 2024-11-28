@@ -9,6 +9,7 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
+  
 }
 
 .header__grey {
@@ -111,5 +112,109 @@ p {
 
 .date-button:hover {
   background-color: #ddd;
+}
+
+/* Barra de acessibilidade */
+#accessibilityBar {
+  display: none; 
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  z-index: 10;
+  text-align: center; 
+}
+
+
+#accessibilityBar.open {
+  display: block; 
+}
+
+
+#accessibilityBar button {
+  display: inline-block; 
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: #565656;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#accessibilityBar button:hover {
+  color: #000;
+}
+
+/* Modo escuro (se for ativado) */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0; 
+}
+
+body.dark-mode #accessibilityBar {
+  background-color: #222222;
+}
+
+body.dark-mode #accessibilityBar button {
+  color: white;
+}
+
+body.dark-mode p {
+  color: #f0f0f0;
+}
+
+body.dark-mode .date-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .date-button:hover {
+  background-color: #333333;
+}
+
+/* Hamburger */
+#hamburgerMenu {
+  display: none; 
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  z-index: 10;
+  text-align: center;
+}
+
+
+#hamburgerMenu.open {
+  display: block;
+}
+
+#hamburgerMenu button {
+  display: inline-block; 
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: #565656;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#hamburgerMenu button:hover {
+  color: #000;
+}
+body.dark-mode #hamburgerMenu {
+  background-color: #222222;
+}
+
+body.dark-mode #hamburgerMenu button {
+  color: white;
+}
+
+body.dark-mode #hamburgerMenu button:hover {
+  color: #dddddd;
 }
 
