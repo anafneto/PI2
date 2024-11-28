@@ -9,9 +9,6 @@ body {
   margin-right: 16px;
   margin-left: 16px;
   background-color: #f4f4f4;
-<<<<<<< HEAD
-=======
-  
 }
 
 p {
@@ -19,14 +16,6 @@ p {
   font-size: 16px;
   line-height: 1.3;
   word-wrap: break-word
-}
-
-p {
-  color: #565656;
-  font-size: 16px;
-  line-height: 1.3;
-  word-wrap: break-word
->>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .header__grey {
@@ -35,63 +24,35 @@ p {
   height: 70px;
 }
 
-/* Basic styling for navbar */
-.navbar {
-<<<<<<< HEAD
+navbar {
   padding: 20px;
 }
 
-/* Logo styling */
 .logo {
   height: 26px;
   float: left;
 }
 
-/* Icons container styling */
 .icons {
   float: right;
 }
-
-/* Styling individual icons */
-.icon {
-  display: inline-block;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
 
 .search {
   width: 100%;
   text-align: center;
-=======
   padding-top: 20px;
 }
 
-/* Logo styling */
-.logo {
-  height: 26px;
-  float: left;
-}
-
-/* Icons container styling */
-.icons {
-  float: right;
-}
-
-/* Styling individual icons */
 .icon {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle;
 }
-
 
 .search {
   width: 100%;
   background: transparent;
   text-align: center;
-
->>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .search-container {
@@ -101,15 +62,11 @@ p {
   margin-top: 15px;
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
-<<<<<<< HEAD
   background: #F1F1F1;
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
-
-=======
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
->>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
 }
 
 .search-container img {
@@ -135,20 +92,13 @@ p {
   width: 100%;
 }
 
-<<<<<<< HEAD
-p {
-color: #565656;
-font-size: 16px;
-line-height: 1.3; 
-word-wrap: break-word
-}
 
 .descricaoEunice {
-margin: 20px 0;
-padding: 10px 15px;
+  margin: 20px 0;
+  padding: 10px 15px;
 }
 
-.cardsVisit{
+.cardsVisit {
   align-items: center;
   margin-top: 26px;
   text-align: left;
@@ -160,25 +110,25 @@ padding: 10px 15px;
 }
 
 
-.cardsVisit p{
+.cardsVisit p {
   padding: 16px 25px;
 }
 
-.coordinates p{
-color: #54595E;
-font-family: Montserrat;
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-margin-top: 16px;
+.coordinates p {
+  color: #54595E;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 16px;
 }
 
-.imagemcardvisit{
+.imagemcardvisit {
   border-radius: 4px 4px 0px 0px;
 }
 
-.footer{
+.footer {
   background-color: #fff;
   width: 100%;
   padding: 0;
@@ -186,37 +136,37 @@ margin-top: 16px;
   left: 0;
 }
 
-.text{
+.text {
   margin-top: 26px;
 }
 
-.hora{
+.hora {
   font-size: 15px;
 }
 
-.title{
+.title {
   font-size: 22.5px;
   font-weight: bold;
 }
 
-.local{
+.local {
   font-size: 15px;
   font-weight: Medium;
 }
 
-.description{
+.description {
   font-size: 15px;
   font-weight: Regular;
   margin-top: 8px;
 }
 
-.speakers{
+.speakers {
   font-size: 22.5px;
   font-weight: bold;
   margin-top: 32px;
 }
 
-.speakercard{
+.speakercard {
   align-items: center;
   margin-top: 26px;
   text-align: left;
@@ -227,19 +177,18 @@ margin-top: 16px;
   padding-bottom: 16px;
 }
 
-.nomeED{
-  margin-top:4px;
+.nomeED {
+  margin-top: 4px;
   font-size: 15px;
   padding-left: 4px;
 }
 
-.descriptionED{
+.descriptionED {
   margin-top: 8px;
   margin-bottom: 16px;
   font-size: 15px;
-  padding-left: 4px; 
+  padding-left: 4px;
 }
-=======
 
 .descricaoEunice {
   margin: 20px 0;
@@ -261,11 +210,11 @@ margin-top: 16px;
   font-size: 16px;
 }
 
-.date-button:hover{
+.date-button:hover {
   background-color: #ddd;
 }
 
-.date-button.selected{
+.date-button.selected {
   background-color: #54595E;
   color: white;
 }
@@ -293,46 +242,106 @@ margin-top: 16px;
   background-color: #ddd;
 }
 
-.location-button.selected,
-.travel-button.selected {
-  background-color: #54595E;
+#accessibilityBar {
+  display: none;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  z-index: 10;
+  text-align: center;
+}
+
+
+#accessibilityBar.open {
+  display: block;
+}
+
+
+#accessibilityBar button {
+  display: inline-block;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: #565656;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#accessibilityBar button:hover {
+  color: #000;
+}
+
+/* Modo escuro (se for ativado) */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode #accessibilityBar {
+  background-color: #222222;
+}
+
+body.dark-mode #accessibilityBar button {
   color: white;
 }
 
-.info {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+body.dark-mode p {
+  color: #f0f0f0;
 }
 
-.info div {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body.dark-mode .date-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #555555;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  fill: currentColor;
+body.dark-mode .date-button:hover {
+  background-color: #333333;
 }
 
-
-.cardsPrograma {
-  box-shadow: 0 0 0 0.25px #54595e;
-  border-radius: 4px;
+/* Hamburger */
+#hamburgerMenu {
+  display: none;
+  position: absolute;
+  top: 60px;
   width: 100%;
-  height: 100%;
-  padding: 16px 24px;
-
+  background-color: #f4f4f4;
+  padding: 10px;
+  z-index: 10;
+  text-align: center;
 }
 
-.cardsPrograma h6, h3 {
+
+#hamburgerMenu.open {
+  display: block;
+}
+
+#hamburgerMenu button {
+  display: inline-block;
+  margin: 0 10px;
+  background: none;
+  border: none;
   color: #565656;
-  line-height: 1.6;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
->>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
+#hamburgerMenu button:hover {
+  color: #000;
+}
+
+body.dark-mode #hamburgerMenu {
+  background-color: #222222;
+}
+
+body.dark-mode #hamburgerMenu button {
+  color: white;
+}
+
+body.dark-mode #hamburgerMenu button:hover {
+  color: #dddddd;
+}
