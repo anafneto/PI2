@@ -73,7 +73,7 @@ function changeInfo() {
 }
 
 
-// ESTA PRÓXIMA FUNÇÃO DEVE SER MODIFICADA 
+// ESTA PRÓXIMA FUNÇÃO DEVE SER MODIFICADA  ehehxd
 
 function changeContent()
 {
