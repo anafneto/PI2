@@ -123,8 +123,8 @@ p {
 .searchbar {
   width: 90%;
   border: none;
-  outline: none;
   background: transparent;
+  outline: none;
   height: 100%;
   float: left;
   padding-left: 5px;
@@ -242,7 +242,6 @@ margin-top: 16px;
 
 .descricaoEunice {
   margin: 20px 0;
-
 }
 
 .date-buttons {
@@ -332,6 +331,7 @@ margin-top: 16px;
 
 .cardsPrograma h6, h3 {
   color: #565656;
+  line-height: 1.6;
 }
 
 >>>>>>> c18d47101047c3473cc78c6e0ddc77174defe271
