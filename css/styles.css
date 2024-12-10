@@ -130,19 +130,26 @@ p {
 }
 
 .cardsVisit {
-  align-items: center;
+  display: inline-block;
   margin-top: 26px;
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
   margin-bottom: 16px;
   width: 360px;
+  vertical-align: top;
+  height: 500px;
 
 }
 
 
 .cardsVisit p {
   padding: 16px 25px;
+}
+
+.coordinates{
+  position: relative;
+  height: 20px;
 }
 
 .coordinates p {
@@ -153,6 +160,8 @@ p {
   font-weight: 700;
   line-height: normal;
   margin-top: 16px;
+  position: absolute;
+  bottom: 8px;
 }
 
 .imagemcardvisit {
@@ -232,7 +241,7 @@ footer {
   border-radius: 4px 4px;
   margin-bottom: 16px;
   width: 176px;
-  padding-bottom: 16px;
+  padding-bottom: 8px;
   vertical-align: top;
 }
 
