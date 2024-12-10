@@ -1,4 +1,6 @@
 //acessibilidade´
+import "./styles.css";
+
 
 const accessibilityIcon = document.getElementById("accessibilityIcon");
 const accessibilityBar = document.getElementById("accessibilityBar");
@@ -13,7 +15,7 @@ function activateTextToSpeech() {
 }
 
 function increaseFontSize() {
-   document.body.style.fontSize = "larger";
+   document.html.style.fontSize = "30px";
 }
 
 function toggleDarkMode() {
@@ -51,7 +53,7 @@ function toggleDarkMode() {
    if (document.body.classList.contains("dark-mode")) {
        darkModeButton.textContent = "Light Mode";
    } else {
-       darkModeButton.textContent = "Black Mode";
+       darkModeButton.textContent = "Dark Mode";
    }
 
 } 
