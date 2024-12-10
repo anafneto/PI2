@@ -246,10 +246,10 @@ p {
 #accessibilityBar {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 85px;
   width: 100%;
   background-color: #f4f4f4;
-  padding: 10px;
+  padding: 15px;
   z-index: 10;
   text-align: center;
 }
@@ -277,12 +277,12 @@ p {
 
 /* Modo escuro (se for ativado) */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #212121;
   color: #f0f0f0;
 }
 
 body.dark-mode #accessibilityBar {
-  background-color: #222222;
+  background-color: #212121;
 }
 
 body.dark-mode #accessibilityBar button {
@@ -307,7 +307,7 @@ body.dark-mode .date-button:hover {
 #hamburgerMenu {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 85px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
@@ -408,4 +408,3 @@ body.dark-mode #hamburgerMenu button:hover {
 .hide {
   display: none;
 }
-
