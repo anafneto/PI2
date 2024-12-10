@@ -1,4 +1,6 @@
 //acessibilidade´
+import "./styles.css";
+
 
 const accessibilityIcon = document.getElementById("accessibilityIcon");
 const accessibilityBar = document.getElementById("accessibilityBar");
@@ -74,7 +76,7 @@ function toggleDarkMode() {
    if (document.body.classList.contains("dark-mode")) {
        darkModeButton.textContent = "Light Mode";
    } else {
-       darkModeButton.textContent = "Black Mode";
+       darkModeButton.textContent = "Dark Mode";
    }
 
 } 

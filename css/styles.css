@@ -29,10 +29,6 @@ p {
   margin-top: 15px;
 }
 
-.navbar {
-  padding: 20px;
-}
-
 .logo {
   height: 26px;
   float: left;
@@ -138,19 +134,26 @@ p {
 }
 
 .cardsVisit {
-  align-items: center;
+  display: inline-block;
   margin-top: 26px;
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
   margin-bottom: 16px;
   width: 360px;
+  vertical-align: top;
+  height: 500px;
 
 }
 
 
 .cardsVisit p {
   padding: 16px 25px;
+}
+
+.coordinates{
+  position: relative;
+  height: 20px;
 }
 
 .coordinates p {
@@ -161,20 +164,48 @@ p {
   font-weight: 700;
   line-height: normal;
   margin-top: 16px;
+  position: absolute;
+  bottom: 8px;
 }
 
 .imagemcardvisit {
   border-radius: 4px 4px 0px 0px;
 }
-
-.footer {
+footer {
   background-color: #fff;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  left: 0;
+  width: 100vw; 
+  margin-left: calc(-1 * 16px); 
+  padding: 16px; 
+  text-align: center; 
+  vertical-align: middle;
+  align-items: center;
+  padding: 10px;
+  color: #54595E;
+  font-size: 15px;
+  position: relative;
+  bottom: 0;
 }
 
+.imgfooter{
+  display: inline-block;
+  padding: 0 16px 10px 0;
+ 
+}
+
+.iconat{
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.iconphone{
+  margin-left: 26px;
+  margin-right: 4px;
+}
+
+.iconsocial{
+  margin-top: 16px;
+  margin-right: 4px;
+}
 .text {
   margin-top: 26px;
 }
@@ -185,12 +216,12 @@ p {
 
 .title {
   font-size: 22.5px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .local {
   font-size: 15px;
-  font-weight: Medium;
+  font-weight: bold;
 }
 
 .description {
@@ -206,27 +237,29 @@ p {
 }
 
 .speakercard {
-  align-items: center;
-  margin-top: 26px;
+  display: inline-block;
+  margin-top: 16px;
+  margin-right: 8px;
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
   margin-bottom: 16px;
   width: 176px;
-  padding-bottom: 16px;
+  padding-bottom: 8px;
+  vertical-align: top;
 }
 
 .nomeED {
   margin-top: 4px;
   font-size: 15px;
-  padding-left: 4px;
+  padding-left: 10px;
 }
 
 .descriptionED {
   margin-top: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-size: 15px;
-  padding-left: 4px;
+  padding-left: 10px;
 }
 
 .descricaoEunice {
@@ -250,12 +283,12 @@ p {
 #accessibilityBar {
   display: none;
   position: absolute;
-  top: 80px; 
-  left: 0;
-  padding: 20px;
+  top: 85px;
   width: 100%;
   z-index: 1000; /* Garante que fique acima dos outros elementos */
   background-color: #f4f4f4;
+  padding: 15px;
+  z-index: 10;
   text-align: center;
 }
 
@@ -283,12 +316,12 @@ p {
 
 /* Modo escuro (se for ativado) */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #212121;
   color: #f0f0f0;
 }
 
 body.dark-mode #accessibilityBar {
-  background-color: #222222;
+  background-color: #212121;
 }
 
 body.dark-mode #accessibilityBar button {
@@ -313,7 +346,7 @@ body.dark-mode .date-button:hover {
 #hamburgerMenu {
   display: none;
   position: absolute;
-  top: 80px;
+  top: 85px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 20px;
@@ -414,4 +447,3 @@ body.dark-mode #hamburgerMenu button:hover {
 .hide {
   display: none;
 }
-
