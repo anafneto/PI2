@@ -1,7 +1,3 @@
-//acessibilidade´
-import "./styles.css";
-
-
 const accessibilityIcon = document.getElementById("accessibilityIcon");
 const accessibilityBar = document.getElementById("accessibilityBar");
 
@@ -41,13 +37,6 @@ function toggleFontSize() {
    }
 }
 
-function toggleDarkMode() {
-   document.body.classList.toggle("dark-mode");
-}
-
-function redirectTo(page) {
-   window.location.href = page;
-}
 
 // Hamburger
 const hamburgerIcon = document.getElementById("hamburgerIcon");
