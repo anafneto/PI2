@@ -33,8 +33,8 @@ p {
 }
 
 .logo {
-  height: 26px;
-  float: left;
+  height: 26px; 
+  width: auto; 
 }
 
 .icons {
@@ -59,12 +59,14 @@ p {
   width: 100%;
   height: 30px;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 50px;
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
   background: #F1F1F1;
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
+  margin-bottom: 26px;
+  
 }
 
 .search-container img {
@@ -86,7 +88,22 @@ p {
   padding-left: 5px;
 }
 
-/* Hero Image Styles */
+@media only screen and (min-width: 768px) {
+  .search-container {
+    width: 50%; 
+    margin: 20px auto; 
+  }
+
+  .searchbar {
+    width: calc(100% - 40px); 
+    padding-left: 10px; 
+  }
+
+  .search-container img {
+    right: 15px;
+  }
+  
+}
 .imagemHero {
   width: 100%;
 }
@@ -131,31 +148,32 @@ p {
     width: 50%;
     aspect-ratio: 16 / 9;
   }
+  .cards-container{
+    text-align: center;
+
+    
+  }
+
 }
 
 /* Cards Styles */
 .cardsVisit {
   display: inline-block;
-  margin-top: 26px;
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
   margin-bottom: 16px;
-  width: 360px;
+  width: 350px;
   vertical-align: top;
-  height: 500px;
 }
 
-.cardsVisit p {
+.cardsVisit p.description {
   padding: 16px 25px;
+  min-height: 190px;
+  margin: 0;
 }
 
-.coordinates {
-  position: relative;
-  height: 20px;
-}
-
-.coordinates p {
+.cardsVisit p.coordinates {
   color: #54595E;
   font-family: Montserrat;
   font-size: var(--base-font-size);
@@ -163,9 +181,10 @@ p {
   font-weight: 700;
   line-height: normal;
   margin-top: 16px;
-  position: absolute;
-  bottom: 8px;
+  padding: 16px 25px;
+  margin: 0;
 }
+
 
 .imagemcardvisit {
   border-radius: 4px 4px 0px 0px;
@@ -277,8 +296,7 @@ footer {
   padding: 16px 24px;
 }
 
-.cardsPrograma h6,
-h3 {
+.cardsPrograma h6, h3 {
   color: #565656;
 }
 
@@ -286,7 +304,7 @@ h3 {
 #accessibilityBar {
   display: none;
   position: absolute;
-  top: 85px;
+  top: 105px;
   width: 100%;
   z-index: 1000;
   background-color: #f4f4f4;
@@ -346,7 +364,7 @@ body.dark-mode .date-button:hover {
 #hamburgerMenu {
   display: none;
   position: absolute;
-  top: 85px;
+  top: 105px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 20px;
