@@ -90,3 +90,69 @@ buttons.forEach(button => {
         changeContent(button.getAttribute('data-id'));
     });
 })}
+
+function changeContent(day, button) {
+    // Esconde os botões de data
+    const buttons = document.querySelectorAll('.date-button');
+    const contentDiv = document.getElementById('content');
+    
+    // Define o conteúdo com base no dia clicado
+    const content = {
+        1: `<div>
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div> <br>
+             <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div>
+            </div>`,
+            
+        2: `<div>
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>9:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div> <br>
+             
+            </div>`,
+        3: `<div>
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div> <br>
+             <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div> <br>
+            <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div>
+            </div>`,
+        4: `<div>
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+                <p>8:30</p>
+                <h3>Registration & Coffee</h3>
+                <p>Foyer Central Services <img src="svg/local.svg"></p>
+            </div> <br>
+            
+            </div>`,
+    };
+
+    // Atualiza o conteúdo da div com HTML
+    contentDiv.innerHTML = content[day];
+    contentDiv.style.visibility = 'visible'; // Torna a div visível
+    
+    // Adiciona a classe 'selected' para o botão que foi clicado
+    buttons.forEach(button => {
+            button.classList.remove('selected');
+    });
+    button.classList.add("selected");
+}

@@ -9,20 +9,19 @@
     <meta name="keywords" content="EUNICE, General Assembly">
     <link rel="stylesheet" href="css/styles.css">
     <title>Projeto de PI2</title>
-    
-    <link rel="stylesheet" href="css/styles.css">
     <script src="js/general.js" defer></script>
     <script src="js/buttons.js" defer></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header class="header__grey">
         <div class="navbar">
-            <img id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
+            <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
 
             <div class="icons">
                 <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility" />
@@ -32,8 +31,8 @@
         </div>
         <div id="accessibilityBar" class="mobile-menu hidden">
             <button onclick="activateTextToSpeech()">Text-to-Speech</button>
-            <button onclick="increaseFontSize()">Font Size</button>
-            <button onclick="toggleDarkMode()">Dark Mode</button> 
+            <button onclick="toggleFontSize()">Increase Font</button>
+            <button onclick="toggleDarkMode()">Dark Mode</button>
         </div>
         <div id="hamburgerMenu" class="mobile-menu hidden">
             <button onclick="redirectTo('indextravel.html')">Travel</button>
@@ -51,34 +50,34 @@
 
     <br>
     <br>
-    
+
     <img src="images/Design_1501x817.png" class="imagemHero" alt="Imagem Herói Eunice">
 
     <div class="imagemHeroDesktop">
-        <div class="containerParagrafo">    
+        <div class="containerParagrafo">
             <p>
-                The General Assembly of <strong>EUNICE European University </strong> will gather partner universities, in the <strong>Polytechnic of Viseu </strong>, to analyse the progress of the alliance and chart future developments.
+                The General Assembly of <strong>EUNICE European University </strong> will gather partner universities,
+                in the <strong>Polytechnic of Viseu </strong>, to analyse the progress of the alliance and chart future
+                developments.
             </p>
         </div>
-            <img src="images/Design_1501x817.png" alt="Imagem Herói Eunice">
-        </div>
+        <img src="images/Design_1501x817.png" alt="Imagem Herói Eunice">
+    </div>
 
     <p class="descricaoEunice">The General Assembly of <b>EUNICE European University</b> will gather partner
         universities, in the <strong>Polytechnic of Viseu</strong>, to analyse the progress of the alliance and chart
         future developments.</p>
 
-            <div class="date-buttons">
-                <button class="date-button" onclick="changeContent('1')">31 Mar</button>
-                <button class="date-button" onclick="changeContent('2')">01 Apr</button>
-                <button class="date-button" onclick="changeContent('3')">02 Apr</button>
-                <button class="date-button" onclick="changeContent('4')">03 Apr</button>
-            </div>
-            <div id="content" style="visibility: hidden;">Selecione um dia.</div>
-            <div class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
-            
-        </body>
+        <div class="date-buttons">
+            <button class="date-button" onclick="changeContent(1, this)">31 Mar</button>
+            <button class="date-button" onclick="changeContent(2, this)">01 Abr</button>
+            <button class="date-button" onclick="changeContent(3, this)">02 Abr</button>
+            <button class="date-button" onclick="changeContent(4, this)">03 Abr</button>
+        </div>
+    <br>
+    <div id="content" style="visibility: hidden;">Selecione um dia.</div>
+
+
+</body>
+
 </html>

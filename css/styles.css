@@ -30,8 +30,8 @@ p {
 }
 
 .logo {
-  height: 26px;
-  float: left;
+  height: 26px; 
+  width: auto; 
 }
 
 .icons {
@@ -61,7 +61,7 @@ p {
   width: 100%;
   height: 30px;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 50px;
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
   background: #F1F1F1;
@@ -275,6 +275,8 @@ footer {
 
 }
 
+
+
 .cardsPrograma h6, h3 {
   color: #565656;
 }
@@ -283,7 +285,7 @@ footer {
 #accessibilityBar {
   display: none;
   position: absolute;
-  top: 85px;
+  top: 105px;
   width: 100%;
   z-index: 1000; /* Garante que fique acima dos outros elementos */
   background-color: #f4f4f4;
@@ -346,7 +348,7 @@ body.dark-mode .date-button:hover {
 #hamburgerMenu {
   display: none;
   position: absolute;
-  top: 85px;
+  top: 105px;
   width: 100%;
   background-color: #f4f4f4;
   padding: 20px;
