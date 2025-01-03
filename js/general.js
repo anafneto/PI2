@@ -50,7 +50,7 @@ function activateTextToSpeech() {
    accessibilityBar.classList.toggle("open");
  });
  
-
+ 
  //muda logo para branco e ativa o ligth mode
  function toggleDarkMode() {
     const body = document.body;
@@ -71,3 +71,36 @@ function activateTextToSpeech() {
     }
  
  } 
+
+const scrollContainer = document.querySelector('.scrollHorizontalImagens');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+scrollContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scrollContainer.classList.add('active');
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+});
+
+scrollContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+});
+
+scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX) * 1; 
+    scrollContainer.scrollLeft = scrollLeft - walk;
+});
+
+ 

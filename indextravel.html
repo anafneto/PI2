@@ -20,21 +20,33 @@
 <body>
     <header class="header__grey">
         <div class="navbar">
-            <img onclick="redirectTo('index.html')"  class="logo" src="svg/Logotipo.svg" alt="logo">
+            <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
 
             <div class="icons">
-                <img class="icon" src="svg/Accesibility.svg" alt="Icon Accesibility">
-                <img class="icon" src="svg/PT.svg" alt="Icon Translation">
-                <img class="icon" src="svg/hamburger.svg" alt="Icon hamburger">
+                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility" />
+                <img class="icon" src="svg/PT.svg" alt="Language Icon">
+                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
             </div>
+        </div>
+        <div id="accessibilityBar" class="mobile-menu hidden">
+            <button onclick="activateTextToSpeech()">Text-to-Speech</button>
+            <button onclick="toggleFontSize()">Increase Font</button>
+            <button onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+        <div id="hamburgerMenu" class="mobile-menu hidden">
+            <button onclick="redirectTo('indextravel.html')">Travel</button>
+            <button onclick="redirectTo('indexvisit.html')">Visit</button>
         </div>
         <div class="search">
             <div class="search-container">
                 <input type="text" class="searchbar">
-                <img src="svg/lupa.svg" alt="lupa searchbar" />
+                <img src="svg/lupa.svg" alt="lupa" />
             </div>
+
+
         </div>
     </header>
+    
     <body>
 
         <div class="button-group">

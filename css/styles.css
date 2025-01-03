@@ -12,9 +12,11 @@
 }
 
 body {
-  margin-right: 16px;
-  margin-left: 16px;
   background-color: #f4f4f4;
+  position: relative;
+  min-height: 100vh;
+  padding-top: calc(112px + 1rem);
+  padding-bottom: calc(237px + 1rem);
 }
 
 p {
@@ -24,17 +26,28 @@ p {
   word-wrap: break-word;
 }
 
+#content {
+  padding: 0 1rem; /*ADDED THIS (equals 0 16px)*/
+}
+
 /* Header Styles */
 .header__grey {
   display: inline-block;
   width: 100%;
-  height: 70px;
-  margin-top: 15px;
+  z-index: 5;
+  /* height: 70px; */
+  /* margin-top: 15px; */
+  padding: 1rem; /*ADDED THIS (equals 16px) - COMMENTED ABOVE*/
+  position: fixed; /*ADDED THIS*/
+  top: 0; /*ADDED THIS*/
+  background-color: #f4f4f4; /*ADDED THIS*/
+  box-shadow: 0px 0px 5px rgba(206, 206, 206, 0.25); /*ADDED THIS*/
 }
 
 .logo {
-  height: 26px;
-  width: auto;
+  height: 26px; 
+  width: auto; 
+  cursor: pointer; /*ADDED THIS*/
 }
 
 .icons {
@@ -46,7 +59,7 @@ p {
 .search {
   width: 100%;
   text-align: center;
-  padding-top: 20px;
+  /* padding-top: 20px; */ /*COMMENTED THIS*/
 }
 
 .icon {
@@ -59,14 +72,14 @@ p {
   width: 100%;
   height: 30px;
   display: inline-block;
-  margin-top: 50px;
+  /* margin-top: 50px;
+  margin-bottom: 26px; */
+  margin: .5rem 0; /*ADDEDE THIS (equals 8px 0) - COMMENTED ABOVE*/
   border-radius: 5px;
   border: 0.5px solid #DBDADA;
   background: #F1F1F1;
   box-shadow: 0px 4px 4px rgba(206, 206, 206, 0.25);
   position: relative;
-  margin-bottom: 26px;
-
 }
 
 .search-container img {
@@ -76,6 +89,7 @@ p {
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
+  cursor: pointer;
 }
 
 .searchbar {
@@ -88,75 +102,12 @@ p {
   padding-left: 5px;
 }
 
-@media only screen and (min-width: 768px) {
-  .search-container {
-    width: 50%;
-    margin: 20px auto;
-  }
-
-  .searchbar {
-    width: calc(100% - 40px);
-    padding-left: 10px;
-  }
-
-  .search-container img {
-    right: 15px;
-  }
-
-}
-
 .imagemHero {
   width: 100%;
 }
 
 .imagemHeroDesktop {
   display: none;
-}
-
-@media only screen and (min-width: 768px) {
-
-  .imagemHero,
-  .descricaoEunice {
-    display: none;
-  }
-
-  .imagemHeroDesktop {
-    font-size: 0;
-    display: block;
-    margin: 40px 0;
-  }
-
-  .containerParagrafo {
-    background-color: #54595e;
-    color: white;
-    display: inline-block;
-    width: 50%;
-    aspect-ratio: 16 / 9;
-    vertical-align: middle;
-  }
-
-  .containerParagrafo p {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 18% 40px;
-  }
-
-  .imagemHeroDesktop img {
-    background-color: #54595e;
-    color: white;
-    vertical-align: middle;
-    display: inline-block;
-    width: 50%;
-    aspect-ratio: 16 / 9;
-  }
-
-  .cards-container {
-    text-align: center;
-
-
-  }
-
 }
 
 /* Cards Styles */
@@ -193,11 +144,62 @@ p {
   border-radius: 4px 4px 0px 0px;
 }
 
-/* Footer Styles */
+.scrollHorizontalImagens {
+  white-space: nowrap;
+  cursor: grab;
+  overflow-x: auto; /*foi necessário utilizar para fazer o scroll horizontal e limitar as imagens à pagina*/
+  display: inline-block;
+  padding: 0 12px;
+  max-width: 100%;
+  margin: 24px 0;
+}
+
+.scrollHorizontalImagens img {
+  display: inline-block;
+  height: 213px;
+  border-radius: 4px;
+  user-select: none; 
+  -webkit-user-drag: none;
+  -webkit-user-select: none; 
+  -moz-user-select: none;
+  -ms-user-select: none; 
+}
+
+.scrollHorizontalImagens::-webkit-scrollbar {
+  display: none;
+}
+
+.eventcard  {
+  display: inline-block;
+  position: relative;
+  margin-right: 4px;
+}
+
+.eventcard:last-child {
+  margin-right: 0;
+}
+
+.now_next {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #D5402D;
+
+  color: #FFF;
+  font-family: Montserrat;
+  z-index: 2;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 footer {
   background-color: #fff;
-  width: 100vw;
-  margin-left: calc(-1 * 16px);
+  width: 100%; /*CHANGED THIS FROM vw*/
+  /* margin-left: calc(-1 * 16px); */ /*COMMENTED THIS*/
   padding: 16px;
   text-align: center;
   vertical-align: middle;
@@ -205,7 +207,7 @@ footer {
   padding: 10px;
   color: #54595E;
   font-size: 15px;
-  position: relative;
+  position: absolute;
   bottom: 0;
 }
 
@@ -231,7 +233,9 @@ footer {
 
 /* Text Styles */
 .text {
-  margin-top: 26px;
+  /* margin-top: 26px; */
+  /* margin-top: calc(112px + 1rem); ADDED THIS (equals 62px [header size] + 16px) - COMMENTED ABOVE */
+  padding: 0 1rem; /*ADDED THIS (equals 0 16px)*/
 }
 
 .hora {
@@ -260,17 +264,22 @@ footer {
   margin-top: 32px;
 }
 
+
 .speakercard {
   display: inline-block;
-  margin-top: 16px;
-  margin-right: 8px;
+  /* margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 8px; */
+  margin: 1rem 0rem; /*ADDED THIS (equals 16px 4px) - COMMENTED ABOVE*/
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
-  margin-bottom: 16px;
-  width: 176px;
-  padding-bottom: 8px;
+  width: 100%; /*CHAGED THIS FROM 176px*/
+  /* padding-bottom: 8px; */ /*COMMENTED THIS*/
   vertical-align: top;
+}
+.speakercard img { /*ADDED THE WHOLE CLASS SELECTOR*/
+  width: 100%;
 }
 
 .nomeED {
@@ -280,10 +289,11 @@ footer {
 }
 
 .descriptionED {
-  margin-top: 8px;
+  /*margin-top: 8px;
   margin-bottom: 8px;
+  padding-left: 10px;*/
+  padding: .5rem; /*ADDED THIS (equals 8px) - COMMENTED ABOVE*/
   font-size: 15px;
-  padding-left: 10px;
 }
 
 .descricaoEunice {
@@ -297,28 +307,35 @@ footer {
   width: 100%;
   height: 100%;
   padding: 16px 24px;
+  cursor: pointer;
 }
 
-.cardsPrograma h6,
-h3 {
+.cardsPrograma h6, h3 {
   color: #565656;
 }
 
 /* Accessibility Bar Styles */
 #accessibilityBar {
-  display: none;
   position: absolute;
-  top: 105px;
+  /* top: 105px; */
+  top: 100%; /*ADDED THIS - COMMENTED ABOVE*/
+  left: 0;
   width: 100%;
   z-index: 1000;
   background-color: #f4f4f4;
   padding: 15px;
   z-index: 10;
   text-align: center;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: all .3s ease-in-out;
+
 }
 
 #accessibilityBar.open {
-  display: block;
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 #accessibilityBar button {
@@ -330,6 +347,7 @@ h3 {
   font-size: 14px;
   cursor: pointer;
   transition: color 0.3s ease;
+  
 }
 
 #accessibilityBar button:hover {
@@ -366,18 +384,25 @@ body.dark-mode .date-button:hover {
 
 /* Hamburger Menu Styles */
 #hamburgerMenu {
-  display: none;
+  /* display: none; */
   position: absolute;
-  top: 105px;
+  /* top: 105px; */
+  top: 100%; /*ADDED THIS - COMMENTED ABOVE*/
+  left: 0;
   width: 100%;
   background-color: #f4f4f4;
   padding: 20px;
   z-index: 10;
   text-align: center;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: all .3s ease-in-out;
 }
 
 #hamburgerMenu.open {
-  display: block;
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 #hamburgerMenu button {
@@ -437,11 +462,10 @@ body.dark-mode #hamburgerMenu button:hover {
   transform: scale(0.95);
   transition: transform 0.1s;
 }
-
 /* Perguntar ao prof fred */
 /* Button Group Styles */
 .button-group {
-  display: block;
+  display: inline-block;
   text-align: left;
   margin-bottom: 20px;
   width: 100%;
@@ -449,11 +473,12 @@ body.dark-mode #hamburgerMenu button:hover {
 }
 
 .location-button {
+  display: inline-block;
   font-size: 15px;
-  width: 49.5%;
+  width: 48%;
   height: 37px;
   border-radius: 4px;
-
+  border: 0.25px solid rgba(84, 89, 94, 0.80);
   background: #F1F1F1;
   align-items: left;
 }
@@ -464,16 +489,12 @@ body.dark-mode #hamburgerMenu button:hover {
   margin-right: 0;
 }
 
-.travel-button:last-child {
-  margin-bottom: 25px;
-}
-
 
 .travel-button {
-  width: 49.5%;
-  height: 30px;
+  display: inline-block;
+  width: 40%;
+  height: 35px;
   font-size: 13px;
-
 }
 
 .location-button,
@@ -490,7 +511,6 @@ body.dark-mode #hamburgerMenu button:hover {
   line-height: normal;
 }
 
-
 .location-button:hover,
 .travel-button:hover {
   background-color: #ddd;
@@ -501,23 +521,19 @@ body.dark-mode #hamburgerMenu button:hover {
   background-color: #54595E;
   color: white;
   transition: all 0.3s ease-in-out;
+  color: #FFF;
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-
-.travel-button.selected {
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .location-button:active,
 .travel-button:active {
   transform: scale(0.98);
   transition: transform 0.2s ease-in-out;
-}
+} 
 
 /* Travel Info Styles */
 /* Travel Info Styles */
@@ -536,8 +552,7 @@ body.dark-mode #hamburgerMenu button:hover {
   display: block;
   align-items: center;
   min-height: 40px;
-  line-height: 1.5;
-  /* Adjust the line height as needed */
+  line-height: 1.5; /* Adjust the line height as needed */
 }
 
 .PortoBus p img,
@@ -545,9 +560,7 @@ body.dark-mode #hamburgerMenu button:hover {
 .PortoTransfer p img,
 .LisboaTransfer p img {
   vertical-align: middle;
-  margin-right: 8px;
-  max-width: 20x;
-  max-height: 20px;
+  margin-right: 8px; /* Adjust the spacing between the icon and the text */
 }
 
 .MetroWarning {
@@ -566,70 +579,137 @@ body.dark-mode #hamburgerMenu button:hover {
   display: none;
 }
 
-
-@media only screen and (min-width: 1024px) {
-
-  .travel-button,
-  .location-button {
-    display: inline;
-    font-size: 15px;
-    width: 47.5%;
-    height: 37px;
-    border-radius: 4px;
-    background: #F1F1F1;
+@media only screen and (min-width: 320px) {
+  body{
+    padding-bottom: calc(197px + 1rem);
   }
 
-  .location-button:last-child {
-    margin-right: 5%;
+  .speakercard{
+    width: calc(50% - .7rem);
+    margin: 1rem .25rem;
   }
 
-  .travel-button:first-child {
-    margin-left: 5%
+  .descriptionED{
+    min-height: 192px; /*ADDED THIS - NEEDS MEDIA QUERY*/
+    /* min-height: 153px; */
   }
-
-  .travel-button.selected {
-    font-weight: 700;
-    font-size: 16px;
-  }
-
-  .button-group {
-    display: inline-block;
-    margin-bottom: 0px;
-    width: 49.7%;
-  }
-
-  .PortoBus,
-  .LisboaBus,
-  .PortoTransfer,
-  .LisboaTransfer, .link {
-    font-size: 16pt;
-    font-weight: 400;
-  }
-
-
-  .PortoBus p img,
-  .LisboaBus p img,
-  .PortoTransfer p img,
-  .LisboaTransfer p img {
-    vertical-align: middle;
-    margin-right: 8px;
-  }
-
 }
 
-@media only screen and (max-width: 408px) {
-  .or {
+@media only screen and (min-width: 576px) {
+  body{
+    padding-bottom: calc(164px + 1rem);
+  }
+
+  .descriptionED{
+    min-height: 114px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body{
+    padding-top: calc(62px + 1rem);
+    padding-bottom: calc(156px + 1rem);
+  }
+
+  .search{
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .search-container {
+    width: 100%; 
+    /* margin: 20px auto;  */
+    margin: 0; /*ADDED THIS - COMMENTED ABOVE*/
+    box-shadow: unset; /*ADDED THIS*/
+    background: transparent; /*ADDED THIS*/
+  }
+
+  .searchbar {
+    width: calc(100% - 40px); 
+    padding-left: 10px; 
+  }
+
+  .search-container img {
+    right: 15px;
+  }
+
+  .imagemHero,
+  .descricaoEunice {
     display: none;
   }
 
-  .location-button,
-  .travel-button {
+  .imagemHeroDesktop {
+    font-size: 0;
     display: block;
-    width: 100%;
   }
 
-  .location-button:last-child {
-    margin-bottom: 20px;
+  .speakercard {
+    display: inline-block;
+    /* margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 8px; */
+    margin: 1rem .25rem; /*ADDED THIS (equals 16px 4px) - COMMENTED ABOVE*/
+    text-align: left;
+    box-shadow: 0 0 0 0.25px #54595E;
+    border-radius: 4px 4px;
+    width: calc(25% - .7rem); /*CHAGED THIS FROM 176px*/
+    /* padding-bottom: 8px; */ /*COMMENTED THIS*/
+    vertical-align: top;
   }
 
+  .containerParagrafo {
+    background-color: #54595e;
+    color: white;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    vertical-align: middle;
+    z-index: 0;
+  }
+
+  .containerParagrafo p {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 01rem 40px;
+    position: absolute;
+    max-width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    }
+
+  .imagemHeroDesktop img {
+    background-color: #54595e;
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .cards-container{
+    text-align: center;
+  }
+
+  .speakercard {
+    width: calc(33.33333% - .7rem);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .button-group {
+    display: none;
+  }
+
+  .speakercard {
+    width: calc(25% - .7rem);
+  }
+
+  .descriptionED{
+    min-height: 113px;
+  }
 }
