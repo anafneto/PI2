@@ -1,15 +1,4 @@
-function activateTextToSpeech() {
-   if ('speechSynthesis' in window) {
-    const text = document.body.innerText; // Obtém todo o texto do corpo
-    const speech = new SpeechSynthesisUtterance(text); // Cria uma instância de fala
-    speech.lang = 'en-US'; // Define o idioma (ajuste conforme necessário)
-    speech.rate = 1; // Velocidade da fala (1 é normal)
-    speech.pitch = 1; // Tom da voz (1 é normal)
-    window.speechSynthesis.speak(speech); // Reproduz o texto em voz
- } else {
-    alert('Desculpe, o navegador não suporta Text-to-Speech.');
- }
- }
+
  
  // Função para aumentar o tamanho da fonte
  var originalFontSize = window.getComputedStyle(document.body).fontSize;
@@ -35,42 +24,43 @@ function activateTextToSpeech() {
     window.location.href = page;
  }
  
- // Hamburger
- const hamburgerIcon = document.getElementById("hamburgerIcon");
- const hamburgerMenu = document.getElementById("hamburgerMenu");
- 
- hamburgerIcon.addEventListener("click", () => {
+// Hamburger
+const hamburgerIcon = document.getElementById("hamburgerIcon");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+const accessibilityIcon = document.getElementById("accessibilityIcon");
+const accessibilityBar = document.getElementById("accessibilityBar");
+
+hamburgerIcon.addEventListener("click", () => {
+    // Close accessibility menu if open
+    if (accessibilityBar.classList.contains("open")) {
+        accessibilityBar.classList.remove("open");
+    }
+    // Toggle hamburger menu
     hamburgerMenu.classList.toggle("open");
- });
- 
- const accessibilityIcon = document.getElementById("accessibilityIcon");
- const accessibilityBar = document.getElementById("accessibilityBar");
- 
- accessibilityIcon.addEventListener("click", () => {
-   accessibilityBar.classList.toggle("open");
- });
- 
- 
- //muda logo para branco e ativa o ligth mode
- function toggleDarkMode() {
+});
+
+accessibilityIcon.addEventListener("click", () => {
+    // Close hamburger menu if open
+    if (hamburgerMenu.classList.contains("open")) {
+        hamburgerMenu.classList.remove("open");
+    }
+    // Toggle accessibility menu
+    accessibilityBar.classList.toggle("open");
+});
+
+//muda logo para branco e ativa o ligth mode
+function toggleDarkMode() {
     const body = document.body;
     const logo = document.getElementById("logo");
- 
+
     body.classList.toggle("dark-mode");
     if (body.classList.contains("dark-mode")) {
         logo.src = "svg/Logotipo_branco.svg";
     } else {
         logo.src = "svg/Logotipo.svg";
     }
- 
-    const darkModeButton = document.querySelector("#accessibilityBar button:last-child");
-    if (document.body.classList.contains("dark-mode")) {
-        darkModeButton.textContent = "Light Mode";
-    } else {
-        darkModeButton.textContent = "Dark Mode";
-    }
- 
- } 
+}
 
 const scrollContainer = document.querySelector('.scrollHorizontalImagens');
 
@@ -103,4 +93,3 @@ scrollContainer.addEventListener('mousemove', (e) => {
     scrollContainer.scrollLeft = scrollLeft - walk;
 });
 
- 

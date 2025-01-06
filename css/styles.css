@@ -146,12 +146,21 @@ p {
 
 .scrollHorizontalImagens {
   white-space: nowrap;
+  cursor: move; /* fallback if grab cursor is unsupported */
   cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
   overflow-x: auto; /*foi necessário utilizar para fazer o scroll horizontal e limitar as imagens à pagina*/
   display: inline-block;
   padding: 0 12px;
   max-width: 100%;
   margin: 24px 0;
+}
+
+.scrollHorizontalImagens.active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .scrollHorizontalImagens img {
@@ -297,7 +306,7 @@ footer {
 }
 
 .descricaoEunice {
-  margin: 20px 0;
+  margin: 20px 13px;
 }
 
 /* Program Cards Styles */
@@ -308,9 +317,11 @@ footer {
   height: 100%;
   padding: 16px 24px;
   cursor: pointer;
+  background-color: #F1F1F1; /* Light background */
+  color: #565656; /* Light text color */
 }
 
-.cardsPrograma h6, h3 {
+.cardsPrograma h6, .cardsPrograma h3, .cardsPrograma p {
   color: #565656;
 }
 
@@ -354,32 +365,12 @@ footer {
   color: #000000;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #212121;
-  color: #f0f0f0;
+.menu {
+  display: none;
 }
 
-body.dark-mode #accessibilityBar {
-  background-color: #212121;
-}
-
-body.dark-mode #accessibilityBar button {
-  color: white;
-}
-
-body.dark-mode p {
-  color: #f0f0f0;
-}
-
-body.dark-mode .date-button {
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #555555;
-}
-
-body.dark-mode .date-button:hover {
-  background-color: #333333;
+.menu.open {
+  display: block;
 }
 
 /* Hamburger Menu Styles */
@@ -418,18 +409,6 @@ body.dark-mode .date-button:hover {
 
 #hamburgerMenu button:hover {
   color: #000;
-}
-
-body.dark-mode #hamburgerMenu {
-  background-color: #222222;
-}
-
-body.dark-mode #hamburgerMenu button {
-  color: white;
-}
-
-body.dark-mode #hamburgerMenu button:hover {
-  color: #dddddd;
 }
 
 /* Date Button Styles */
@@ -712,4 +691,89 @@ body.dark-mode #hamburgerMenu button:hover {
   .descriptionED{
     min-height: 113px;
   }
+}
+
+/*
+
+
+
+
+
+*/
+
+/* Dark Mode Styles */
+
+body.dark-mode {
+  background-color: #191B19;
+  color: #f0f0f0;
+}
+
+body.dark-mode #accessibilityBar {
+  background-color: #191B19;
+  color: white;
+}
+
+body.dark-mode #accessibilityBar button {
+  color: white;
+}
+
+body.dark-mode .searchbar{
+  color: white;
+}
+
+body.dark-mode .date-button.selected {
+  border-radius: 4px;
+  border: 0.25px solid #4B4F4B;
+  background: #F5F5F5;
+  color: #000;
+}
+
+body.dark-mode p {
+  color: #f0f0f0;
+}
+
+body.dark-mode .date-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .date-button:hover {
+  background-color: lightgrey;
+}
+
+body.dark-mode header {
+  background-color: #191B19; /* Dark background for header */
+  color: #f0f0f0; /* Light text color for header */
+}
+
+body.dark-mode header a {
+  color: #f0f0f0; /* Light text color for links in header */
+}
+
+body.dark-mode .search-container {
+  background: white; /* Dark background for search container */
+  border: 0.5px solid #4B4F4B;
+}
+
+body.dark-mode #hamburgerMenu {
+  background-color: #222222;
+}
+
+body.dark-mode #hamburgerMenu button {
+  color: white;
+}
+
+body.dark-mode #hamburgerMenu button:hover {
+  color: #dddddd;
+}
+
+.dark-mode .cardsPrograma {
+  box-shadow: 0 0 0 0.25px #ffffff;
+  background-color: #191B19; /* Dark background */
+  color: #ffffff; /* Dark text color */
+}
+
+.dark-mode .cardsPrograma h6, .dark-mode .cardsPrograma h3, .dark-mode .cardsPrograma p {
+  color: #ffffff;
 }
