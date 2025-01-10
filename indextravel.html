@@ -21,17 +21,16 @@
     <header class="header__grey">
         <div class="navbar">
             <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
-
             <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility" />
-                <img class="icon" src="svg/PT.svg" alt="Language Icon">
+                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
+                <img id="languageIcon" class="icon" 
+                src="svg/PT.svg" alt="Language Icon">
                 <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
             </div>
         </div>
         <div id="accessibilityBar" class="mobile-menu hidden">
-            <button onclick="activateTextToSpeech()">Text-to-Speech</button>
-            <button onclick="toggleFontSize()">Increase Font</button>
-            <button onclick="toggleDarkMode()">Dark Mode</button>
+            <button id="fontSizeButton" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
         <div id="hamburgerMenu" class="mobile-menu hidden">
             <button onclick="redirectTo('indextravel.html')">Travel</button>
@@ -42,23 +41,24 @@
                 <input type="text" class="searchbar">
                 <img src="svg/lupa.svg" alt="lupa" />
             </div>
-
-
         </div>
     </header>
     
     <body>
+        <div class="containerInfoTravel">
+
 
         <div class="button-group">
             <button class="location-button" id="PortoBtn" onclick="changeBackgroundColor(this)">From Porto</button>
             <button class="location-button" id="LisboaBtn" onclick="changeBackgroundColor(this)">From Lisboa</button>
         </div>
 
-        <div class="button-group">
-            <button class="travel-button" id="BusBtn" onclick="changeBackgroundColor(this)">Metro & Bus</button>
-            
-            <button class="travel-button" id="TransferBtn" onclick="changeBackgroundColor(this)">Transfer</button>
+        <div class="button-container">
+            <button id="BusBtn" class="travel-button" onclick="changeBackgroundColor(this)">Metro & Bus</button>
+            <span class="or-text">or</span>
+            <button id="TransferBtn" class="travel-button" onclick="changeBackgroundColor(this)">Transfer</button>
         </div>
+
         <div class="PortoBus" id="PortoBus">
             <p><img src="svg/clock.svg" alt="clock icon" /> 2h40 to 3h</p>
             <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
@@ -87,18 +87,29 @@
             <p><img src="svg/clock.svg" alt="clock icon" /> 4h</p>
             <p><img src="svg/money.svg" alt="money icon" /> 300€</p>
         </div>
+        </div>
         
-        <footer><img class="imgfooter" src="images/ipv.png" alt="ipv logo"><img class="imgfooter"
-            src="images/university of pelo.png"><img class="imgfooter" src="images/logo 3.png"><img class="imgfooter"
-            src="images/Layer_1.png"><img class="imgfooter" src="images/Layer_1-1.png"><img class="imgfooter"
-            src="images/Layer_1-2.png"><img class="imgfooter" src="images/Layer_1-3.png"><img class="imgfooter"
-            src="images/Layer_2.png"><img class="imgfooter" src="images/Layer_3.png"><br>
-        <img class="iconat" src="images/@.png">eunice@sc.ipv.pt <img class="iconphone" src="images/telefone.png">232 222
-        222<br><img class="iconsocial" src="images/iconmonstr-facebook-3 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-youtube-8 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-linkedin-3 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-instagram-13 1.png" alt="ipv logo">
-    </footer>
+        <footer>
+            <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="ipv logo">
+            <img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg">
+            <img class="imgfooter" src="svg/footerIcons/vasaan.svg">
+            <img class="imgfooter" src="svg/footerIcons/umons.svg">
+            <img class="imgfooter" src="svg/footerIcons/btu.svg">
+            <img class="imgfooter" src="svg/footerIcons/universidadeDeCatania.svg">
+            <img class="imgfooter" src="svg/footerIcons/poznanska.svg">
+            <img class="imgfooter" src="svg/footerIcons/UC.svg">
+            <img class="imgfooter" src="svg/footerIcons/malstads.svg">
+            <img class="imgfooter" src="svg/footerIcons/france.svg">
+            <br>
+            <img class="iconat" src="svg/email.svg"><a class="emailFooter" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
+            <img class="iconphone" src="svg/telefone.svg">232 222
+            222
+            <br>
+            <img class="iconsocial" src="svg/redes/iconmonstr-facebook-3 1.svg" alt="ipv logo">
+            <img class="iconsocial" src="svg/redes/iconmonstr-youtube-8 1.svg" alt="logo youtube">
+            <img class="iconsocial" src="svg/redes/iconmonstr-linkedin-3 1.svg" alt="logo linkedin">
+            <img class="iconsocial" src="svg/redes/iconmonstr-instagram-13 1.svg" alt="logo instagram">
+        </footer>
     </body>
 
     </html>

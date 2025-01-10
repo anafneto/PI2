@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -23,17 +23,16 @@
     <header class="header__grey">
         <div class="navbar">
             <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
-
             <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility" />
-                <img class="icon" src="svg/PT.svg" alt="Language Icon">
+                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
+                <img id="languageIcon" class="icon" 
+                src="svg/PT.svg" alt="Language Icon">
                 <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
             </div>
         </div>
         <div id="accessibilityBar" class="mobile-menu hidden">
-            <button onclick="activateTextToSpeech()">Text-to-Speech</button>
-            <button onclick="toggleFontSize()">Increase Font</button>
-            <button onclick="toggleDarkMode()">Dark Mode</button> 
+            <button id="fontSizeButton" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
         <div id="hamburgerMenu" class="mobile-menu hidden">
             <button onclick="redirectTo('indextravel.html')">Travel</button>
@@ -44,19 +43,20 @@
                 <input type="text" class="searchbar">
                 <img src="svg/lupa.svg" alt="lupa" />
             </div>
-
-
         </div>
     </header>
+    
     <div class="cards-container">
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/seviseu.jpg" alt="sé de viseu" width="100%" height="240">
-            <p class="description"><b>Viseu Cathedral</b> began to be built in the 12th century and, over the years,
+            <p class="description"><strong>Viseu Cathedral</strong> began to be built in the 12th century and, over the years,
                 various
                 pieces have been added, resulting in a combination of styles including Romanesque, Manueline,
                 Renaissance
                 and Gothic.</p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+            <a href="https://maps.app.goo.gl/pcdWpgBd3BxQkmJfA" target="_blank">
+                <p class="coordinates"> 40° 39′ 35,75″ N, 7° 54′ 39,47″ O <img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+            </a>
 
 
         </div>
@@ -64,61 +64,80 @@
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/igrejamisericordia.png" alt="igreja da misericórdia" width="100%"
                 height="240">
-            <p class="description"><b>Igreja da Misericórdia’s</b> chambers are filled with priceless oil paintings and
+            <p class="description"><strong>Igreja da Misericórdia’s</strong> chambers are filled with priceless oil paintings and
                 holy
                 objects. Some are portraits of the numerous donors to the church, while others feature religious themes
                 or
                 figures.</p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+            <a href="https://maps.app.goo.gl/aXDXF4gbVTppMf6X8" target="_blank">
+                <p class="coordinates"><strong>40° 39′ 37″ N, 7° 54′ 43″ W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+            </a>
         </div>
         <!-- -->
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/pracadduarte.jpeg" alt="Praça D. Duarte" width="100%" height="240">
-            <p class="description">At the heart of Viseu’s historical centre, the bronze statue of <b>King Duarte</b>
+            <p class="description">At the heart of Viseu’s historical centre, the bronze statue of <strong>King Duarte</strong>
                 presides over a square lined with cafés and restuarants and backed by the cathedral walls. It’s a great
                 place for people watching and admiring the beautiful old buildings that surround the square.</p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+            <a href="https://maps.app.goo.gl/v53PRsmQDRXhEmbd8" target="_blank">
+                <p class="coordinates"><strong>40° 39' 34.80" N, 7° 54' 41.61" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+            </a>
         </div>
         <!-- -->
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/rossio.jpeg" alt="Rossio" width="100%" height="240">
-            <p class="description"><b>Praça da República</b> is leafy and flower-filled, with a fountain and
+            <p class="description"><strong>Praça da República</strong> is leafy and flower-filled, with a fountain and
                 merry-go-round.
                 It’s also bordered on one side by an azulejo mural. During festivals and events, there are usually
                 activities in this square but even without extra thrills, the café in the centre is a popular spot with
                 locals.</p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+            <a href="https://maps.app.goo.gl/6jogwWchYxWAME1g9" target="_blank">
+                    <p class="coordinates"><strong>40° 39' 27.13" N, 7° 54' 49.89" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+            </a>
         </div>
         <!-- -->
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/museu.png" alt="museu" width="100%" height="240">
-            <p class="description">Next to Viseu Cathedral, you’ll find <b>Grão Vasco National Museum</b>. The museum in
+            <p class="description">Next to Viseu Cathedral, you’ll find <strong>Grão Vasco National Museum</strong>. The museum in
                 his
                 name also houses a fine collection of carved, painted Baroque figurines and other religious objects...
             </p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+            <a href="https://maps.app.goo.gl/TonFnZcYVvMB5nMq7" target="_blank">
+                <p class="coordinates"><strong>40° 39' 36.55" N 7° 54' 39.7" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+            </a>
         </div>
         <!-- -->
         <div class="cardsVisit">
             <img class="imagemcardvisit" src="images/ruadireita.jpeg" alt="rua direita" width="100%" height="240">
-            <p class="description"><b>Rua Direita</b> is well-known for its charmingly retro stores, which are like
+            <p class="description"><strong>Rua Direita</strong> is well-known for its charmingly retro stores, which are like
                 stepping into a delightful time capsule. These shops are a haven for vintage lovers and offer a truly
                 unique shopping experience that captures the charm of yesteryear.</p>
-            <p class="coordinates"><b>40° 39′ 35,75″ N, 7° 54′ 39,47″ W ⚲</b></p>
+                <a href="https://maps.app.goo.gl/hH4YhCGjgMeVrQpE6" target="_blank">
+                    <p class="coordinates"><strong>40° 39' 31.26" N, 7° 54' 39.38" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg"></p>
+                </a>
         </div>
     </div>
 
     <footer>
-        <img class="imgfooter" src="images/ipv.png" alt="ipv logo"><img class="imgfooter"
-            src="images/university of pelo.png"><img class="imgfooter" src="images/logo 3.png"><img class="imgfooter"
-            src="images/Layer_1.png"><img class="imgfooter" src="images/Layer_1-1.png"><img class="imgfooter"
-            src="images/Layer_1-2.png"><img class="imgfooter" src="images/Layer_1-3.png"><img class="imgfooter"
-            src="images/Layer_2.png"><img class="imgfooter" src="images/Layer_3.png"><br>
-        <img class="iconat" src="images/@.png">eunice@sc.ipv.pt <img class="iconphone" src="images/telefone.png">232 222
-        222<br><img class="iconsocial" src="images/iconmonstr-facebook-3 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-youtube-8 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-linkedin-3 1.png" alt="ipv logo"><img class="iconsocial"
-            src="images/iconmonstr-instagram-13 1.png" alt="ipv logo">
+        <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="ipv logo">
+        <img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg">
+        <img class="imgfooter" src="svg/footerIcons/vasaan.svg">
+        <img class="imgfooter" src="svg/footerIcons/umons.svg">
+        <img class="imgfooter" src="svg/footerIcons/btu.svg">
+        <img class="imgfooter" src="svg/footerIcons/universidadeDeCatania.svg">
+        <img class="imgfooter" src="svg/footerIcons/poznanska.svg">
+        <img class="imgfooter" src="svg/footerIcons/UC.svg">
+        <img class="imgfooter" src="svg/footerIcons/malstads.svg">
+        <img class="imgfooter" src="svg/footerIcons/france.svg">
+        <br>
+        <img class="iconat" src="svg/email.svg"><a class="emailFooter" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
+        <img class="iconphone" src="svg/telefone.svg">232 222
+        222
+        <br>
+        <img class="iconsocial" src="svg/redes/iconmonstr-facebook-3 1.svg" alt="ipv logo">
+        <img class="iconsocial" src="svg/redes/iconmonstr-youtube-8 1.svg" alt="logo youtube">
+        <img class="iconsocial" src="svg/redes/iconmonstr-linkedin-3 1.svg" alt="logo linkedin">
+        <img class="iconsocial" src="svg/redes/iconmonstr-instagram-13 1.svg" alt="logo instagram">
     </footer>
 </body>
 

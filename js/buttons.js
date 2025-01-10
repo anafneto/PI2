@@ -103,7 +103,7 @@ function changeContent(day, button) {
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
                 <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div> <br>
+            </div>
              <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
@@ -116,7 +116,7 @@ function changeContent(day, button) {
                 <p>9:30</p>
                 <h3>Registration & Coffee</h3>
                 <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div> <br>
+            </div>
              
             </div>`,
         3: `<div>
@@ -124,12 +124,12 @@ function changeContent(day, button) {
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
                 <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div> <br>
+            </div>
              <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
                 <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div> <br>
+            </div>
             <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
@@ -141,7 +141,7 @@ function changeContent(day, button) {
                 <p>8:30</p>
                 <h3>Registration & Coffee</h3>
                 <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div> <br>
+            </div>
             
             </div>`,
     };

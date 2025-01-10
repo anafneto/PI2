@@ -24,12 +24,15 @@
     window.location.href = page;
  }
  
+
 // Hamburger
 const hamburgerIcon = document.getElementById("hamburgerIcon");
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 
 const accessibilityIcon = document.getElementById("accessibilityIcon");
 const accessibilityBar = document.getElementById("accessibilityBar");
+const languageIcon = document.getElementById("languageIcon");
+
 
 hamburgerIcon.addEventListener("click", () => {
     // Close accessibility menu if open
@@ -53,14 +56,45 @@ accessibilityIcon.addEventListener("click", () => {
 function toggleDarkMode() {
     const body = document.body;
     const logo = document.getElementById("logo");
+    const accessibilityIcon = document.getElementById("accessibilityIcon");
+    const hamburgerIcon = document.getElementById("hamburgerIcon");
+    const languageIcon = document.getElementById("languageIcon");
+    const darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
 
+    // Toggle dark mode class
     body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
+    const isDarkMode = body.classList.contains("dark-mode");
+    localStorage.setItem('darkMode', isDarkMode);
+
+    // Update icons
+    if (isDarkMode) {
         logo.src = "svg/Logotipo_branco.svg";
+        accessibilityIcon.src = "svg/AccesibilityWhite.svg";        
+        hamburgerIcon.src = "svg/hamburgerWhite.svg";        
+        languageIcon.src = "svg/PTWhite.svg";        
+        darkModeButton.textContent = "Light Mode"; // Update button text
     } else {
         logo.src = "svg/Logotipo.svg";
+        accessibilityIcon.src = "svg/Accesibility.svg";        
+        hamburgerIcon.src = "svg/hamburger.svg";        
+        languageIcon.src = "svg/PT.svg";        
+        darkModeButton.textContent = "Dark Mode"; // Update button text
     }
 }
+
+// Check dark mode preference on page load
+window.addEventListener('load', () => {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        document.getElementById("logo").src = "svg/Logotipo_branco.svg";
+        document.getElementById("accessibilityIcon").src = "svg/AccesibilityWhite.svg";
+        document.getElementById("hamburgerIcon").src = "svg/hamburgerWhite.svg";
+        document.getElementById("languageIcon").src = "svg/PTWhite.svg";
+    }
+});
+
+// Scroll horizontal
 
 const scrollContainer = document.querySelector('.scrollHorizontalImagens');
 
@@ -92,4 +126,3 @@ scrollContainer.addEventListener('mousemove', (e) => {
     const walk = (x - startX) * 1; 
     scrollContainer.scrollLeft = scrollLeft - walk;
 });
-
