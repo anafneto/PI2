@@ -42,6 +42,15 @@ function changeBackgroundColor(element) {
     // Add color to selected btn
     changeInfo();
     element.classList.add('selected');
+
+    // Show or hide the appropriate divs
+    if (elementId === 'PortoBtn') {
+        document.getElementById('fromPortoDesktop').classList.remove('hide');
+        document.getElementById('fromLisbonDesktop').classList.add('hide');
+    } else if (elementId === 'LisboaBtn') {
+        document.getElementById('fromPortoDesktop').classList.add('hide');
+        document.getElementById('fromLisbonDesktop').classList.remove('hide');
+    }
 }
 
 function changeInfo() {

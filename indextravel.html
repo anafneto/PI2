@@ -45,52 +45,106 @@
     </header>
     
     <body>
-        <div class="containerInfoTravel">
-
-
-        <div class="button-group">
-            <button class="location-button" id="PortoBtn" onclick="changeBackgroundColor(this)">From Porto</button>
-            <button class="location-button" id="LisboaBtn" onclick="changeBackgroundColor(this)">From Lisbon</button>
-        </div>
-
-        <div class="button-container">
-            <button id="BusBtn" class="travel-button" onclick="changeBackgroundColor(this)">Metro & Bus</button>
-            <span class="or-text">or</span>
-            <button id="TransferBtn" class="travel-button" onclick="changeBackgroundColor(this)">Transfer</button>
-        </div>
-
-        <div class="PortoBus" id="PortoBus">
-            <p><img src="svg/clock.svg" alt="clock icon" /> 2h40 to 3h</p>
-            <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
-            <p><img src="svg/metro.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">From Airport Purple line to Campanhã</a></p>
-            <p><img src="svg/walking.svg" alt="walking icon" /> 6min to Bus Station</p>
-            <p><img src="svg/bus.svg" alt="bus icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Porto (Campanhã) to Viseu</a></p>
-            <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
-        </div>
-
-        <div class="button-container-Destktop"></div>
-
-        <div class="LisboaBus" id="LisboaBus">
-            <p><img src="svg/clock.svg" alt="clock icon" /> 3h</p>
-            <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
-            <p><img src="svg/metro.svg" alt="metro icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">From
-                    Airport Purple line to Oriente</a></p>
-            <p><img src="svg/bus.svg" alt="bus icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">Lisbon
-                    (Oriente) to Viseu</a></p>
-            <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
-        </div>
-
-        <div class="PortoTransfer" id="PortoTransfer">
-            <p><img src="svg/clock.svg" alt="clock icon" /> 2h40 to 3h</p>
-            <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
-        </div>
-
-        <div class="LisboaTransfer" id="LisboaTransfer">
-            <p><img src="svg/clock.svg" alt="clock icon" /> 4h</p>
-            <p><img src="svg/money.svg" alt="money icon" /> 300€</p>
-        </div>
+        <div class="button-groupContainer">
+            <div class="button-group">
+                <button class="location-button" id="PortoBtn" onclick="changeBackgroundColor(this)">From Porto</button><button class="location-button" id="LisboaBtn" onclick="changeBackgroundColor(this)">From Lisbon</button>
+            </div>
         </div>
         
+        <div class="containerInfoTravel_Touch">
+            <div class="button-groupContainer">
+                <div class="button-container">
+                    <button id="BusBtn" class="travel-button" onclick="changeBackgroundColor(this)">Metro & Bus</button>
+                    <span class="or-text">or</span>
+                    <button id="TransferBtn" class="travel-button" onclick="changeBackgroundColor(this)">Transfer</button>
+                </div>
+            </div>
+            
+            <div class="PortoBus" id="PortoBus">
+                <p><img src="svg/clock.svg" alt="clock icon" /> 2h40 to 3h</p>
+                <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
+                <p><img src="svg/metro.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">From Airport Purple line to Campanhã</a></p>
+                <p><img src="svg/walking.svg" alt="walking icon" /> 6min to Bus Station</p>
+                <p><img src="svg/bus.svg" alt="bus icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Porto (Campanhã) to Viseu</a></p>
+                <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
+            </div>
+
+            <div class="LisboaBus" id="LisboaBus">
+                <p><img src="svg/clock.svg" alt="clock icon" /> 3h to 4h</p>
+                <p><img src="svg/money.svg" alt="money icon" /> 21.80€</p>
+                <p><img src="svg/metro.svg" alt="metro icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">From
+                        Airport Purple line to Oriente</a></p>
+                <p><img src="svg/bus.svg" alt="bus icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">Lisbon
+                        (Oriente) to Viseu</a></p>
+                <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
+            </div>
+
+            <div class="PortoTransfer" id="PortoTransfer">
+                <p><img src="svg/clock.svg" alt="clock icon" /> 1h30</p>
+                <p><img src="svg/money.svg" alt="money icon" /> 150€</p>
+                <p><img src="svg/car.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Porto to Viseu</a></p>            </div>
+
+            <div class="LisboaTransfer" id="LisboaTransfer">
+                <p><img src="svg/clock.svg" alt="clock icon" /> 3h50</p>
+                <p><img src="svg/money.svg" alt="money icon" /> 300€</p>
+                <p><img src="svg/car.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Lisbon to Viseu</a></p>
+            </div>
+        </div>
+        
+        <br>
+        <!-- 
+        
+        
+        
+        
+        -->
+
+        <div class="containerInfoTravel_Desktop">
+            <!-- From Porto -->
+            <div class="location-info" id="fromPortoDesktop">
+                <button class="travel-buttonDesktop">Metro & Bus</button>
+                <div class="PortoBus" id="PortoBus">
+                    <p><img src="svg/clock.svg" alt="clock icon" /> 2h40 to 3h</p>
+                    <p><img src="svg/money.svg" alt="money icon" /> 15€ to 16€</p>
+                    <p><img src="svg/metro.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">From Airport Purple line to Campanhã</a></p>
+                    <p><img src="svg/walking.svg" alt="walking icon" /> 6min to Bus Station</p>
+                    <p><img src="svg/bus.svg" alt="bus icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Porto (Campanhã) to Viseu</a></p>
+                    <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
+                </div>
+                <button class="travel-buttonDesktop">Transfer</button>
+                <div class="PortoTransfer" id="PortoTransfer">
+                    <p><img src="svg/clock.svg" alt="clock icon" /> 1h30</p>
+                    <p><img src="svg/money.svg" alt="money icon" /> 150€</p>
+                    <p><img src="svg/car.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Porto to Viseu</a></p>
+                </div>
+            </div>
+
+
+
+            <!-- From Lisbon -->
+            <div class="location-info hide" id="fromLisbonDesktop">
+                <button class="travel-buttonDesktop">Metro & Bus</button>
+                <div class="LisboaBus" id="LisboaBus">
+                    <p><img src="svg/clock.svg" alt="clock icon" /> 3h30 to 4h</p>
+                    <p><img src="svg/money.svg" alt="money icon" /> 21.80€</p>
+                    <p><img src="svg/metro.svg" alt="metro icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">From
+                            Airport Purple line to Oriente</a></p>
+                    <p><img src="svg/bus.svg" alt="bus icon" /><a href="https://linktr.ee/euniceGaTravel" class="link">Lisbon
+                            (Oriente) to Viseu</a></p>
+                    <div class="MetroWarning">Metro tickets are bought on the Metro Station machines</div>
+                </div>
+                <br>
+                
+                <button class="travel-buttonDesktop">Transfer</button>
+                
+                <div class="LisboaTransfer" id="LisboaTransfer">
+                    <p><img src="svg/clock.svg" alt="clock icon" /> 3h50</p>
+                    <p><img src="svg/money.svg" alt="money icon" /> 300€</p>
+                    <p><img src="svg/car.svg" alt="metro icon" /> <a href="https://linktr.ee/euniceGaTravel" class="link">Lisbon to Viseu</a></p>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="ipv logo">
             <img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg">

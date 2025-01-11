@@ -439,6 +439,7 @@ footer {
   width: 70px;
   height: 30px;
   border: 1px solid #ccc;
+  color: #54595E;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -454,22 +455,22 @@ footer {
   color: white;
 }
 
-.date-button:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
-}
 /* Perguntar ao prof fred */
 /* Button Group Styles */
 .button-group {
   display: inline-block;
-  text-align: left;
-  margin-bottom: 20px;
+  text-align: center;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: .5rem;  
 }
 
-.containerInfoTravel {
+.containerInfoTravel_Touch {
   margin: 0 1rem; 
+}
+
+.containerInfoTravel_Desktop {
+  display: none;
 }
 
 .location-button {
@@ -477,9 +478,6 @@ footer {
   font-size: 15px;
   width: 49%;
   height: 37px;
-  border-radius: 4px;
-  border: 0.25px solid rgba(84, 89, 94, 0.80);
-  background: #F1F1F1;
 }
 
 .location-button:last-child,
@@ -498,6 +496,16 @@ footer {
   font-size: 15px;
   width: calc(50% - 30px);
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.travel-buttonDesktop {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 35px;
+  width: 150px;
+  background-color: #54595E;
+  color: white;
+  margin-bottom: 1rem;
 }
 
 .travel-buttonLaptop {
@@ -523,18 +531,12 @@ footer {
 .travel-button.selected {
   background-color: #54595E;
   color: white;
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 
 .or-text {
   display: inline-block;
   vertical-align: middle; /* Align the text vertically with the buttons */
-  margin: 0 1rem; /* Adjust the margin as needed */
+  margin: 0 .1rem;
 }
 
 /* Travel Info Styles */
@@ -544,14 +546,15 @@ footer {
 .PortoTransfer,
 .LisboaTransfer {
   text-align: left;
+  margin: 20px 1rem;;
 }
 
 .PortoBus p,
 .LisboaBus p,
 .PortoTransfer p,
 .LisboaTransfer p {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   display: block;
   align-items: center;
   min-height: 40px;
@@ -569,6 +572,7 @@ footer {
 .MetroWarning {
   font-style: italic;
   font-size: 12px;
+  margin-bottom: 1rem;
 }
 
 /* Link Styles */
@@ -591,9 +595,18 @@ footer {
     padding-bottom: calc(197px + 1rem);
   }
 
+  .location-button {
+    width: 43%;
+    margin-right: 1rem;
+  }
+  
   .speakercard{
     width: calc(50% - .7rem);
     margin: 1rem .25rem;
+  }
+
+  .travel-button {
+    width: 45%;
   }
 
   .descriptionED{
@@ -608,9 +621,13 @@ footer {
   }
 
   .location-button {
-    width: 49.6%;
+    width: 45%;
+    margin-right: 1rem;
   }
   
+  .or-text{
+    margin: 0 .6rem;
+  }
 
   .cardsVisit {
     margin-right: 5px;
@@ -628,7 +645,11 @@ footer {
   }
 
   .location-button {
-    width: 49.6%;
+    width: 45%;
+  }
+
+  .or-text{
+    margin: 0 .5rem;
   }
 
   .search{
@@ -721,8 +742,13 @@ footer {
 }
 
 @media only screen and (min-width: 992px) {
-  .button-container {
+  .containerInfoTravel_Touch {
     display: none;
+  }
+
+  .containerInfoTravel_Desktop {
+    display: inline-block;
+    margin: 0 4rem;
   }
 
   .travel-buttonLaptop {
@@ -739,14 +765,18 @@ footer {
     color: white;
   }
 
-  .containerInfoTravel {
+  .containerInfoTravel_Touch {
     margin: 0 4rem;
   }
 
   .button-group {
-    display: block;
-    margin: 0 auto;
-    width: 61%  ;
+      display: inline-block;
+      width: 350px;
+  }
+
+  .button-groupContainer {
+    text-align: center;
+    height: fit-content;
   }
 
   .speakercard {
