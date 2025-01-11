@@ -82,6 +82,22 @@ function toggleDarkMode() {
     }
 }
 
+function initializeDarkMode() {
+    const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+    const darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
+
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+        darkModeButton.textContent = "Light Mode"; // Update button text
+    } else {
+        document.body.classList.remove("dark-mode");
+        darkModeButton.textContent = "Dark Mode"; // Update button text
+    }
+}
+
+// Call the initialize function when the site loads
+document.addEventListener('DOMContentLoaded', initializeDarkMode);
+
 // Check dark mode preference on page load
 window.addEventListener('load', () => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
