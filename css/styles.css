@@ -49,6 +49,7 @@ p {
   height: 26px; 
   width: auto; 
   cursor: pointer; /*ADDED THIS*/
+  image-rendering: auto;
 }
 
 .icons {
@@ -258,9 +259,13 @@ footer {
 
 /* Text Styles */
 .text {
-  /* margin-top: 26px; */
-  /* margin-top: calc(112px + 1rem); ADDED THIS (equals 62px [header size] + 16px) - COMMENTED ABOVE */
-  padding: 0 3rem;
+  padding: 0 1rem;
+}
+
+.speakercard
+{
+  width: 40%;
+  margin: 1rem 0.5rem;
 }
 
 .hora {
@@ -590,6 +595,9 @@ footer {
     padding-bottom: calc(197px + 1rem);
   }
 
+  .text {
+    padding: 0 1rem;
+  }
   .location-button {
     width: 43%;
     margin-right: 1rem;
@@ -613,6 +621,10 @@ footer {
 @media only screen and (min-width: 576px) {
   body{
     padding-bottom: calc(164px + 1rem);
+  }
+
+  .text {
+    padding: 0 2rem;
   }
 
   .location-button {
@@ -707,6 +719,7 @@ footer {
     z-index: 0;
   }
 
+
   .containerParagrafo p {
     color: white;
     display: inline-block;
@@ -740,6 +753,7 @@ footer {
   .containerInfoTravel_Touch {
     display: none;
   }
+
 
   .containerInfoTravel_Desktop {
     display: inline-block;
