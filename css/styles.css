@@ -260,7 +260,7 @@ footer {
 .text {
   /* margin-top: 26px; */
   /* margin-top: calc(112px + 1rem); ADDED THIS (equals 62px [header size] + 16px) - COMMENTED ABOVE */
-  padding: 0 1rem; /*ADDED THIS (equals 0 16px)*/
+  padding: 0 3rem;
 }
 
 .hora {
@@ -300,11 +300,12 @@ footer {
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
   width: 100%; /*CHAGED THIS FROM 176px*/
-  /* padding-bottom: 8px; */ /*COMMENTED THIS*/
   vertical-align: top;
 }
 .speakercard img { /*ADDED THE WHOLE CLASS SELECTOR*/
   width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .nomeED {
@@ -506,7 +507,6 @@ footer {
   color: white;
   margin-bottom: 1rem;
 }
-
 .travel-buttonLaptop {
   display: none;
 }
@@ -840,6 +840,14 @@ body.dark-mode .travel-button {
 body.dark-mode p {
   color: #f0f0f0;
 }
+
+
+body.dark-mode .travel-buttonDesktop {
+  background-color: white;
+  color: #54595E;
+  font-weight: bold;
+}
+
 
 body.dark-mode .date-button {
   background-color: transparent;
