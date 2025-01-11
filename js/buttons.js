@@ -82,8 +82,6 @@ function changeInfo() {
 }
 
 
-// ESTA PRÓXIMA FUNÇÃO DEVE SER MODIFICADA  ehehxd
-
 function changeContent()
 {
 // Different syntax, same logic - Date buttons
@@ -109,47 +107,146 @@ function changeContent(day, button) {
     const content = {
         1: `<div>
         <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
-             <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
+                <p>20:00</p>
+                <h3>Welcome Dinner</h3>
+                <p>Pousada de Viseu <img src="svg/local.svg"></p>
             </div>
             </div>`,
             
         2: `<div>
         <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>9:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
+            <p>8:30</p>
+            <h3>Registration & Coffee</h3>
+            <p>Foyer Central Services <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>9:00</p>
+            <h3>Campus Tour</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>10:00</p>
+            <h3>Welcome and Opening</h3>
+            <p>Aula Magna <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>11:00</p>
+            <h3>General Assembly</h3>
+            <p>CAFAC <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>11:00</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>13:00</p>
+            <h3>Lunch</h3>
+            <p>CAFAC <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>14:30</p>
+            <h3>General Assembly</h3>
+            <p>Aula Magna <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>16:00</p>
+            <h3>Coffee Break</h3>
+            <p>CAFAC <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>16:30</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>19:00</p>
+            <h3>Reception</h3>
+            <p>Câmara Municipal de Viseu <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>19:00</p>
+            <h3>Dinner</h3>
+            <p>LUSOVINI - Nelas <img src="svg/local.svg"></p>
+        </div>
              
             </div>`,
         3: `<div>
         <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
-             <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
-            <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
-            </div>
+            <p>8:30</p>
+            <h3>Registration & Coffee</h3>
+            <p>Foyer Central Services <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>9:00</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>10:30</p>
+            <h3>Coffee Break</h3>
+            <p>CAFAC <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>11:00</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>13:00</p>
+            <h3>Lunch</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>14:30</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>15:30</p>
+            <h3>Coffee Break</h3>
+            <p>CAFAC <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>16:30</p>
+            <h3>Parallel Sessions</h3>
+            <p>ESTGV <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>17:30</p>
+            <h3>Closing Ceremony</h3>
+            <p>Aula Magna <img src="svg/local.svg"></p>
+        </div>
+
+        <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
+            <p>20:00</p>
+            <h3>Dinner</h3>
+            <p>Quinta da Magarenha <img src="svg/local.svg"></p>
+        </div>
             </div>`,
         4: `<div>
         <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
                 <p>8:30</p>
-                <h3>Registration & Coffee</h3>
-                <p>Foyer Central Services <img src="svg/local.svg"></p>
+                <h3>Visit to S. Pedro do Sul</h3>
+                <p>??? <img src="svg/local.svg"></p>
             </div>
             
             </div>`,

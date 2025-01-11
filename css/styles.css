@@ -345,8 +345,7 @@ footer {
 /* Accessibility Bar Styles */
 #accessibilityBar {
   position: absolute;
-  /* top: 105px; */
-  top: 100%; /*ADDED THIS - COMMENTED ABOVE*/
+  top: 95%; /*ADDED THIS - COMMENTED ABOVE*/
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -395,7 +394,7 @@ footer {
   /* display: none; */
   position: absolute;
   /* top: 105px; */
-  top: 100%; /*ADDED THIS - COMMENTED ABOVE*/
+  top: 95%; /*ADDED THIS - COMMENTED ABOVE*/
   left: 0;
   width: 100%;
   background-color: #f4f4f4;
@@ -522,16 +521,12 @@ footer {
   line-height: normal;
 }
 
-.location-button:hover,
-.travel-button:hover {
-  background-color: #ddd;
-}
-
-.location-button.selected,
-.travel-button.selected {
-  background-color: #54595E;
-  color: white;
-}
+  .location-button.selected,
+  .travel-button.selected {
+    background-color: #54595E;
+    color: white;
+    font-weight: bold;
+  }
 
 .or-text {
   display: inline-block;
@@ -817,6 +812,29 @@ body.dark-mode .date-button.selected {
   border: 0.25px solid #4B4F4B;
   background: #F5F5F5;
   color: #000;
+}
+
+body.dark-mode .location-button.selected {
+  background-color: white;
+  color: #54595E;
+  font-weight: bold;
+}
+
+body.dark-mode .location-button {
+  background-color: #191B19;
+  color: white;
+}
+
+body.dark-mode .travel-button.selected {
+  background-color: white;
+  color: #54595E;
+  font-weight: bold;
+
+}
+
+body.dark-mode .travel-button {
+  background-color: #191B19;
+  color: white;
 }
 
 body.dark-mode p {
