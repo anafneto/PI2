@@ -120,7 +120,7 @@ p {
 .cardsVisit {
   display: inline-block;
   text-align: left;
-  box-shadow: 0 0 0 0.25px #54595E;
+  box-shadow: 0 0 0 .03rem #54595E;
   border-radius: 4px 4px;
   width: 350px;
   vertical-align: top;
@@ -572,7 +572,7 @@ footer {
 
 /* Link Styles */
 .link {
-  color: #2F547A;
+  color: #54595E;
   text-decoration: underline;
 }
 
@@ -897,4 +897,12 @@ body.dark-mode .cardsPrograma h6, .dark-mode .cardsPrograma h3, .dark-mode .card
 
 body.dark-mode .cardsVisit p {
   color: #ffffff;
+}
+
+body.dark-mode .PortoBus p img, .dark-mode .LisboaBus p img, .dark-mode .PortoTransfer p img, .dark-mode .LisboaTransfer p img {
+  filter: invert(1);
+}
+
+body.dark-mode .link {
+  color: #f0f0f0;
 }
