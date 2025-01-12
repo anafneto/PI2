@@ -152,6 +152,8 @@ p {
 
 .imagemcardvisit {
   border-radius: 4px 4px 0px 0px;
+  width:100%;
+  height:240px;
 }
 
 .scrollHorizontalImagens {
@@ -165,6 +167,7 @@ p {
   padding: 0 12px;
   max-width: 100%;
   margin: 24px 0;
+  scroll-behavior: smooth;
 }
 
 .scrollHorizontalImagens.active {
@@ -284,7 +287,7 @@ footer {
 
 .description {
   font-size: 15px;
-  font-weight: Regular;
+  font-weight: normal;
   margin-top: 8px;
 }
 
@@ -632,6 +635,11 @@ footer {
     margin-right: 1rem;
   }
   
+  .speakercard{
+    width: calc(33% - .7rem);
+    margin: 1rem .25rem;
+  }
+
   .or-text{
     margin: 0 .6rem;
   }
@@ -744,9 +752,6 @@ footer {
     text-align: center;
   }
 
-  .speakercard {
-    width: calc(33.33333% - .7rem);
-  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -759,6 +764,8 @@ footer {
     display: inline-block;
     margin: 0 4rem;
   }
+
+  
 
   .travel-buttonLaptop {
     display: inline-block;
@@ -789,7 +796,7 @@ footer {
   }
 
   .speakercard {
-    width: calc(25% - .7rem);
+    width: 250px;
   }
 
   .descriptionED{

@@ -257,8 +257,14 @@ function changeContent(day, button) {
     contentDiv.style.visibility = 'visible'; // Torna a div visível
     
     // Adiciona a classe 'selected' para o botão que foi clicado
-    buttons.forEach(button => {
-            button.classList.remove('selected');
-    });
-    button.classList.add("selected");
+    buttons.forEach(btn => btn.classList.remove('selected'));
+    button.classList.add('selected');
+
+    // Scroll the scrollHorizontalImagens element
+    const scrollPositions = {
+        2: 330, // 01 Abril
+        3: 3905, // 02 Abril
+        4: 10000, // 03 Abril
+    };
+    scrollContainer.scrollLeft = scrollPositions[day];
 }
