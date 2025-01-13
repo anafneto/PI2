@@ -919,6 +919,10 @@ body.dark-mode .search-container {
   border: 0.5px solid #4B4F4B;
 }
 
+body.dark-mode .search-result {
+  color: #191B19; /* Dark text color for search bar */
+}
+
 body.dark-mode #hamburgerMenu {
   background-color: #191B19;
 }
