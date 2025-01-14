@@ -167,8 +167,8 @@ window.addEventListener('load', () => {
 
 // Scroll horizontal em containers
 const scrollContainer = document.querySelector('.scrollHorizontalImagens');
-let isDown = false;
-let startX, scrollLeft;
+var isDown = false;
+var startX, scrollLeft;
 
 scrollContainer.addEventListener('mousedown', (e) => {
     isDown = true;

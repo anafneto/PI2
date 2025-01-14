@@ -4,8 +4,8 @@ const LisboaBtn = document.getElementById('LisboaBtn');
 const BusBtn = document.getElementById('BusBtn');
 const TransferBtn = document.getElementById('TransferBtn');
 const datebutton = document.getElementsByClassName('date-button');
-let LocationBtnSelected;
-let TravelBtnSelected;
+var LocationBtnSelected;
+var TravelBtnSelected;
 
 // Travel info
 const PortoBusInfo = document.getElementById('PortoBus');
