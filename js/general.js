@@ -204,3 +204,7 @@ scrollContainer.addEventListener('mousemove', function (e) {
     var walk = (x - startX) * 1;
     scrollContainer.scrollLeft = scrollLeft - walk;
 });
+
+
+// Mapa de páginas (pt-en) e lógica para o butão
+
