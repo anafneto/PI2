@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grupo 6 TDM 2º ano, 2024/25">
+    <meta name="description" content="Landing page for Eunice General Assembly 2025">
+    <meta name="keywords" content="EUNICE, General Assembly">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Projeto de PI2</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin defer></script>
+    <script src="js/general.js" defer></script>
+    <script src="js/buttons.js" defer></script>
+    <script src="js/Formulario.js" defer></script>
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header__grey">
+        <div class="navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="icons">
+                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
+                <img id="languageIcon" class="icon" 
+                src="svg/PT.svg" alt="Language Icon">
+                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
+            </div>
+        </div>
+        <div id="accessibilityBar" class="mobile-menu hidden">
+            <button id="fontSizeButton" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+        <div id="hamburgerMenu" class="mobile-menu hidden">
+            <button onclick="redirectTo('indextravel.html')">Travel</button>
+            <button onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
+        </div>
+        <div class="search">
+            <div class="search-container">
+                <input type="text" id="searchbar" class="searchbar">
+                <img src="svg/lupa.svg" alt="lupa">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+    <div id="formulario-container"></div>
+</body>
+</html>
+
