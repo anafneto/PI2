@@ -143,6 +143,70 @@ function handleMouseMove(event) {
     var walk = (x - startX) * 1;
     domElements.scrollContainer.scrollLeft = scrollLeft - walk;
 }
+// =================== SEARCH BAR ===================
+// Função para lidar com a pesquisa
+function handleSearch(event) {
+    var pesquisa = event.target.value.toLowerCase();
+    var contentorResultados = document.getElementById('searchResults');
+    
+    // Fechar menus se estiverem abertos
+    if (domElements.accessibilityBar.classList.contains("open")) {
+        domElements.accessibilityBar.classList.remove("open");
+    }
+    if (domElements.hamburgerMenu.classList.contains("open")) {
+        domElements.hamburgerMenu.classList.remove("open");
+    }
+
+    // Limpar resultados anteriores
+    contentorResultados.innerHTML = '';
+
+    // Verificar se existe texto na pesquisa
+    if (pesquisa) {
+        try {
+            var resultados = searchItems(pesquisa);
+            if (resultados.length > 0) {
+                resultados.forEach(function(resultado) {
+                    var elementoResultado = document.createElement('div');
+                    elementoResultado.classList.add('search-result');
+                    elementoResultado.textContent = resultado.name;
+                    elementoResultado.addEventListener('click', function() {
+                        window.location = resultado.url;
+                    });
+                    contentorResultados.appendChild(elementoResultado);
+                });
+                contentorResultados.style.display = 'block';
+            } else {
+                contentorResultados.style.display = 'none';
+            }
+        } catch (erro) {
+            console.error('Erro na pesquisa:', erro);
+            contentorResultados.style.display = 'none';
+        }
+    } else {
+        contentorResultados.style.display = 'none';
+    }
+}
+
+// Items para pesquisa
+function searchItems(pesquisa) {
+    var items = [
+        { name: 'Viagens Porto & Lisboa', url: 'indextravel.html#porto' },
+        { name: 'EUNICE Universidade Europeia', url: 'index.html#eunice' },
+        { name: 'Assembleia Geral', url: 'index.html#assembly' },
+        { name: 'Descrição do Evento', url: 'indexEvent.html#event' },
+        { name: 'Instagram', url: 'https://www.instagram.com/eunice_uni_/' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/company/74565706/' },
+        { name: 'YouTube', url: 'https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg' },
+        { name: 'Transportes', url: 'indextravel.html#transfer' },
+        { name: 'Contactos', url: '#Contactos' },
+        { name: 'Redes Sociais', url: '#redes-sociais' },
+        { name: 'Programa Eunice', url: 'index.html#Programa' }
+    ];
+    
+    return items.filter(function(item) {
+        return item.name.toLowerCase().includes(pesquisa);
+    });
+}
 
 // =================== EVENT LISTENERS ===================
 // Quando a página carrega
@@ -179,3 +243,8 @@ domElements.scrollContainer.addEventListener('mousedown', handleMouseDown);
 domElements.scrollContainer.addEventListener('mouseleave', handleMouseUp);
 domElements.scrollContainer.addEventListener('mouseup', handleMouseUp);
 domElements.scrollContainer.addEventListener('mousemove', handleMouseMove);
+
+// Barra de pesquisa
+domElements.searchbar.addEventListener('input', handleSearch);
+
+
