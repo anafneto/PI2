@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #f1f1f1;
   position: relative;
   min-height: 100vh;
   padding-top: calc(112px + 1rem);
@@ -57,6 +57,7 @@ p {
   float: right;
   cursor: pointer;
 }
+
 
 /* Search Styles */
 .search {
@@ -128,12 +129,8 @@ p {
   cursor: pointer;
 }
 
-.imagemHero {
+.imagem_Hero {
   width: 100%;
-}
-
-.imagemHeroDesktop {
-  display: none;
 }
 
 /* Cards Styles */
@@ -185,7 +182,7 @@ p {
   display: inline-block;
   padding: 0 12px;
   max-width: 100%;
-  margin: 24px 0;
+  margin: 16px 0;
   scroll-behavior: smooth;
 }
 
@@ -714,15 +711,6 @@ footer {
     right: 15px;
   }
 
-  .imagemHero,
-  .descricaoEunice {
-    display: none;
-  }
-
-  .imagemHeroDesktop {
-    font-size: 0;
-    display: block;
-  }
 
   .speakercard {
     display: inline-block;
@@ -739,36 +727,10 @@ footer {
   }
 
   .containerParagrafo {
-    background-color: #54595e;
-    color: white;
-    display: inline-block;
-    width: 50%;
-    aspect-ratio: 16 / 9;
-    position: relative;
-    vertical-align: middle;
-    z-index: 0;
+    margin-top: 16px;
+    margin-left:16px;
   }
 
-
-  .containerParagrafo p {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 01rem 40px;
-    position: absolute;
-    max-width: 100%;
-    top: 50%;
-    transform: translate(0, -50%);
-    }
-
-  .imagemHeroDesktop img {
-    background-color: #54595e;
-    color: white;
-    vertical-align: middle;
-    display: inline-block;
-    width: 50%;
-    aspect-ratio: 16 / 9;
-  }
 
   .cards-container{
     text-align: center;
@@ -777,6 +739,10 @@ footer {
 }
 
 @media only screen and (min-width: 992px) {
+  body{
+    padding-bottom: calc(243px + 1rem);
+  }
+  
   .containerInfoTravel_Touch {
     display: none;
   }
@@ -823,6 +789,46 @@ footer {
 
   .descriptionED{
     min-height: 113px;
+  }
+  .imgfooter {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 32px 32px 20px 0;
+    transform: scale(1.2);
+  
+  }
+  .iconat {
+    vertical-align: middle;
+    margin-right: 4px;
+    transform: scale(1.1);
+  }
+  
+  .iconphone  {
+    margin-left: 26px;
+    margin-right: 4px;
+    transform: scale(1.1);
+  }
+  
+  .iconsocial {
+    margin-top: 16px;
+    margin-right: 4px;
+    height: 23px;
+  }
+
+  .cardsPrograma{
+    font-size: 18px;
+  }
+
+  .cardsPrograma h3 {
+    font-size: 20px;
+  }
+
+  .descricaoEunice{
+    font-size: 18px;
+  }
+
+  .descricaoEunice strong{
+    font-size: 18px;
   }
 }
 
