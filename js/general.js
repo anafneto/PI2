@@ -3,9 +3,9 @@
  // Função para aumentar o tamanho da fonte
  var originalFontSize = window.getComputedStyle(document.body).fontSize;
  function toggleFontSize() {
-    const root = document.documentElement;
-    const fontSizeButton = document.getElementById("fontSizeButton");
-    const currentFontSize = getComputedStyle(root).getPropertyValue('--base-font-size').trim();
+    var root = document.documentElement;
+    var fontSizeButton = document.getElementById("fontSizeButton");
+    var currentFontSize = getComputedStyle(root).getPropertyValue('--base-font-size').trim();
 
     if (currentFontSize === '16px') {
         root.style.setProperty('--base-font-size', '24px');
@@ -26,28 +26,30 @@
  
 
 // Hamburger
-const hamburgerIcon = document.getElementById("hamburgerIcon");
-const hamburgerMenu = document.getElementById("hamburgerMenu");
+var hamburgerIcon = document.getElementById("hamburgerIcon");
+var hamburgerMenu = document.getElementById("hamburgerMenu");
 
-const accessibilityIcon = document.getElementById("accessibilityIcon");
-const accessibilityBar = document.getElementById("accessibilityBar");
-const languageIcon = document.getElementById("languageIcon");
+var accessibilityIcon = document.getElementById("accessibilityIcon");
+var accessibilityBar = document.getElementById("accessibilityBar");
+var languageIcon = document.getElementById("languageIcon");
 
 
-hamburgerIcon.addEventListener("click", () => {
-    // Close accessibility menu if open
+hamburgerIcon.addEventListener("click", function () {
+    // Fechar o menu de acessibilidade, se aberto
     if (accessibilityBar.classList.contains("open")) {
         accessibilityBar.classList.remove("open");
     }
-    // Toggle hamburger menu
+    // Alternar o menu de hambúrguer
     hamburgerMenu.classList.toggle("open");
 });
 
+
 document.getElementById('searchbar').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const resultsContainer = document.getElementById('searchResults');
-    const accessibilityMenu = document.getElementById('accessibilityMenu'); // Assuming the menu has this ID
-    const hamburgerMenu = document.getElementById('hamburgerMenu'); // Assuming the menu has this ID
+    var query = this.value.toLowerCase();
+    var resultsContainer = document.getElementById('searchResults');
+    var accessibilityMenu = document.getElementById('accessibilityMenu'); // Assuming the menu has this ID
+    var hamburgerMenu = document.getElementById('hamburgerMenu'); // Assuming the menu has this ID
+
 
     // Close accessibility and hamburger menus if they are open
     if (accessibilityMenu && accessibilityMenu.classList.contains('open')) {
@@ -60,24 +62,24 @@ document.getElementById('searchbar').addEventListener('input', function() {
     resultsContainer.innerHTML = ''; // Clear previous results
 
     if (query) {
-        const results = searchItems(query);
-        results.forEach(result => {
-            const resultElement = document.createElement('div');
+        var results = searchItems(query);
+        results.forEach(function (result) {
+            var resultElement = document.createElement('div');
             resultElement.classList.add('search-result');
             resultElement.textContent = result.name;
-            resultElement.addEventListener('click', () => {
+            resultElement.addEventListener('click', function () {
                 window.location = result.url;
             });
             resultsContainer.appendChild(resultElement);
         });
-        resultsContainer.style.display = 'block'; // Show results container
+        resultsContainer.style.display = 'block'; // Mostrar container de resultados
     } else {
-        resultsContainer.style.display = 'none'; // Hide results container
+        resultsContainer.style.display = 'none'; // Ocultar container de resultados
     }
-    });
+    
     
     function searchItems(query) {
-        const items = [
+        var items = [
             { name: 'Travel From Porto & Lisbon', url: 'indextravel.html#porto' },
             { name: 'EUNICE European University', url: 'index.html#eunice' },
             { name: 'General Assembly', url: 'index.html#assembly' },
@@ -88,56 +90,63 @@ document.getElementById('searchbar').addEventListener('input', function() {
             { name: 'Transport', url: 'indextravel.html#transfer' },
             { name: 'Contactos', url: '#Contactos' },
             { name: 'Redes Sociais', url: '#redes-sociais' },
-            { name: 'Programa Eunice', url: 'index.html#Programa' },
+            { name: 'Programa Eunice', url: 'index.html#Programa' }
         ];
-        return items.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+        
+        return items.filter(function (item) {
+            return item.name.toLowerCase().includes(query.toLowerCase());
+        });
     }
+    
     
 
 
 
-accessibilityIcon.addEventListener("click", () => {
-    // Close hamburger menu if open
-    if (hamburgerMenu.classList.contains("open")) {
-        hamburgerMenu.classList.remove("open");
-    }
-    // Toggle accessibility menu
-    accessibilityBar.classList.toggle("open");
-});
+    accessibilityIcon.addEventListener("click", function () {
+        // Fechar o menu de hambúrguer, se aberto
+        if (hamburgerMenu.classList.contains("open")) {
+            hamburgerMenu.classList.remove("open");
+        }
+        // Alternar o menu de acessibilidade
+        accessibilityBar.classList.toggle("open");
+    });
+    
 
 //muda logo para branco e ativa o ligth mode
 function toggleDarkMode() {
-    const body = document.body;
-    const logo = document.getElementById("logo");
-    const accessibilityIcon = document.getElementById("accessibilityIcon");
-    const hamburgerIcon = document.getElementById("hamburgerIcon");
-    const languageIcon = document.getElementById("languageIcon");
-    const darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
+    var body = document.body;
+    var logo = document.getElementById("logo");
+    var accessibilityIcon = document.getElementById("accessibilityIcon");
+    var hamburgerIcon = document.getElementById("hamburgerIcon");
+    var languageIcon = document.getElementById("languageIcon");
+    var darkModeButton = document.getElementById("darkModeButton"); // Supondo que o botão tem este ID
 
-    // Toggle dark mode class
+    // Alternar classe de modo escuro
     body.classList.toggle("dark-mode");
-    const isDarkMode = body.classList.contains("dark-mode");
+    var isDarkMode = body.classList.contains("dark-mode");
     localStorage.setItem('darkMode', isDarkMode);
 
-    // Update icons
+    // Atualizar ícones
     if (isDarkMode) {
         logo.src = "svg/Logotipo_branco.svg";
         accessibilityIcon.src = "svg/AccesibilityWhite.svg";        
         hamburgerIcon.src = "svg/hamburgerWhite.svg";        
         languageIcon.src = "svg/PTWhite.svg";        
-        darkModeButton.textContent = "Light Mode"; // Update button text
+        darkModeButton.textContent = "Light Mode"; // Atualizar texto do botão
     } else {
         logo.src = "svg/Logotipo.svg";
         accessibilityIcon.src = "svg/Accesibility.svg";        
         hamburgerIcon.src = "svg/hamburger.svg";        
         languageIcon.src = "svg/PT.svg";        
-        darkModeButton.textContent = "Dark Mode"; // Update button text
+        darkModeButton.textContent = "Dark Mode"; // Atualizar texto do botão
     }
 }
 
+
+
 function initializeDarkMode() {
-    const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-    const darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
+    var isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+    var darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
 
     if (isDarkMode) {
         document.body.classList.add("dark-mode");
@@ -154,8 +163,8 @@ document.addEventListener('DOMContentLoaded', initializeDarkMode);
 
 
 // Check dark mode preference on page load
-window.addEventListener('load', () => {
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+window.addEventListener('load', function () {
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
         document.getElementById("logo").src = "svg/Logotipo_branco.svg";
@@ -165,32 +174,34 @@ window.addEventListener('load', () => {
     }
 });
 
+});
+
 // Scroll horizontal em containers
-const scrollContainer = document.querySelector('.scrollHorizontalImagens');
+var scrollContainer = document.querySelector('.scrollHorizontalImagens');
 var isDown = false;
 var startX, scrollLeft;
 
-scrollContainer.addEventListener('mousedown', (e) => {
+scrollContainer.addEventListener('mousedown', function (e) {
     isDown = true;
     scrollContainer.classList.add('active');
     startX = e.pageX - scrollContainer.offsetLeft;
     scrollLeft = scrollContainer.scrollLeft;
 });
 
-scrollContainer.addEventListener('mouseleave', () => {
+scrollContainer.addEventListener('mouseleave', function () {
     isDown = false;
     scrollContainer.classList.remove('active');
 });
 
-scrollContainer.addEventListener('mouseup', () => {
+scrollContainer.addEventListener('mouseup', function () {
     isDown = false;
     scrollContainer.classList.remove('active');
 });
 
-scrollContainer.addEventListener('mousemove', (e) => {
+scrollContainer.addEventListener('mousemove', function (e) {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - scrollContainer.offsetLeft;
-    const walk = (x - startX) * 1;
+    var x = e.pageX - scrollContainer.offsetLeft;
+    var walk = (x - startX) * 1;
     scrollContainer.scrollLeft = scrollLeft - walk;
 });
