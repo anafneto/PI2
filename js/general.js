@@ -1,210 +1,181 @@
-// Variáveis globais para controlo do tamanho da fonte
-var originalFontSize = window.getComputedStyle(document.body).fontSize;
+// =================== VARIÁVEIS GLOBAIS ===================
+// Guarda todos os elementos que vamos usar várias vezes
+var domElements = {
+    body: document.body,
+    root: document.documentElement,
+    logo: document.getElementById("logo"),
+    hamburgerIcon: document.getElementById("hamburgerIcon"),
+    hamburgerMenu: document.getElementById("hamburgerMenu"),
+    accessibilityIcon: document.getElementById("accessibilityIcon"),
+    accessibilityBar: document.getElementById("accessibilityBar"),
+    languageIcon: document.getElementById("languageIcon"),
+    darkModeButton: document.getElementById("darkModeButton"),
+    fontSizeButton: document.getElementById("fontSizeButton"),
+    scrollContainer: document.querySelector('.scrollHorizontalImagens')
+};
 
-// Função para alternar tamanho da fonte
-function toggleFontSize() {
-    var root = document.documentElement;
-    var fontSizeButton = document.getElementById("fontSizeButton");
-    var currentFontSize = getComputedStyle(root).getPropertyValue('--base-font-size').trim();
-
-    // Verificar tamanho atual e alternar
-    if (currentFontSize === '16px') {
-        root.style.setProperty('--base-font-size', '24px');
-        fontSizeButton.textContent = "Resize Font";
-    } else {
-        root.style.setProperty('--base-font-size', '16px');
-        fontSizeButton.textContent = "Increase Font"
-    }
-}
-
-// Função para navegação entre páginas
+// =================== FUNÇÕES BÁSICAS ===================
+// Mudar de página
 function redirectTo(page) {
+    if (!page) {
+        console.error('Erro: Nome da página em falta');
+        return;
+    }
     window.location.href = page;
 }
 
-// Gestão dos menus
-var hamburgerIcon = document.getElementById("hamburgerIcon");
-var hamburgerMenu = document.getElementById("hamburgerMenu");
-var accessibilityIcon = document.getElementById("accessibilityIcon");
-var accessibilityBar = document.getElementById("accessibilityBar");
-var languageIcon = document.getElementById("languageIcon");
-
-// Ouvinte para o menu hamburger
-hamburgerIcon.addEventListener("click", function() {
-    if (accessibilityBar.classList.contains("open")) {
-        accessibilityBar.classList.remove("open");
-    }
-    hamburgerMenu.classList.toggle("open");
-});
-
-// Ouvinte para o menu de acessibilidade
-accessibilityIcon.addEventListener("click", function() {
-    if (hamburgerMenu.classList.contains("open")) {
-        hamburgerMenu.classList.remove("open");
-    }
-    accessibilityBar.classList.toggle("open");
-});
-
-// Pesquisa e resultados
-document.getElementById('searchbar').addEventListener('input', function() {
-    var pesquisa = this.value.toLowerCase();
-    var contentorResultados = document.getElementById('searchResults');
-    
-    // Fechar menus se estiverem abertos
-    if (accessibilityBar.classList.contains("open")) {
-        accessibilityBar.classList.remove("open");
-    }
-    if (hamburgerMenu.classList.contains("open")) {
-        hamburgerMenu.classList.remove("open");
-    }
-
-    // Limpar resultados anteriores
-    contentorResultados.innerHTML = '';
-
-    // Verificar se existe texto na pesquisa
-    if (pesquisa) {
-        try {
-            var resultados = procurarItems(pesquisa);
-            if (resultados.length > 0) {
-                resultados.forEach(function(resultado) {
-                    var elementoResultado = document.createElement('div');
-                    elementoResultado.classList.add('search-result');
-                    elementoResultado.textContent = resultado.name;
-                    elementoResultado.addEventListener('click', function() {
-                        window.location = resultado.url;
-                    });
-                    contentorResultados.appendChild(elementoResultado);
-                });
-                contentorResultados.style.display = 'block';
-            } else {
-                contentorResultados.style.display = 'none';
-            }
-        } catch (erro) {
-            console.error('Erro na pesquisa:', erro);
-            contentorResultados.style.display = 'none';
-        }
-    } else {
-        contentorResultados.style.display = 'none';
-    }
-});
-
-// Items para pesquisa
-function searchItems(pesquisa) {
-    var items = [
-        { name: 'Viagens Porto & Lisboa', url: 'indextravel.html#porto' },
-        { name: 'EUNICE Universidade Europeia', url: 'index.html#eunice' },
-        { name: 'Assembleia Geral', url: 'index.html#assembly' },
-        { name: 'Descrição do Evento', url: 'indexEventDescription.html#event' },
-        { name: 'Instagram', url: 'https://www.instagram.com/eunice_uni_/' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/company/74565706/' },
-        { name: 'YouTube', url: 'https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg' },
-        { name: 'Transportes', url: 'indextravel.html#transfer' },
-        { name: 'Contactos', url: '#Contactos' },
-        { name: 'Redes Sociais', url: '#redes-sociais' },
-        { name: 'Programa Eunice', url: 'index.html#Programa' }
-    ];
-    
-    return items.filter(function(item) {
-        return item.name.toLowerCase().includes(pesquisa);
-    });
+// Ver em que página estamos
+function getCurrentPage() {
+    var path = window.location.pathname;
+    var pageName = path.split("/").pop();
+    return pageName || 'index.html'; // Se não encontrar, volta para index
 }
 
+// Traduzir nome da página
+function getTranslatedPage(currentPage) {
+    if (!currentPage) {
+        return 'index.html';
+    }
+    
+    var pageName = currentPage.replace('.html', '');
+    
+    // indexOf retorna -1 se não encontrar (Procura o index da primeira instância de "pt")
+    if (pageName.indexOf('pt') !== -1) {
+        // Se tem 'pt', remove para versão inglesa
+        return pageName.replace('pt', '') + '.html';
+    } else {
+        // Se não tem 'pt', adiciona para versão portuguesa
+        return pageName + 'pt.html';
+    }
+}
 
-
-//muda logo para branco e ativa o ligth mode
+// =================== DARK MODE ===================
+// Mudar entre modo claro e escuro
 function toggleDarkMode() {
-    var body = document.body;
-    var logo = document.getElementById("logo");
-    var accessibilityIcon = document.getElementById("accessibilityIcon");
-    var hamburgerIcon = document.getElementById("hamburgerIcon");
-    var languageIcon = document.getElementById("languageIcon");
-    var darkModeButton = document.getElementById("darkModeButton"); // Supondo que o botão tem este ID
-
-    // Alternar classe de modo escuro
-    body.classList.toggle("dark-mode");
-    var isDarkMode = body.classList.contains("dark-mode");
-    localStorage.setItem('darkMode', isDarkMode);
-
-    // Atualizar ícones
-    if (isDarkMode) {
-        logo.src = "svg/Logotipo_branco.svg";
-        accessibilityIcon.src = "svg/AccesibilityWhite.svg";        
-        hamburgerIcon.src = "svg/hamburgerWhite.svg";        
-        languageIcon.src = "svg/PTWhite.svg";        
-        darkModeButton.textContent = "Light Mode"; // Atualizar texto do botão
+    var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
+    
+    // Adiciona ou remove a classe dark-mode
+    if (domElements.body.classList.contains('dark-mode')) {
+        domElements.body.classList.remove('dark-mode');
+        updateInterface(false, isPortuguese);
     } else {
-        logo.src = "svg/Logotipo.svg";
-        accessibilityIcon.src = "svg/Accesibility.svg";        
-        hamburgerIcon.src = "svg/hamburger.svg";        
-        languageIcon.src = "svg/PT.svg";        
-        darkModeButton.textContent = "Dark Mode"; // Atualizar texto do botão
+        domElements.body.classList.add('dark-mode');
+        updateInterface(true, isPortuguese);
+    }
+    
+    // Guarda a preferência
+    localStorage.setItem('darkMode', domElements.body.classList.contains('dark-mode'));
+}
+
+// Atualiza os ícones baseado no modo
+function updateInterface(isDarkMode, isPortuguese) {
+    try {
+        if (isDarkMode) {
+            domElements.logo.src = isPortuguese ? "svg/Logotipo_brancopt.svg" : "svg/Logotipo_branco.svg";
+            domElements.accessibilityIcon.src = "svg/AccesibilityWhite.svg";
+            domElements.hamburgerIcon.src = "svg/hamburgerWhite.svg";
+            domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
+            domElements.darkModeButton.textContent = "Light Mode";
+        } else {
+            domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
+            domElements.accessibilityIcon.src = "svg/Accesibility.svg";
+            domElements.hamburgerIcon.src = "svg/hamburger.svg";
+            domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
+            domElements.darkModeButton.textContent = "Dark Mode";
+        }
+    } catch (error) {
+        console.error('Erro ao atualizar interface:', error);
     }
 }
 
-
-
-function initializeDarkMode() {
-    var isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-    var darkModeButton = document.getElementById("darkModeButton"); // Assuming the button has this ID
-
-    if (isDarkMode) {
-        document.body.classList.add("dark-mode");
-        darkModeButton.textContent = "Light Mode"; // Update button text
+// =================== ACESSIBILIDADE ===================
+// Mudar tamanho da letra
+function toggleFontSize() {
+    var currentSize = getComputedStyle(domElements.root).getPropertyValue('--base-font-size').trim();
+    
+    if (currentSize === '16px') {
+        domElements.root.style.setProperty('--base-font-size', '24px');
+        domElements.fontSizeButton.textContent = "Resize Font";
     } else {
-        document.body.classList.remove("dark-mode");
-        darkModeButton.textContent = "Dark Mode"; // Update button text
+        domElements.root.style.setProperty('--base-font-size', '16px');
+        domElements.fontSizeButton.textContent = "Increase Font";
     }
 }
 
-
-// Call the initialize function when the site loads
-document.addEventListener('DOMContentLoaded', initializeDarkMode);
-
-
-// Check dark mode preference on page load
-window.addEventListener('load', function () {
-    var isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        document.getElementById("logo").src = "svg/Logotipo_branco.svg";
-        document.getElementById("accessibilityIcon").src = "svg/AccesibilityWhite.svg";
-        document.getElementById("hamburgerIcon").src = "svg/hamburgerWhite.svg";
-        document.getElementById("languageIcon").src = "svg/PTWhite.svg";
+// =================== MENUS ===================
+// Abrir e fechar menus
+function toggleMenu(menuToToggle, menuToClose) {
+    // Fecha menu aberto
+    if (menuToClose && menuToClose.classList.contains("open")) {
+        menuToClose.classList.remove("open");
     }
-});
+    
+    // Abre ou fecha menu selecionado
+    if (menuToToggle) {
+        menuToToggle.classList.toggle("open");
+    }
+}
 
-
-
-// Scroll horizontal em containers
-var scrollContainer = document.querySelector('.scrollHorizontalImagens');
+// =================== SCROLL HORIZONTAL ===================
 var isDown = false;
-var startX, scrollLeft;
+var startX;
+var scrollLeft;
 
-scrollContainer.addEventListener('mousedown', function (e) {
+// Funções para arrastar imagens na horizontal
+function handleMouseDown(event) {
     isDown = true;
-    scrollContainer.classList.add('active');
-    startX = e.pageX - scrollContainer.offsetLeft;
-    scrollLeft = scrollContainer.scrollLeft;
-});
+    domElements.scrollContainer.classList.add('active');
+    startX = event.pageX - domElements.scrollContainer.offsetLeft;
+    scrollLeft = domElements.scrollContainer.scrollLeft;
+}
 
-scrollContainer.addEventListener('mouseleave', function () {
+function handleMouseUp() {
     isDown = false;
-    scrollContainer.classList.remove('active');
-});
+    domElements.scrollContainer.classList.remove('active');
+}
 
-scrollContainer.addEventListener('mouseup', function () {
-    isDown = false;
-    scrollContainer.classList.remove('active');
-});
-
-scrollContainer.addEventListener('mousemove', function (e) {
-    if (!isDown) return;
-    e.preventDefault();
-    var x = e.pageX - scrollContainer.offsetLeft;
+function handleMouseMove(event) {
+    if (!isDown) {
+        return;
+    }
+    event.preventDefault();
+    var x = event.pageX - domElements.scrollContainer.offsetLeft;
     var walk = (x - startX) * 1;
-    scrollContainer.scrollLeft = scrollLeft - walk;
+    domElements.scrollContainer.scrollLeft = scrollLeft - walk;
+}
+
+// =================== EVENT LISTENERS ===================
+// Quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
+    
+    if (isDarkMode) {
+        domElements.body.classList.add('dark-mode');
+        updateInterface(true, isPortuguese);
+    }
 });
 
+// Menus
+domElements.hamburgerIcon.addEventListener("click", function() {
+    toggleMenu(domElements.hamburgerMenu, domElements.accessibilityBar);
+});
 
-// Mapa de páginas (pt-en) e lógica para o butão
+domElements.accessibilityIcon.addEventListener("click", function() {
+    toggleMenu(domElements.accessibilityBar, domElements.hamburgerMenu);
+});
 
+// Idioma
+domElements.languageIcon.addEventListener("click", function() {
+    var currentPage = getCurrentPage();
+    var isPortuguese = currentPage.indexOf('pt') !== -1;
+    
+    localStorage.setItem('language', isPortuguese ? 'en' : 'pt');
+    redirectTo(getTranslatedPage(currentPage));
+});
+
+// Scroll horizontal
+domElements.scrollContainer.addEventListener('mousedown', handleMouseDown);
+domElements.scrollContainer.addEventListener('mouseleave', handleMouseUp);
+domElements.scrollContainer.addEventListener('mouseup', handleMouseUp);
+domElements.scrollContainer.addEventListener('mousemove', handleMouseMove);
