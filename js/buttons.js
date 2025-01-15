@@ -1,17 +1,17 @@
 // Travel btns
-const PortoBtn = document.getElementById('PortoBtn');
-const LisboaBtn = document.getElementById('LisboaBtn');
-const BusBtn = document.getElementById('BusBtn');
-const TransferBtn = document.getElementById('TransferBtn');
-const datebutton = document.getElementsByClassName('date-button');
+var PortoBtn = document.getElementById('PortoBtn');
+var LisboaBtn = document.getElementById('LisboaBtn');
+var BusBtn = document.getElementById('BusBtn');
+var TransferBtn = document.getElementById('TransferBtn');
+var datebutton = document.getElementsByClassName('date-button');
 var LocationBtnSelected;
 var TravelBtnSelected;
 
 // Travel info
-const PortoBusInfo = document.getElementById('PortoBus');
-const LisboaBusInfo = document.getElementById('LisboaBus');
-const PortoTransferInfo = document.getElementById('PortoTransfer');
-const LisboaTransferInfo = document.getElementById('LisboaTransfer');
+var PortoBusInfo = document.getElementById('PortoBus');
+var LisboaBusInfo = document.getElementById('LisboaBus');
+var PortoTransferInfo = document.getElementById('PortoTransfer');
+var LisboaTransferInfo = document.getElementById('LisboaTransfer');
 
 // Set Defaults
 PortoBtn.classList.add('selected');
@@ -26,7 +26,7 @@ LisboaBusInfo.classList.add('hide');
 
 
 function changeBackgroundColor(element) {
-    const elementId = element.getAttribute('id');
+    var elementId = element.getAttribute('id');
     // Remove color from opposite btn
     elementId === 'PortoBtn' ? LisboaBtn.classList.remove('selected') :
     elementId === 'LisboaBtn' ? PortoBtn.classList.remove('selected') :
@@ -82,29 +82,34 @@ function changeInfo() {
 }
 
 
-function changeContent()
-{
-// Different syntax, same logic - Date buttons
-const buttons = document.querySelectorAll('.date-button');
+function changeContent(id) {
+    var contentElement = document.getElementById('content');
+    contentElement.textContent = "Conteúdo para o botão com id: " + id;
+}
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove 'selected' class from sibling buttons
-        button.parentElement.querySelectorAll('.date-button').forEach(btn => btn.classList.remove('selected'));
-        // Add 'selected' class to the clicked button
+var buttons = document.querySelectorAll('.date-button');
+
+for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    button.addEventListener('click', function () {
+        var siblings = button.parentElement.querySelectorAll('.date-button');
+        for (var j = 0; j < siblings.length; j++) {
+            siblings[j].classList.remove('selected');
+        }
         button.classList.add('selected');
-        // Change content based on clicked button
         changeContent(button.getAttribute('data-id'));
     });
-})}
+}
+
+
 
 function changeContent(day, button) {
     // Esconde os botões de data
-    const buttons = document.querySelectorAll('.date-button');
-    const contentDiv = document.getElementById('content');
+    var buttons = document.querySelectorAll('.date-button');
+    var contentDiv = document.getElementById('content');
     
     // Define o conteúdo com base no dia clicado
-    const content = {
+    var content = {
         1: `<div>
         <div onclick="redirectTo('indexEventDescription.html')" class="cardsPrograma">
                 <p>20:00</p>
@@ -257,11 +262,14 @@ function changeContent(day, button) {
     contentDiv.style.visibility = 'visible'; // Torna a div visível
     
     // Adiciona a classe 'selected' para o botão que foi clicado
-    buttons.forEach(btn => btn.classList.remove('selected'));
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('selected');
+    }
+    
     button.classList.add('selected');
 
     // Scroll the scrollHorizontalImagens element
-    const scrollPositions = {
+    var scrollPositions = {
         2: 330, // 01 Abril
         3: 3905, // 02 Abril
         4: 10000, // 03 Abril
