@@ -20,23 +20,24 @@
 </head>
 
 <body>
-    <header class="header__grey">
-        <div class="navbar">
-            <img onclick="redirectTo('indexpt.html')" id="logo" class="logo" src="svg/Logotipopt.svg" alt="logótipo">
-            <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Ícone Acessibilidade">
-                <img id="languageIcon" class="icon" src="svg/ENG.svg" alt="Ícone Idioma" onclick="redirectTo('indexEvent.html')">
-                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu">
+    <header class="header header--grey">
+        <div class="header__navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="header__icons">
+                <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
+                    onclick="redirectTo('indextravelpt.html')">
+                <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
-        <div id="accessibilityBar" class="mobile-menu hidden">
-            <button id="fontSizeButton" onclick="toggleFontSize()">Aumentar Fonte</button>
-            <button id="darkModeButton" onclick="toggleDarkMode()">Modo Escuro</button>
+        <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
-        <div id="hamburgerMenu" class="mobile-menu hidden">
-            <button onclick="redirectTo('indextravelpt.html')">Viagens</button>
-            <button onclick="redirectTo('indexvisitpt.html')">Visitar</button>
-            <button onclick="redirectTo('formsReact.html')">Formulários React (AI)</button>
+        <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
+            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
+            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
         <div class="header__search">
             <div class="header__search-container">
@@ -50,7 +51,7 @@
     <div class="event">
         <p class="event__hora">20h</p>
         <p class="event__title">Assembleia Geral</p>
-        <p class="event__local">CAFAC <img src="svg/GPSCoordinates.svg" alt="ícone gps" class="event__gps-icon" height="16px"></p>
+        <p class="event__local">CAFAC <img src="svg/GPSCoordinates.svg" alt="ícone gps" class="event__gps-icon" height="16"></p>
         <p class="event__description">A Assembleia Geral da Universidade Europeia EUNICE é um evento internacional que
             reúne representantes de várias universidades europeias para discutir tópicos relacionados com a cooperação
             académica, investigação e desenvolvimento. Em 2025, será organizada pelo Instituto Politécnico de Viseu
@@ -63,13 +64,13 @@
             <p class="event__speaker-card__name"><b>Orador 1</b></p>
             <p class="event__speaker-card__description">Um estudante de TDM é um indivíduo criativo e tecnicamente competente,
                 especializado em design gráfico, multimédia e desenvolvimento web.</p>
-        </div>
-        <div class="event__speaker-card">
+        </div><!--
+        --><div class="event__speaker-card">
             <img src="images/placeholder-mulher.jpg" alt="Foto do Orador" class="event__speaker-card__image">
             <p class="event__speaker-card__name"><b>Orador 2</b></p>
             <p class="event__speaker-card__description">Um estudante de TDM.</p>
-        </div>
-        <div class="event__speaker-card">
+        </div><!--
+        --><div class="event__speaker-card">
             <img src="images/placeholder-mulher.jpg" alt="Foto do Orador" class="event__speaker-card__image">
             <p class="event__speaker-card__name"><b>Orador 3</b></p>
             <p class="event__speaker-card__description">Um estudante de TDM é um indivíduo criativo e tecnicamente competente,
@@ -92,10 +93,10 @@
         <img class="footer__icon" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="footer__email" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
         <img class="footer__icon--phone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
         <br>
-        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank" id="redes-sociais"><img class="footer__social-icon" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
-        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
-        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
-        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
+        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank" id="redes-sociais"><img class="footer__social-icon" src="svg/redes/iconFacebook.svg" alt="ipv logo"></a>
+        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="footer__social-icon" src="svg/redes/iconYoutube.svg" alt="logo youtube"></a>
+        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="footer__social-icon" src="svg/redes/iconLinkedin.svg" alt="logo linkedin"></a>
+        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="footer__social-icon" src="svg/redes/iconInstagram.svg" alt="logo instagram"></a>
     </footer>
 </body>
 </html>

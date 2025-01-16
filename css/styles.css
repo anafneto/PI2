@@ -16,7 +16,7 @@ body {
   background-color: #f1f1f1;
   position: relative;
   min-height: 100vh;
-  padding-top: calc(112px + 1rem);
+  padding-top: calc(97px + 1rem);
   padding-bottom: calc(237px + 1rem);
 }
 
@@ -127,7 +127,7 @@ p {
   width: 100%;
 }
 .hero__description {
-  margin: 20px 13px;
+  margin: 1rem 13px 0 13px;
 }
 /*====fim hero section====*/
 
@@ -156,7 +156,7 @@ p {
 
 .scroll-horizontal-imagens__event-card img {
   display: inline-block;
-  height: 213px;
+  height: 140px;
   border-radius: 4px;
   user-select: none; 
   -webkit-user-drag: none;
@@ -206,7 +206,7 @@ p {
 
 .date-buttons__button {
   width: 70px;
-  height: 30px;
+  min-height: 30px;
   border: 1px solid #ccc;
   color: #54595E;
   border-radius: 5px;
@@ -246,8 +246,9 @@ p {
 
 /*===========================ELEMENTOS PÁGINA VISIT=========================*/
 /*==== cards ====*/
-.cards-container {
+.event__cards-container {
   text-align: center;
+  margin: 0;
 }
 
 .cards-visit {
@@ -257,12 +258,18 @@ p {
   border-radius: 4px 4px;
   width: 350px;
   vertical-align: top;
-  margin: .5rem 1rem;
+  margin: .5rem;
 }
 
 .cards-visit__description {
   padding: 16px 25px;
-  min-height: 200px;
+  min-height: 220px;
+  margin: 0;
+}
+
+.cards-visit__description {
+  padding: 16px 25px;
+  min-height: 160px;
   margin: 0;
 }
 
@@ -296,7 +303,7 @@ p {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: .5rem;  
+  margin: 1rem 0;  
 }
 
 .containerInfoTravel_Touch {
@@ -403,6 +410,17 @@ p {
   margin-bottom: 1rem;
 }
 
+.info--travel--icon {
+  width: 22px;
+  vertical-align: middle;
+  fill: none;
+  stroke: #54595E;
+  margin-right: .5rem;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
 .link {
   color: #54595E;
   text-decoration: underline;
@@ -412,11 +430,12 @@ p {
 /*===========================ELEMENTOS PÁGINA EVENT=========================*/
 .event {
   padding: 0 1rem;
+  margin-top: 1rem;
 }
 
 .event__speaker-card {
   display: inline-block;
-  margin: 1rem 0;
+  margin: .5rem 0;
   text-align: left;
   box-shadow: 0 0 0 0.25px #54595E;
   border-radius: 4px 4px;
@@ -428,7 +447,8 @@ p {
   width: 100%;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-}
+  object-fit: cover;
+  height: 180px;}
 
 .event__speaker-card__name {
   margin-top: 4px;
@@ -458,13 +478,13 @@ p {
 .event__description {
   font-size: 15px;
   font-weight: normal;
-  margin-top: 8px;
+  margin-top: .5rem;
 }
 
 .event__speakers {
   font-size: 22.5px;
   font-weight: bold;
-  margin-top: 32px;
+  margin-top: 1rem;
 }
 
 .event__gps-icon {
@@ -626,7 +646,7 @@ footer {
 
   .event__speaker-card {
     width: calc(50% - .7rem);
-    margin: 1rem .25rem;
+    margin: .5rem .25rem;
   }
 
   .event__travel-button {
@@ -672,12 +692,16 @@ footer {
 
 @media only screen and (min-width: 768px) {
   body {
-    padding-top: calc(62px + 1rem);
+    padding-top: calc(47px + 1rem);
     padding-bottom: calc(156px + 1rem);
   }
 
+  .scroll-horizontal-imagens__event-card img {
+    height: 213px;
+  }
+
   .location-button {
-    width: 20%;
+    width: 47%;
   }
 
   .event__or-text {
@@ -726,15 +750,35 @@ footer {
   .event__cards-container {
     text-align: center;
   }
+  
+  .cards-visit__description {
+    padding: 16px 25px;
+    min-height: 180px;
+    margin: 0;
+  }
+  
+  .cards-visit {
+    width: 500px;
+  }
+  
+  .cards-visit__image {
+    height: 240px;
+    object-fit: cover;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   body {
     padding-bottom: calc(243px + 1rem);
   }
-
+  
+  
   .event__container-info-travel-touch {
     display: none;
+  }
+
+  .location-button {
+    width: 20%;
   }
 
   .event__container-info-travel-desktop {
@@ -947,6 +991,15 @@ body.dark-mode .PortoBus p img, .dark-mode .LisboaBus p img, .dark-mode .PortoTr
 
 body.dark-mode .link {
   color: #f0f0f0;
+}
+
+body.dark-mode .info--travel--icon {
+  fill: none;
+  stroke: white;
+}
+
+body.dark-mode .header__search-results {
+  color: #191B19;
 }
 
 /*Apenas para avaliação em Aplicações para a Internet I */
