@@ -20,139 +20,116 @@
 </head>
 
 <body>
-    <header class="header__grey">
-        <div class="navbar">
-            <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
-            <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
-                <img id="languageIcon" class="icon" 
-                src="svg/PT.svg" alt="Language Icon" onclick="redirectTo('indexvisitpt.html')">
-                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
+    <header class="header header--grey">
+        <div class="header__navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="header__icons">
+                <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
+                    onclick="redirectTo('indexpt.html')">
+                <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
-        <div id="accessibilityBar" class="mobile-menu hidden">
-            <button id="fontSizeButton" onclick="toggleFontSize()">Increase Font</button>
-            <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
+        <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
-        <div id="hamburgerMenu" class="mobile-menu hidden">
-            <button onclick="redirectTo('indextravel.html')">Travel</button>
-            <button onclick="redirectTo('indexvisit.html')">Visit</button>
-            <button onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
+        <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
+            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
+            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
-        <div class="search">
-            <div class="search-container">
-                <input type="text" id="searchbar" class="searchbar">
-                <img src="svg/lupa.svg" alt="lupa">
-                <div id="searchResults" class="search-results"></div>
+        <div class="header__search">
+            <div class="header__search-container">
+                <input type="text" id="searchbar" class="header__searchbar">
+                <img src="svg/lupa.svg" alt="lupa" class="header__search-icon">
+                <div id="searchResults" class="header__search-results"></div>
             </div>
         </div>
     </header>
     
     <div class="cards-container">
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/seviseu.jpg" alt="sé de viseu">
-            <p class="description"><strong>Viseu Cathedral</strong> began to be built in the 12th century and, over the years,
-                various
-                pieces have been added, resulting in a combination of styles including Romanesque, Manueline,
-                Renaissance
-                and Gothic.</p>
-            <a href="https://maps.app.goo.gl/pcdWpgBd3BxQkmJfA" target="_blank">
-                <p class="coordinates"> 40° 39′ 35,75″ N, 7° 54′ 39,47″ O <img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
-            </a>
-
-
-        </div>
-        <!-- -->
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/igrejamisericordia.png" alt="igreja da misericórdia">
-            <p class="description"><strong>Igreja da Misericórdia’s</strong> chambers are filled with priceless oil paintings and
-                holy
-                objects. Some are portraits of the numerous donors to the church, while others feature religious themes
-                or
-                figures.</p>
-            <a href="https://maps.app.goo.gl/aXDXF4gbVTppMf6X8" target="_blank">
-                <p class="coordinates"><strong>40° 39′ 37″ N, 7° 54′ 43″ W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/seviseu.jpg" alt="sé de viseu">
+            <p class="cards-visit__description"><strong>Viseu Cathedral</strong> began to be built in the 12th century and, over the years,
+                various pieces have been added, resulting in a combination of styles including Romanesque, Manueline,
+                Renaissance and Gothic.</p>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/pcdWpgBd3BxQkmJfA" target="_blank">
+                <p class="cards-visit__coordinates"> 40° 39′ 35,75″ N, 7° 54′ 39,47″ O <img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
             </a>
         </div>
         <!-- -->
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/pracadduarte.jpeg" alt="Praça D. Duarte">
-            <p class="description">At the heart of Viseu’s historical centre, the bronze statue of <strong>Rei Duarte</strong>
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/igrejamisericordia.png" alt="igreja da misericórdia">
+            <p class="cards-visit__description"><strong>Igreja da Misericórdia’s</strong> chambers are filled with priceless oil paintings and
+                holy objects. Some are portraits of the numerous donors to the church, while others feature religious themes
+                or figures.</p>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/aXDXF4gbVTppMf6X8" target="_blank">
+                <p class="cards-visit__coordinates"><strong>40° 39′ 37″ N, 7° 54′ 43″ W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+            </a>
+        </div>
+        <!-- -->
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/pracadduarte.jpeg" alt="Praça D. Duarte">
+            <p class="cards-visit__description">At the heart of Viseu’s historical centre, the bronze statue of <strong>Rei Duarte</strong>
                 presides over a square lined with cafés and restuarants and backed by the cathedral walls. It’s a great
                 place for people watching and admiring the beautiful old buildings that surround the square.</p>
-            <a href="https://maps.app.goo.gl/v53PRsmQDRXhEmbd8" target="_blank">
-                <p class="coordinates"><strong>40° 39' 34.80" N, 7° 54' 41.61" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/v53PRsmQDRXhEmbd8" target="_blank">
+                <p class="cards-visit__coordinates"><strong>40° 39' 34.80" N, 7° 54' 41.61" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
             </a>
         </div>
         <!-- -->
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/rossio.jpeg" alt="Rossio">
-            <p class="description"><strong>Praça da República</strong> is leafy and flower-filled, with a fountain and
-                merry-go-round.
-                It’s also bordered on one side by an azulejo mural. During festivals and events, there are usually
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/rossio.jpeg" alt="Rossio">
+            <p class="cards-visit__description"><strong>Praça da República</strong> is leafy and flower-filled, with a fountain and
+                merry-go-round. It’s also bordered on one side by an azulejo mural. During festivals and events, there are usually
                 activities in this square but even without extra thrills, the café in the centre is a popular spot with
                 locals.</p>
-            <a href="https://maps.app.goo.gl/6jogwWchYxWAME1g9" target="_blank">
-                    <p class="coordinates"><strong>40° 39' 27.13" N, 7° 54' 49.89" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/6jogwWchYxWAME1g9" target="_blank">
+                <p class="cards-visit__coordinates"><strong>40° 39' 27.13" N, 7° 54' 49.89" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
             </a>
         </div>
         <!-- -->
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/museu.png" alt="museu">
-            <p class="description">Next to Viseu Cathedral, you’ll find <strong>Grão Vasco National Museum</strong>. The museum in
-                his
-                name also houses a fine collection of carved, painted Baroque figurines and other religious objects...
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/museu.png" alt="museu">
+            <p class="cards-visit__description">Next to Viseu Cathedral, you’ll find <strong>Grão Vasco National Museum</strong>. The museum in
+                his name also houses a fine collection of carved, painted Baroque figurines and other religious objects...
             </p>
-            <a href="https://maps.app.goo.gl/TonFnZcYVvMB5nMq7" target="_blank">
-                <p class="coordinates"><strong>40° 39' 36.55" N 7° 54' 39.7" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/TonFnZcYVvMB5nMq7" target="_blank">
+                <p class="cards-visit__coordinates"><strong>40° 39' 36.55" N 7° 54' 39.7" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
             </a>
         </div>
         <!-- -->
-        <div class="cardsVisit">
-            <img class="imagemcardvisit" src="images/ruadireita.jpeg" alt="rua direita">
-            <p class="description"><strong>Rua Direita</strong> is well-known for its charmingly retro stores, which are like
+        <div class="cards-visit">
+            <img class="cards-visit__image" src="images/ruadireita.jpeg" alt="rua direita">
+            <p class="cards-visit__description"><strong>Rua Direita</strong> is well-known for its charmingly retro stores, which are like
                 stepping into a delightful time capsule. These shops are a haven for vintage lovers and offer a truly
                 unique shopping experience that captures the charm of yesteryear.</p>
-                <a href="https://maps.app.goo.gl/hH4YhCGjgMeVrQpE6" target="_blank">
-                    <p class="coordinates"><strong>40° 39' 31.26" N, 7° 54' 39.38" W </strong><img class="gpsIcon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
-                </a>
+            <a class="cards-visit__link" href="https://maps.app.goo.gl/hH4YhCGjgMeVrQpE6" target="_blank">
+                <p class="cards-visit__coordinates"><strong>40° 39' 31.26" N, 7° 54' 39.38" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+            </a>
         </div>
     </div>
 
-    <footer>
-        <a href="https://ipv.pt" target="_blank"> <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
-        <a href="https://www.uop.gr/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg"
-                alt="University of Peloponnese Logo"></a>
-        <a href="https://www.uwasa.fi/fi"target="_blank"><img class="imgfooter" src="svg/footerIcons/vasaan.svg"
-                alt="Vaasan yliopisto Logo"></a>
-        <a href="https://web.umons.ac.be/en/"target="_blank"> <img class="imgfooter" src="svg/footerIcons/umons.svg"
-                alt="Umons Logo"></a>
-        <a href="https://www.b-tu.de/en/"target="_blank"><img class="imgfooter" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
-        <a href="https://www.unict.it/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDeCatania.svg"
-                alt="Universitat de Catania Logo"></a>
-        <a href="https://put.poznan.pl/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/poznanska.svg"
-                alt="Poznanska Logo"></a>
-        <a href="https://web.unican.es/"target="_blank"><img class="imgfooter" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
-        <a href="https://www.kau.se/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/malstads.svg"
-                alt="Karlstads Universitet Logo"></a>
-        <img class="imgfooter" src="svg/footerIcons/france.svg" alt="france logo">
+    <footer class="footer">
+        <a href="https://ipv.pt" target="_blank"> <img class="footer__img" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
+        <a href="https://www.uop.gr/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDePolo.svg" alt="University of Peloponnese Logo"></a>
+        <a href="https://www.uwasa.fi/fi" target="_blank"><img class="footer__img" src="svg/footerIcons/vasaan.svg" alt="Vaasan yliopisto Logo"></a>
+        <a href="https://web.umons.ac.be/en/" target="_blank"> <img class="footer__img" src="svg/footerIcons/umons.svg" alt="Umons Logo"></a>
+        <a href="https://www.b-tu.de/en/" target="_blank"><img class="footer__img" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
+        <a href="https://www.unict.it/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDeCatania.svg" alt="Universitat de Catania Logo"></a>
+        <a href="https://put.poznan.pl/en" target="_blank"><img class="footer__img" src="svg/footerIcons/poznanska.svg" alt="Poznanska Logo"></a>
+        <a href="https://web.unican.es/" target="_blank"><img class="footer__img" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
+        <a href="https://www.kau.se/en" target="_blank"><img class="footer__img" src="svg/footerIcons/malstads.svg" alt="Karlstads Universitet Logo"></a>
+        <img class="footer__img" src="svg/footerIcons/france.svg" alt="france logo">
         <br>
-        <img class="iconat" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="emailFooter"
-            href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
-        <img class="iconphone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
+        <img class="footer__icon" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="footer__email" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
+        <img class="footer__icon--phone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
         <br>
-
-        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank"
-            id="redes-sociais"><img class="iconsocial" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
-
-        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
-
-        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
-
-        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
+        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank" id="redes-sociais"><img class="footer__social-icon" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
+        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
+        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
+        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
     </footer>
 </body>
 

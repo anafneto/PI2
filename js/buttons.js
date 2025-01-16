@@ -1,9 +1,91 @@
+// DOM Elements
+var contentDiv = document.getElementById('content');
+var buttons = document.querySelectorAll('.date-buttons__button');
+var scrollContainer = document.querySelector('.scroll-horizontal-imagens');
+
+// Dados dos eventos - EN
+var eventsEN = {
+    1: [
+        { time: '20:00', title: 'Welcome Dinner', location: 'Pousada de Viseu' }
+    ],
+    2: [
+        { time: '8:30', title: 'Registration & Coffee', location: 'Foyer Central Services' },
+        { time: '9:00', title: 'Campus Tour', location: 'ESTGV' },
+        { time: '10:00', title: 'Welcome and Opening', location: 'Aula Magna' },
+        { time: '11:00', title: 'General Assembly', location: 'CAFAC' },
+        { time: '11:00', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '13:00', title: 'Lunch', location: 'CAFAC' },
+        { time: '14:30', title: 'General Assembly', location: 'Aula Magna' },
+        { time: '16:00', title: 'Coffee Break', location: 'CAFAC' },
+        { time: '16:30', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '19:00', title: 'Reception', location: 'Câmara Municipal de Viseu' },
+        { time: '19:00', title: 'Dinner', location: 'LUSOVINI - Nelas' }
+    ],
+    3: [
+        { time: '8:30', title: 'Registration & Coffee', location: 'Foyer Central Services' },
+        { time: '9:00', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '10:30', title: 'Coffee Break', location: 'CAFAC' },
+        { time: '11:00', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '13:00', title: 'Lunch', location: 'ESTGV' },
+        { time: '14:30', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '15:30', title: 'Coffee Break', location: 'CAFAC' },
+        { time: '16:30', title: 'Parallel Sessions', location: 'ESTGV' },
+        { time: '17:30', title: 'Closing Ceremony', location: 'Aula Magna' },
+        { time: '20:00', title: 'Dinner', location: 'Quinta da Magarenha' }
+    ],
+    4: [
+        { time: '8:30', title: 'Visit to S. Pedro do Sul', location: '???' }
+    ]
+};
+
+// Dados dos eventos - PT
+var eventsPT = {
+    5: [
+        { time: '20:00', title: 'Jantar de Boas-vindas', location: 'Pousada de Viseu' }
+    ],
+    6: [
+        { time: '8:30', title: 'Registo e Café', location: 'Foyer Serviços Centrais' },
+        { time: '9:00', title: 'Visita ao Campus', location: 'ESTGV' },
+        { time: '10:00', title: 'Boas-vindas e Abertura', location: 'Aula Magna' },
+        { time: '11:00', title: 'Assembleia Geral', location: 'CAFAC' },
+        { time: '11:00', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '13:00', title: 'Almoço', location: 'CAFAC' },
+        { time: '14:30', title: 'Assembleia Geral', location: 'Aula Magna' },
+        { time: '16:00', title: 'Pausa para Café', location: 'CAFAC' },
+        { time: '16:30', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '19:00', title: 'Receção', location: 'Câmara Municipal de Viseu' },
+        { time: '19:00', title: 'Jantar', location: 'LUSOVINI - Nelas' }
+    ],
+    7: [
+        { time: '8:30', title: 'Registo e Café', location: 'Foyer Serviços Centrais' },
+        { time: '9:00', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '10:30', title: 'Pausa para Café', location: 'CAFAC' },
+        { time: '11:00', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '13:00', title: 'Almoço', location: 'ESTGV' },
+        { time: '14:30', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '15:30', title: 'Pausa para Café', location: 'CAFAC' },
+        { time: '16:30', title: 'Sessões Paralelas', location: 'ESTGV' },
+        { time: '17:30', title: 'Cerimónia de Encerramento', location: 'Aula Magna' },
+        { time: '20:00', title: 'Jantar', location: 'Quinta da Magarenha' }
+    ],
+    8: [
+        { time: '8:30', title: 'Visita a S. Pedro do Sul', location: '???' }
+    ]
+};
+
+// Scroll Positions
+var SCROLL_POSITIONS = {
+    1: 1, // 31 Mar
+    2: 330,  // 01 April
+    3: 3905, // 02 April
+    4: 10000 // 03 April
+};
+
 // Botões de navegação 
 var PortoBtn = document.getElementById('PortoBtn');
 var LisboaBtn = document.getElementById('LisboaBtn');
 var BusBtn = document.getElementById('BusBtn');
 var TransferBtn = document.getElementById('TransferBtn');
-var datebutton = document.getElementsByClassName('date-button');
 
 // Estado de seleção dos botões
 var LocationBtnSelected;
@@ -25,6 +107,8 @@ TravelBtnSelected = 'Bus';
 PortoTransferInfo.classList.add('hide');
 LisboaTransferInfo.classList.add('hide');
 LisboaBusInfo.classList.add('hide');
+
+
 
 // Altera a cor do botão e atualiza o estado quando um botão é clicado
 function changeBackgroundColor(element) {
@@ -84,323 +168,40 @@ function changeInfo() {
     ) : null;
 }
 
+// Função para criar carta 
+function createEventCard(event, isPortuguese) {
+    var targetPage = isPortuguese ? 'indexEventpt.html' : 'indexEvent.html';
+    return `
+        <div onclick="redirectTo('${targetPage}')" class="cardsPrograma">
+            <p>${event.time}</p>
+            <h3>${event.title}</h3>
+            <p>${event.location} <img src="svg/local.svg"></p>
+        </div>
+    `;
+}
+
 function changeContent(day, button) {
-    // Esconde os botões de data
-    var buttons = document.querySelectorAll('.date-button');
-    var contentDiv = document.getElementById('content');
-
-    // Define o conteúdo com base no dia clicado
-    var content = {
-        1: `<div>
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-                <p>20:00</p>
-                <h3>Welcome Dinner</h3>
-                <p>Pousada de Viseu <img src="svg/local.svg"></p>
-            </div>
-            </div>`,
-
-        2: `<div>
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>8:30</p>
-            <h3>Registration & Coffee</h3>
-            <p>Foyer Central Services <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>9:00</p>
-            <h3>Campus Tour</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>10:00</p>
-            <h3>Welcome and Opening</h3>
-            <p>Aula Magna <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>11:00</p>
-            <h3>General Assembly</h3>
-            <p>CAFAC <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>11:00</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>13:00</p>
-            <h3>Lunch</h3>
-            <p>CAFAC <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>14:30</p>
-            <h3>General Assembly</h3>
-            <p>Aula Magna <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>16:00</p>
-            <h3>Coffee Break</h3>
-            <p>CAFAC <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>16:30</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>19:00</p>
-            <h3>Reception</h3>
-            <p>Câmara Municipal de Viseu <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>19:00</p>
-            <h3>Dinner</h3>
-            <p>LUSOVINI - Nelas <img src="svg/local.svg"></p>
-        </div>
-             
-            </div>`,
-        3: `<div>
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>8:30</p>
-            <h3>Registration & Coffee</h3>
-            <p>Foyer Central Services <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>9:00</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>10:30</p>
-            <h3>Coffee Break</h3>
-            <p>CAFAC <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>11:00</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>13:00</p>
-            <h3>Lunch</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>14:30</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>15:30</p>
-            <h3>Coffee Break</h3>
-            <p>CAFAC <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>16:30</p>
-            <h3>Parallel Sessions</h3>
-            <p>ESTGV <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>17:30</p>
-            <h3>Closing Ceremony</h3>
-            <p>Aula Magna <img src="svg/local.svg"></p>
-        </div>
-
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-            <p>20:00</p>
-            <h3>Dinner</h3>
-            <p>Quinta da Magarenha <img src="svg/local.svg"></p>
-        </div>
-            </div>`,
-        4: `<div>
-        <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Visit to S. Pedro do Sul</h3>
-                <p>??? <img src="svg/local.svg"></p>
-            </div>
-            
-            </div>`,
-            
-        // PT
-        5: `<div>
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                    <p>20:00</p>
-                    <h3>Jantar de Boas-vindas</h3>
-                    <p>Pousada de Viseu <img src="svg/local.svg"></p>
-                </div>
-                </div>`,
-
-        6: `<div>
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registo e Café</h3>
-                <p>Foyer Serviços Centrais <img src="svg/local.svg"></p>
-            </div>
+    if (!day || !button) return;
     
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>9:00</p>
-                <h3>Visita ao Campus</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
+    var isPortuguese = day > 4;
+    var events = isPortuguese ? eventsPT[day] : eventsEN[day];
     
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>10:00</p>
-                <h3>Boas-vindas e Abertura</h3>
-                <p>Aula Magna <img src="svg/local.svg"></p>
-            </div>
+    if (events) {
+        contentDiv.innerHTML = `<div>${
+            events.map(event => createEventCard(event, isPortuguese)).join('')
+        }</div>`;
+        contentDiv.style.visibility = 'visible';
+    }
     
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>11:00</p>
-                <h3>Assembleia Geral</h3>
-                <p>CAFAC <img src="svg/local.svg"></p>
-            </div>
+    buttons.forEach(btn => btn.classList.remove('date-buttons__button--selected'));
+    button.classList.add('date-buttons__button--selected');
     
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>11:00</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>13:00</p>
-                <h3>Almoço</h3>
-                <p>CAFAC <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>14:30</p>
-                <h3>Assembleia Geral</h3>
-                <p>Aula Magna <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>16:00</p>
-                <h3>Pausa para Café</h3>
-                <p>CAFAC <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>16:30</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>19:00</p>
-                <h3>Receção</h3>
-                <p>Câmara Municipal de Viseu <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>19:00</p>
-                <h3>Jantar</h3>
-                <p>LUSOVINI - Nelas <img src="svg/local.svg"></p>
-            </div>
-                </div>`,
-
-        7: `<div>
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>8:30</p>
-                <h3>Registo e Café</h3>
-                <p>Foyer Serviços Centrais <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>9:00</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>10:30</p>
-                <h3>Pausa para Café</h3>
-                <p>CAFAC <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>11:00</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>13:00</p>
-                <h3>Almoço</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>14:30</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>15:30</p>
-                <h3>Pausa para Café</h3>
-                <p>CAFAC <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>16:30</p>
-                <h3>Sessões Paralelas</h3>
-                <p>ESTGV <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>17:30</p>
-                <h3>Cerimónia de Encerramento</h3>
-                <p>Aula Magna <img src="svg/local.svg"></p>
-            </div>
-    
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                <p>20:00</p>
-                <h3>Jantar</h3>
-                <p>Quinta da Magarenha <img src="svg/local.svg"></p>
-            </div>
-                </div>`,
-
-        8: `<div>
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma">
-                    <p>8:30</p>
-                    <h3>Visita a S. Pedro do Sul</h3>
-                    <p>??? <img src="svg/local.svg"></p>
-                </div>
-                </div>`,
-    };
-
-    // Atualiza o conteúdo da div com HTML
-    contentDiv.innerHTML = content[day];
-    contentDiv.style.visibility = 'visible'; // Torna a div visível
-
-    // Adiciona a classe 'selected' para o botão que foi clicado
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('selected');
+    if(isPortuguese)
+    {
+        day = day - 4;
     }
 
-    button.classList.add('selected');
-
-    // Scroll the scrollHorizontalImagens element
-    var scrollPositions = {
-        2: 330, // 01 Abril
-        3: 3905, // 02 Abril
-        4: 10000, // 03 Abril
-    };
-    scrollContainer.scrollLeft = scrollPositions[day];
+    if (SCROLL_POSITIONS[day]) {
+        scrollContainer.scrollLeft = SCROLL_POSITIONS[day];
+    }
 }

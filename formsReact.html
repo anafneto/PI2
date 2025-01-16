@@ -23,30 +23,30 @@
 </head>
 
 <body>
-    <header class="header__grey">
-        <div class="navbar">
-            <img onclick="redirectTo('index.html')" id="logo" class="logo" src="svg/Logotipo.svg" alt="logo">
-            <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
-                <img id="languageIcon" class="icon" 
-                src="svg/PT.svg" alt="Language Icon">
-                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
+    <header class="header header--grey">
+        <div class="header__navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="header__icons">
+                <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
+                    onclick="redirectTo('indexpt.html')">
+                <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
-        <div id="accessibilityBar" class="mobile-menu hidden">
-            <button id="fontSizeButton" onclick="toggleFontSize()">Increase Font</button>
-            <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
+        <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
-        <div id="hamburgerMenu" class="mobile-menu hidden">
-            <button onclick="redirectTo('indextravel.html')">Travel</button>
-            <button onclick="redirectTo('indexvisit.html')">Visit</button>
-            <button onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
+        <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
+            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
+            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
-        <div class="search">
-            <div class="search-container">
-                <input type="text" id="searchbar" class="searchbar">
-                <img src="svg/lupa.svg" alt="lupa">
-                <div id="searchResults" class="search-results"></div>
+        <div class="header__search">
+            <div class="header__search-container">
+                <input type="text" id="searchbar" class="header__searchbar">
+                <img src="svg/lupa.svg" alt="lupa" class="header__search-icon">
+                <div id="searchResults" class="header__search-results"></div>
             </div>
         </div>
     </header>

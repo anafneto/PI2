@@ -19,30 +19,30 @@
 </head>
 
 <body>
-    <header class="header__grey">
-        <div class="navbar">
-            <img onclick="redirectTo('indexpt.html')" id="logo" class="logo" src="svg/Logotipopt.svg" alt="logo">
-            <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Icon Acessibility">
-                <img id="languageIcon" class="icon" 
-                src="svg/ENG.svg" alt="Language Icon" onclick="redirectTo('indextravel.html')">
-                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu Hamburguer">
+    <header class="header header--grey">
+        <div class="header__navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="header__icons">
+                <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
+                    onclick="redirectTo('indexpt.html')">
+                <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
-        <div id="accessibilityBar" class="mobile-menu hidden">
-            <button id="fontSizeButton" onclick="toggleFontSize()">Aumentar Fonte</button>
-            <button id="darkModeButton" onclick="toggleDarkMode()">Modo Escuro</button>
+        <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
-        <div id="hamburgerMenu" class="mobile-menu hidden">
-            <button onclick="redirectTo('indextravelpt.html')">Viagem</button>
-            <button onclick="redirectTo('indexvisitpt.html')">Visitar</button>
-            <button onclick="redirectTo('formsReact.html')">Formulários em React (AI)</button>
+        <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
+            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
+            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
-        <div class="search">
-            <div class="search-container">
-                <input type="text" id="searchbar" class="searchbar">
-                <img src="svg/lupa.svg" alt="lupa">
-                <div id="searchResults" class="search-results"></div>
+        <div class="header__search">
+            <div class="header__search-container">
+                <input type="text" id="searchbar" class="header__searchbar">
+                <img src="svg/lupa.svg" alt="lupa" class="header__search-icon">
+                <div id="searchResults" class="header__search-results"></div>
             </div>
         </div>
     </header>
@@ -147,40 +147,25 @@
             </div>
         </div>
 
-        <footer>
-            <a href="https://ipv.pt" target="_blank"> <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
-            <a href="https://www.uop.gr/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg"
-                    alt="University of Peloponnese Logo"></a>
-            <a href="https://www.uwasa.fi/fi"target="_blank"><img class="imgfooter" src="svg/footerIcons/vasaan.svg"
-                    alt="Vaasan yliopisto Logo"></a>
-            <a href="https://web.umons.ac.be/en/"target="_blank"> <img class="imgfooter" src="svg/footerIcons/umons.svg"
-                    alt="Umons Logo"></a>
-            <a href="https://www.b-tu.de/en/"target="_blank"><img class="imgfooter" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
-            <a href="https://www.unict.it/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDeCatania.svg"
-                    alt="Universitat de Catania Logo"></a>
-            <a href="https://put.poznan.pl/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/poznanska.svg"
-                    alt="Poznanska Logo"></a>
-            <a href="https://web.unican.es/"target="_blank"><img class="imgfooter" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
-            <a href="https://www.kau.se/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/malstads.svg"
-                    alt="Karlstads Universitet Logo"></a>
-            <img class="imgfooter" src="svg/footerIcons/france.svg" alt="france logo">
+        <footer class="footer">
+            <a href="https://ipv.pt" target="_blank"> <img class="footer__img" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
+            <a href="https://www.uop.gr/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDePolo.svg" alt="University of Peloponnese Logo"></a>
+            <a href="https://www.uwasa.fi/fi" target="_blank"><img class="footer__img" src="svg/footerIcons/vasaan.svg" alt="Vaasan yliopisto Logo"></a>
+            <a href="https://web.umons.ac.be/en/" target="_blank"> <img class="footer__img" src="svg/footerIcons/umons.svg" alt="Umons Logo"></a>
+            <a href="https://www.b-tu.de/en/" target="_blank"><img class="footer__img" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
+            <a href="https://www.unict.it/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDeCatania.svg" alt="Universitat de Catania Logo"></a>
+            <a href="https://put.poznan.pl/en" target="_blank"><img class="footer__img" src="svg/footerIcons/poznanska.svg" alt="Poznanska Logo"></a>
+            <a href="https://web.unican.es/" target="_blank"><img class="footer__img" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
+            <a href="https://www.kau.se/en" target="_blank"><img class="footer__img" src="svg/footerIcons/malstads.svg" alt="Karlstads Universitet Logo"></a>
+            <img class="footer__img" src="svg/footerIcons/france.svg" alt="france logo">
             <br>
-            <img class="iconat" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="emailFooter"
-                href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
-            <img class="iconphone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
+            <img class="footer__icon" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="footer__email" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
+            <img class="footer__icon--phone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
             <br>
-    
-            <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank"
-                id="redes-sociais"><img class="iconsocial" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
-    
-            <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="iconsocial"
-                    src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
-    
-            <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="iconsocial"
-                    src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
-    
-            <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="iconsocial"
-                    src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
+            <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank" id="redes-sociais"><img class="footer__social-icon" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
+            <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
+            <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
+            <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
         </footer>
     </body>
 
