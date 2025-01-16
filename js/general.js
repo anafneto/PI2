@@ -79,12 +79,14 @@ function updateInterface(isDarkMode, isPortuguese) {
             domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
             domElements.darkModeButton.textContent = "Light Mode";
             domElements.hero__image.src = "images/hero-dark.png";
+            domElements.hero__image.src = "images/hero-dark.png";
         } else {
             domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
             domElements.accessibilityIcon.src = "svg/Accesibility.svg";
             domElements.hamburgerIcon.src = "svg/hamburger.svg";
             domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
             domElements.darkModeButton.textContent = "Dark Mode";
+            domElements.hero__image.src = "images/1920banner.png";
             domElements.hero__image.src = "images/1920banner.png";
         }
     

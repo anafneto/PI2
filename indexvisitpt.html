@@ -22,21 +22,21 @@
 <body>
     <header class="header header--grey">
         <div class="header__navbar">
-            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <img onclick="redirectTo('indexpt.html')" id="logo" class="header__logo" src="svg/Logotipopt.svg" alt="logo">
             <div class="header__icons">
                 <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
-                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
-                    onclick="redirectTo('indexpt.html')">
+                <img id="languageIcon" class="header__icon" src="svg/ENG.svg" alt="Language Icon"
+                    onclick="redirectTo('indexvisit.html')">
                 <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
         <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
-            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
-            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Aumentar Fonte</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Modo Escuro</button>
         </div>
         <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
-            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
-            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('indextravelpt.html')">Viajem</button>
+            <button class="header__button" onclick="redirectTo('indexvisitpt.html')">Visitar</button>
             <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
         <div class="header__search">
@@ -51,62 +51,61 @@
     <div class="cards-container">
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/seviseu.jpg" alt="sé de viseu">
-            <p class="cards-visit__description"><strong>Viseu Cathedral</strong> began to be built in the 12th century and, over the years,
-                various pieces have been added, resulting in a combination of styles including Romanesque, Manueline,
-                Renaissance and Gothic.</p>
+            <p class="cards-visit__description"><strong>Sé de Viseu</strong> começou a ser construída no século XII e, ao longo dos anos,
+                foram adicionadas várias peças, resultando numa combinação de estilos incluindo Românico, Manuelino,
+                Renascentista e Gótico.</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/pcdWpgBd3BxQkmJfA" target="_blank">
-                <p class="cards-visit__coordinates"> 40° 39′ 35,75″ N, 7° 54′ 39,47″ O <img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"> 40° 39′ 35,75″ N, 7° 54′ 39,47″ O <img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
         <!-- -->
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/igrejamisericordia.png" alt="igreja da misericórdia">
-            <p class="cards-visit__description"><strong>Igreja da Misericórdia’s</strong> chambers are filled with priceless oil paintings and
-                holy objects. Some are portraits of the numerous donors to the church, while others feature religious themes
-                or figures.</p>
+            <p class="cards-visit__description">As câmaras da <strong>Igreja da Misericórdia</strong> estão repletas de pinturas a óleo e
+                objetos sagrados inestimáveis. Alguns são retratos dos numerosos doadores da igreja, enquanto outros apresentam temas
+                ou figuras religiosas.</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/aXDXF4gbVTppMf6X8" target="_blank">
-                <p class="cards-visit__coordinates"><strong>40° 39′ 37″ N, 7° 54′ 43″ W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"><strong>40° 39′ 37″ N, 7° 54′ 43″ W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
         <!-- -->
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/pracadduarte.jpeg" alt="Praça D. Duarte">
-            <p class="cards-visit__description">At the heart of Viseu’s historical centre, the bronze statue of <strong>Rei Duarte</strong>
-                presides over a square lined with cafés and restuarants and backed by the cathedral walls. It’s a great
-                place for people watching and admiring the beautiful old buildings that surround the square.</p>
+            <p class="cards-visit__description">No coração do centro histórico de Viseu, a estátua de bronze do <strong>Rei Duarte</strong>
+                preside sobre uma praça ladeada por cafés e restaurantes e resguardada pelas paredes da catedral. É um ótimo
+                lugar para observar as pessoas e admirar os belos edifícios antigos que rodeiam a praça.</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/v53PRsmQDRXhEmbd8" target="_blank">
-                <p class="cards-visit__coordinates"><strong>40° 39' 34.80" N, 7° 54' 41.61" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"><strong>40° 39' 34.80" N, 7° 54' 41.61" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
         <!-- -->
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/rossio.jpeg" alt="Rossio">
-            <p class="cards-visit__description"><strong>Praça da República</strong> is leafy and flower-filled, with a fountain and
-                merry-go-round. It’s also bordered on one side by an azulejo mural. During festivals and events, there are usually
-                activities in this square but even without extra thrills, the café in the centre is a popular spot with
-                locals.</p>
+            <p class="cards-visit__description">A <strong>Praça da República</strong> é verdejante e repleta de flores, com uma fonte e
+                carrossel. Também é delimitada de um lado por um painel de azulejos. Durante festivais e eventos, costumam haver
+                atividades nesta praça, mas mesmo sem atrações extras, o café no centro é um local popular entre os
+                locais.</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/6jogwWchYxWAME1g9" target="_blank">
-                <p class="cards-visit__coordinates"><strong>40° 39' 27.13" N, 7° 54' 49.89" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"><strong>40° 39' 27.13" N, 7° 54' 49.89" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
         <!-- -->
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/museu.png" alt="museu">
-            <p class="cards-visit__description">Next to Viseu Cathedral, you’ll find <strong>Grão Vasco National Museum</strong>. The museum in
-                his name also houses a fine collection of carved, painted Baroque figurines and other religious objects...
-            </p>
+            <p class="cards-visit__description">Junto à Sé de Viseu, encontra-se o <strong>Museu Nacional Grão Vasco</strong>. O museu em
+                seu nome também abriga uma bela coleção de figurinos barrocos esculpidos e pintados e outros objetos religiosos...</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/TonFnZcYVvMB5nMq7" target="_blank">
-                <p class="cards-visit__coordinates"><strong>40° 39' 36.55" N 7° 54' 39.7" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"><strong>40° 39' 36.55" N 7° 54' 39.7" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
         <!-- -->
         <div class="cards-visit">
             <img class="cards-visit__image" src="images/ruadireita.jpeg" alt="rua direita">
-            <p class="cards-visit__description"><strong>Rua Direita</strong> is well-known for its charmingly retro stores, which are like
-                stepping into a delightful time capsule. These shops are a haven for vintage lovers and offer a truly
-                unique shopping experience that captures the charm of yesteryear.</p>
+            <p class="cards-visit__description">A <strong>Rua Direita</strong> é conhecida pelas suas lojas encantadoramente retro, que são como
+                entrar numa cápsula do tempo deliciosa. Estas lojas são um paraíso para os amantes do vintage e oferecem uma
+                experiência de compras verdadeiramente única que captura o charme de antigamente.</p>
             <a class="cards-visit__link" href="https://maps.app.goo.gl/hH4YhCGjgMeVrQpE6" target="_blank">
-                <p class="cards-visit__coordinates"><strong>40° 39' 31.26" N, 7° 54' 39.38" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="GPS Coordinates Icon"></p>
+                <p class="cards-visit__coordinates"><strong>40° 39' 31.26" N, 7° 54' 39.38" W </strong><img height="16px" class="gps-icon" src="svg/GPSCoordinates.svg" alt="Ícone de Coordenadas GPS"></p>
             </a>
         </div>
     </div>
