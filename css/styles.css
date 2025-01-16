@@ -798,19 +798,19 @@ footer {
     height: 23px;
   }
 
-  .event__cards-programa {
+  .cardsPrograma {
     font-size: 18px;
   }
 
-  .event__cards-programa h3 {
+  .cardsPrograma h3 {
     font-size: 20px;
   }
 
-  .event__descricao-eunice {
+  .hero__description {
     font-size: 18px;
   }
 
-  .event__descricao-eunice strong {
+  .hero__description strong {
     font-size: 18px;
   }
 }
@@ -938,7 +938,7 @@ body.dark-mode .PortoBus p img, .dark-mode .LisboaBus p img, .dark-mode .PortoTr
 body.dark-mode .link {
   color: #f0f0f0;
 }
-/* ====== Inicio Dark Mode ===== */
+/* ====== Fim Dark Mode ===== */
 
 /*Apenas para avaliação em Aplicações para a Internet I */
 /*CSS REACT (AI)*/
