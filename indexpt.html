@@ -20,190 +20,171 @@
 </head>
 
 <body>
-    <header class="header__grey">
-        <div class="navbar">
-            <img onclick="redirectTo('indexpt.html')" id="logo" class="logo" src="svg/Logotipopt.svg" alt="logótipo">
-            <div class="icons">
-                <img id="accessibilityIcon" class="icon" src="svg/Accesibility.svg" alt="Ícone Acessibilidade">
-                <img id="languageIcon" class="icon" src="svg/ENG.svg" alt="Ícone Idioma"
-                    onclick="redirectTo('index.html')">
-                <img id="hamburgerIcon" class="icon" src="svg/hamburger.svg" alt="Menu">
+    <header class="header header--grey">
+        <div class="header__navbar">
+            <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
+            <div class="header__icons">
+                <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
+                    onclick="redirectTo('indexpt.html')">
+                <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
-        <div id="accessibilityBar" class="mobile-menu hidden">
-            <button id="fontSizeButton" onclick="toggleFontSize()">Aumentar Fonte</button>
-            <button id="darkModeButton" onclick="toggleDarkMode()">Modo Escuro</button>
+        <div id="accessibilityBar" class="header__mobile-menu header__mobile-menu--hidden">
+            <button id="fontSizeButton" class="header__button" onclick="toggleFontSize()">Increase Font</button>
+            <button id="darkModeButton" class="header__button" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
-        <div id="hamburgerMenu" class="mobile-menu hidden">
-            <button onclick="redirectTo('indextravelpt.html')">Viagem</button>
-            <button onclick="redirectTo('indexvisitpt.html')">Visitar</button>
-            <button onclick="redirectTo('formsReact.html')">Formulário React (IA)</button>
+        <div id="hamburgerMenu" class="header__mobile-menu header__mobile-menu--hidden">
+            <button class="header__button" onclick="redirectTo('indextravel.html')">Travel</button>
+            <button class="header__button" onclick="redirectTo('indexvisit.html')">Visit</button>
+            <button class="header__button" onclick="redirectTo('formsReact.html')">Forms em React (AI)</button>
         </div>
-        <div class="search">
-            <div class="search-container">
-                <input type="text" id="searchbar" class="searchbar">
-                <img src="svg/lupa.svg" alt="lupa">
-                <div id="searchResults" class="search-results"></div>
+        <div class="header__search">
+            <div class="header__search-container">
+                <input type="text" id="searchbar" class="header__searchbar">
+                <img src="svg/lupa.svg" alt="lupa" class="header__search-icon">
+                <div id="searchResults" class="header__search-results"></div>
             </div>
         </div>
     </header>
 
 
-    <img src="images/1920banner.png" alt="Imagem Herói Eunice">
-
-
-    <p class="descricaoEunice">The General Assembly of <strong>EUNICE European University</strong> will gather partner
+    <img class="hero__image" src="images/1920banner.png" alt="Imagem Herói Eunice">
+    <p class="hero__description">The General Assembly of <strong>EUNICE European University</strong> will gather partner
         universities, in the <strong>Polytechnic of Viseu</strong>, to analyse the progress of the alliance and chart
         future developments.
     </p>
-    <div class="scrollHorizontalImagens" id="scrollHorizontalImagens">
-        <div class="eventcard">
-            <span class="now_next">AGORA</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-01.png" alt="Welcome Dinner">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-02.png" alt="Conference">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-03.png" alt="Workshop">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-04.png" alt="Networking Event">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-05.png" alt="Panel Discussion">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-06.png" alt="Keynote Speech">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-07.png" alt="Lunch Break">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-08.png" alt="Afternoon Session">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-09.png" alt="Evening Reception">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-10.png" alt="Dinner">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-11.png" alt="Morning Session">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-12.png" alt="Coffee Break">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-13.png" alt="Round Table">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-14.png" alt="Closing Ceremony">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-15.png" alt="Farewell Dinner">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-16.png" alt="City Tour">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-17.png" alt="Cultural Event">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-18.png" alt="Networking Lunch">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-19.png" alt="Workshop 2">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-20.png" alt="Panel Discussion 2">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-21.png" alt="Keynote Speech 2">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-22.png" alt="Lunch Break 2">
-        </div>
-        <div class="eventcard">
-            <span class="now_next">A SEGUIR</span>
-            <img src="images/imgScrollHorizontal/pt/ScrollHorizontalPT-23.png" alt="Afternoon Session 2">
-        </div>
-    </div>
 
-
+    <div class="scroll-horizontal-imagens" id="scrollHorizontalImagens">
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NOW</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-01.png" alt="Welcome Dinner">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-02.png" alt="Conference">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-03.png" alt="Workshop">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-04.png" alt="Networking Event">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-05.png" alt="Panel Discussion">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-06.png" alt="Keynote Speech">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-07.png" alt="Lunch Break">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-08.png" alt="Afternoon Session">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-09.png" alt="Evening Reception">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-10.png" alt="Dinner">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-11.png" alt="Morning Session">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-12.png" alt="Coffee Break">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-13.png" alt="Round Table">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-14.png" alt="Closing Ceremony">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-15.png" alt="Farewell Dinner">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-16.png" alt="City Tour">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-17.png" alt="Cultural Event">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-18.png" alt="Networking Lunch">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-19.png" alt="Workshop 2">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-20.png" alt="Panel Discussion 2">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-21.png" alt="Keynote Speech 2">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-22.png" alt="Lunch Break 2">
+        </div>
+        <div class="scroll-horizontal-imagens__event-card">
+            <span class="scroll-horizontal-imagens__now-next">NEXT</span>
+            <img src="images/imgScrollHorizontal/eng/ScrollHorizontalENG-23.png" alt="Afternoon Session 2">
+        </div>
     </div>
 
     <div class="date-buttons">
-        <button class="date-button selected" onclick="changeContent(5, this)">31 Mar</button>
-        <button class="date-button" onclick="changeContent(6, this)">01 Abr</button>
-        <button class="date-button" onclick="changeContent(7, this)">02 Abr</button>
-        <button class="date-button" onclick="changeContent(8, this)">03 Abr</button>
-    </div>
+    <button class="date-buttons__button date-buttons__button--selected" onclick="changeContent(1, this)">31 Mar</button>
+    <button class="date-buttons__button" onclick="changeContent(2, this)">01 Apr</button>
+    <button class="date-buttons__button" onclick="changeContent(3, this)">02 Apr</button>
+    <button class="date-buttons__button" onclick="changeContent(4, this)">03 Apr</button>
+</div>
     <div id="content">
         <div>
-            <div onclick="redirectTo('indexEventpt.html')" class="cardsPrograma" id="Programa">
+            <div onclick="redirectTo('indexEvent.html')" class="cardsPrograma" id="Programa">
                 <p>20:00</p>
-                <h3>Jantar de Boas-vindas</h3>
-                <p>Pousada de Viseu <img src="svg/local.svg" alt="Ícone Localização"></p>
+                <h3>Welcome Dinner</h3>
+                <p>Pousada de Viseu <img src="svg/local.svg" alt="Location Icon"></p>
             </div>
         </div>
     </div>
 
-    <footer>
-        <a href="https://ipv.pt" target="_blank"> <img class="imgfooter" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
-        <a href="https://www.uop.gr/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDePolo.svg"
-                alt="University of Peloponnese Logo"></a>
-        <a href="https://www.uwasa.fi/fi"target="_blank"><img class="imgfooter" src="svg/footerIcons/vasaan.svg"
-                alt="Vaasan yliopisto Logo"></a>
-        <a href="https://web.umons.ac.be/en/"target="_blank"> <img class="imgfooter" src="svg/footerIcons/umons.svg"
-                alt="Umons Logo"></a>
-        <a href="https://www.b-tu.de/en/"target="_blank"><img class="imgfooter" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
-        <a href="https://www.unict.it/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/universidadeDeCatania.svg"
-                alt="Universitat de Catania Logo"></a>
-        <a href="https://put.poznan.pl/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/poznanska.svg"
-                alt="Poznanska Logo"></a>
-        <a href="https://web.unican.es/"target="_blank"><img class="imgfooter" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
-        <a href="https://www.kau.se/en"target="_blank"><img class="imgfooter" src="svg/footerIcons/malstads.svg"
-                alt="Karlstads Universitet Logo"></a>
-        <img class="imgfooter" src="svg/footerIcons/france.svg" alt="france logo">
+    <footer class="footer">
+        <a href="https://ipv.pt" target="_blank"> <img class="footer__img" src="svg/footerIcons/ipv.svg" alt="IPV Logo"></a>
+        <a href="https://www.uop.gr/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDePolo.svg" alt="University of Peloponnese Logo"></a>
+        <a href="https://www.uwasa.fi/fi" target="_blank"><img class="footer__img" src="svg/footerIcons/vasaan.svg" alt="Vaasan yliopisto Logo"></a>
+        <a href="https://web.umons.ac.be/en/" target="_blank"> <img class="footer__img" src="svg/footerIcons/umons.svg" alt="Umons Logo"></a>
+        <a href="https://www.b-tu.de/en/" target="_blank"><img class="footer__img" src="svg/footerIcons/btu.svg" alt="BTU Logo"></a>
+        <a href="https://www.unict.it/en" target="_blank"><img class="footer__img" src="svg/footerIcons/universidadeDeCatania.svg" alt="Universitat de Catania Logo"></a>
+        <a href="https://put.poznan.pl/en" target="_blank"><img class="footer__img" src="svg/footerIcons/poznanska.svg" alt="Poznanska Logo"></a>
+        <a href="https://web.unican.es/" target="_blank"><img class="footer__img" src="svg/footerIcons/UC.svg" alt="UC logo"></a>
+        <a href="https://www.kau.se/en" target="_blank"><img class="footer__img" src="svg/footerIcons/malstads.svg" alt="Karlstads Universitet Logo"></a>
+        <img class="footer__img" src="svg/footerIcons/france.svg" alt="france logo">
         <br>
-        <img class="iconat" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="emailFooter"
-            href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
-        <img class="iconphone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
+        <img class="footer__icon" src="svg/email.svg" alt="Email Icon" id="Contactos"><a class="footer__email" href="mailto:eunice@sc.ipv.pt" target="_blank">eunice@sc.ipv.pt</a>
+        <img class="footer__icon--phone" src="svg/telefone.svg" alt="Phone Icon">+351 232 480 700
         <br>
-
-        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank"
-            id="redes-sociais"><img class="iconsocial" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
-
-        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
-
-        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
-
-        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="iconsocial"
-                src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
+        <a href="https://www.facebook.com/Eunice-European-University-101749955266529" target="_blank" id="redes-sociais"><img class="footer__social-icon" src="images/iconmonstr-facebook-3 1.svg" alt="ipv logo"></a>
+        <a href="https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-youtube-8 1.svg" alt="logo youtube"></a>
+        <a href="https://www.linkedin.com/company/74565706/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-linkedin-3 1.svg" alt="logo linkedin"></a>
+        <a href="https://www.instagram.com/eunice_uni_/" target="_blank"><img class="footer__social-icon" src="images/iconmonstr-instagram-13 1.svg" alt="logo instagram"></a>
     </footer>
 </body>
 

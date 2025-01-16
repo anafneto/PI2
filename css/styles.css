@@ -2,7 +2,6 @@
   --base-font-size: 16px;
 }
 
-/* General Styles */
 * {
   padding: 0;
   margin: 0;
@@ -29,54 +28,45 @@ p {
 }
 
 #content {
-  padding: 0 1rem; /*ADDED THIS (equals 0 16px)*/
+  padding: 0 1rem; 
 }
 
-/* Header Styles */
-.header__grey {
+/*=====================================<header>===================================*/ 
+.header--grey {
   display: inline-block;
   width: 100%;
   z-index: 5;
-  /* height: 70px; */
-  /* margin-top: 15px; */
-  padding: 1rem; /*ADDED THIS (equals 16px) - COMMENTED ABOVE*/
-  position: fixed; /*ADDED THIS*/
-  top: 0; /*ADDED THIS*/
-  background-color: #f4f4f4; /*ADDED THIS*/
-  box-shadow: 0px 0px 5px rgba(206, 206, 206, 0.25); /*ADDED THIS*/
+  padding: 1rem; 
+  position: fixed; 
+  top: 0; 
+  background-color: #f4f4f4; 
+  box-shadow: 0px 0px 5px rgba(206, 206, 206, 0.25);
 }
 
-.logo {
+.header__logo {
   height: 26px; 
   width: auto; 
-  cursor: pointer; /*ADDED THIS*/
+  cursor: pointer; 
   image-rendering: auto;
 }
 
-.icons {
+.header__icons {
   float: right;
   cursor: pointer;
 }
 
-
-/* Search Styles */
-.search {
+.header__search {
   width: 100%;
   text-align: center;
 }
 
-.icon {
+.header__icon {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle;
 }
 
-.gpsIcon {
-  height: 18px;
-  vertical-align: top;
-}
-
-.search-container {
+.header__search-container {
   width: 100%;
   height: 30px;
   display: inline-block;
@@ -88,7 +78,7 @@ p {
   position: relative;
 }
 
-.search-container img {
+.header__search-container img {
   position: absolute;
   height: 16px;
   width: 16px;
@@ -98,7 +88,7 @@ p {
   cursor: pointer;
 }
 
-.searchbar {
+.header__searchbar {
   width: 90%;
   border: none;
   background: transparent;
@@ -108,7 +98,7 @@ p {
   padding-left: 5px;
 }
 
-.search-results {
+.header__search-results {
   display: none;
   position: absolute;
   margin-top: 29px;
@@ -118,63 +108,34 @@ p {
   width: 100%;
 }
 
-.search-result {
+.header__search-result {
   padding: 10px;
   border-radius: 4px;
   border-bottom: 1px solid #eee;
 }
 
-.search-result:hover {
+.header__search-result:hover {
   background-color: #d2d2d2;
   cursor: pointer;
 }
+/*===================================</header>===========================*/
 
-.imagem_Hero {
+/*===========================ELEMENTOS PÁGINA INICIAL=========================*/
+
+/*====hero section====*/
+.hero__image {
   width: 100%;
 }
-
-/* Cards Styles */
-.cardsVisit {
-  display: inline-block;
-  text-align: left;
-  box-shadow: 0 0 0 .03rem #54595E;
-  border-radius: 4px 4px;
-  width: 350px;
-  vertical-align: top;
-  margin: .5rem 1rem;
+.hero__description {
+  margin: 20px 13px;
 }
+/*====fim hero section====*/
 
-.cardsVisit p.description {
-  padding: 16px 25px;
-  min-height: 190px;
-  margin: 0;
-}
 
-.cardsVisit p.coordinates{
-  color: #54595E;
-  font-family: Montserrat;
-  font-size: var(--base-font-size);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-top: 16px;
-  padding: 16px 25px;
-  margin: 0;
-}
-
-.cardsVisit a {
-  text-decoration: none;
-}
-
-.imagemcardvisit {
-  border-radius: 4px 4px 0px 0px;
-  width:100%;
-  height:240px;
-}
-
-.scrollHorizontalImagens {
+/*====scroll horizontal====*/
+.scroll-horizontal-imagens {
   white-space: nowrap;
-  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: move;
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
@@ -186,14 +147,14 @@ p {
   scroll-behavior: smooth;
 }
 
-.scrollHorizontalImagens.active {
+.scroll-horizontal-imagens.active {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
   scroll-behavior: auto;
 }
 
-.scrollHorizontalImagens img {
+.scroll-horizontal-imagens__event-card img {
   display: inline-block;
   height: 213px;
   border-radius: 4px;
@@ -204,28 +165,27 @@ p {
   -ms-user-select: none; 
 }
 
-.scrollHorizontalImagens::-webkit-scrollbar {
+.scroll-horizontal-imagens::-webkit-scrollbar {
   display: none;
 }
 
-.eventcard  {
+.scroll-horizontal-imagens__event-card {
   display: inline-block;
   position: relative;
   margin-right: 4px;
 }
 
-.eventcard:last-child {
+.scroll-horizontal-imagens__event-card:last-child {
   margin-right: 0;
 }
 
-.now_next {
+.scroll-horizontal-imagens__now-next {
   position: absolute;
   top: .5rem;
   left: .5rem;
   padding: 4px 8px;
   border-radius: 4px;
   background: #D5402D;
-
   color: #FFF;
   font-family: Montserrat;
   z-index: 2;
@@ -234,7 +194,282 @@ p {
   font-weight: 700;
   line-height: normal;
 }
+/*==== fim scroll horizontal ====*/
 
+/*==== cards programa e data ====*/
+
+.date-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.date-buttons__button {
+  width: 70px;
+  height: 30px;
+  border: 1px solid #ccc;
+  color: #54595E;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.date-buttons__button:hover {
+  background-color: #ddd;
+}
+
+.date-buttons__button--selected {
+  background-color: #54595E;
+  color: white;
+}
+
+.cardsPrograma {
+  box-shadow: 0 0 0 0.25px #54595e;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background-color: #F1F1F1; 
+  color: #565656;
+}
+.cardsPrograma h6, .cardsPrograma h3, .cardsPrograma p {
+  color: #565656;
+}
+
+/*==== fim cards programa e data====*/
+
+/*==== fim ELEMENTOS PÁGINA INICIAL ====*/
+
+/*===========================ELEMENTOS PÁGINA VISIT=========================*/
+/*==== cards ====*/
+.cards-visit {
+  display: inline-block;
+  text-align: left;
+  box-shadow: 0 0 0 .03rem #54595E;
+  border-radius: 4px 4px;
+  width: 350px;
+  vertical-align: top;
+  margin: .5rem 1rem;
+}
+
+.cards-visit__description {
+  padding: 16px 25px;
+  min-height: 190px;
+  margin: 0;
+}
+
+.cards-visit__coordinates {
+  color: #54595E;
+  font-family: Montserrat;
+  font-size: var(--base-font-size);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 16px;
+  padding: 16px 25px;
+  margin: 0;
+}
+
+.cards-visit__link {
+  text-decoration: none;
+}
+
+.cards-visit__image {
+  border-radius: 4px 4px 0px 0px;
+  width: 100%;
+  height: 240px;
+}
+/*==== fim cards ====*/
+/*===========================fim ELEMENTOS PÁGINA VISIT=========================*/
+
+/*===========================ELEMENTOS PÁGINA TRAVEL=========================*/
+.button-group {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: .5rem;  
+}
+
+.containerInfoTravel_Touch {
+  margin: 0 1rem; 
+}
+
+.containerInfoTravel_Desktop {
+  display: none;
+}
+
+.location-button {
+  display: inline-block;
+  font-size: 15px;
+  width: 49%;
+  height: 37px;
+}
+
+.location-button:last-child,
+.travel-button:last-child {
+  margin-right: 0;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.travel-button {
+  display: inline-block;
+  height: 35px;
+  font-size: 15px;
+  width: calc(50% - 30px);
+  box-sizing: border-box; 
+}
+
+.travel-buttonDesktop {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 35px;
+  width: 150px;
+  background-color: #54595E;
+  color: white;
+  margin-bottom: 1rem;
+}
+.travel-buttonLaptop {
+  display: none;
+}
+
+.location-button,
+.travel-button {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #54595E;
+  line-height: normal;
+}
+
+  .location-button.selected,
+  .travel-button.selected {
+    background-color: #54595E;
+    color: white;
+    font-weight: bold;
+  }
+
+.or-text {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .1rem;
+}
+
+.PortoBus,
+.LisboaBus,
+.PortoTransfer,
+.LisboaTransfer {
+  text-align: left;
+  margin: 20px 1rem;;
+}
+
+.PortoBus p,
+.LisboaBus p,
+.PortoTransfer p,
+.LisboaTransfer p {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: block;
+  align-items: center;
+  min-height: 40px;
+  line-height: 1.5; 
+}
+
+.PortoBus p img,
+.LisboaBus p img,
+.PortoTransfer p img,
+.LisboaTransfer p img {
+  vertical-align: middle;
+  margin-right: 8px; 
+}
+
+.MetroWarning {
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: #54595E;
+  text-decoration: underline;
+}
+/*===========================fim ELEMENTOS PÁGINA TRAVEL=========================*/
+
+/*===========================ELEMENTOS PÁGINA EVENT=========================*/
+.event {
+  padding: 0 1rem;
+}
+
+.event__speaker-card {
+  display: inline-block;
+  margin: 1rem 0;
+  text-align: left;
+  box-shadow: 0 0 0 0.25px #54595E;
+  border-radius: 4px 4px;
+  width: 100%;
+  vertical-align: top;
+}
+
+.event__speaker-card__image {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.event__speaker-card__name {
+  margin-top: 4px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.event__speaker-card__description {
+  padding: .5rem;
+  font-size: 15px;
+}
+
+.event__hora {
+  font-size: 15px;
+}
+
+.event__title {
+  font-size: 22.5px;
+  font-weight: bolder;
+}
+
+.event__local {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.event__description {
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+.event__speakers {
+  font-size: 22.5px;
+  font-weight: bold;
+  margin-top: 32px;
+}
+
+.event__gps-icon {
+  height: 18px;
+  vertical-align: top;
+}
+
+
+/*===========================fim ELEMENTOS PÁGINA EVENT=========================*/
+
+/*==== footer ====*/
 footer {
   background-color: #fff;
   width: 100%;
@@ -249,131 +484,39 @@ footer {
   bottom: 0;
 }
 
-.emailFooter {
-  color:inherit;
+.footer__email {
+  color: inherit;
   text-decoration: none;  
 }
 
-.imgfooter {
+.footer__img {
   display: inline-block;
   vertical-align: middle;
   padding: 0 16px 10px 0;
 }
 
-.iconat {
+.footer__icon {
   vertical-align: middle;
   margin-right: 4px;
 }
 
-.iconphone  {
+.footer__icon--phone {
   margin-left: 26px;
   margin-right: 4px;
   height: 14px;
 }
 
-.iconsocial {
+.footer__social-icon {
   margin-top: 16px;
   margin-right: 4px;
   height: 17px;
 }
+/*==== fim footer ====*/
 
-/* Text Styles */
-.text {
-  padding: 0 1rem;
-}
-
-.speakercard
-{
-  width: 40%;
-  margin: 1rem 0.5rem;
-}
-
-.hora {
-  font-size: 15px;
-}
-
-.title {
-  font-size: 22.5px;
-  font-weight: bolder;
-}
-
-.local {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.description {
-  font-size: 15px;
-  font-weight: normal;
-  margin-top: 8px;
-}
-
-.speakers {
-  font-size: 22.5px;
-  font-weight: bold;
-  margin-top: 32px;
-}
-
-
-.speakercard {
-  display: inline-block;
-  /* margin-top: 16px;
-  margin-bottom: 16px;
-  margin-right: 8px; */
-  margin: 1rem 0rem; /*ADDED THIS (equals 16px 4px) - COMMENTED ABOVE*/
-  text-align: left;
-  box-shadow: 0 0 0 0.25px #54595E;
-  border-radius: 4px 4px;
-  width: 100%; /*CHAGED THIS FROM 176px*/
-  vertical-align: top;
-}
-.speakercard img { /*ADDED THE WHOLE CLASS SELECTOR*/
-  width: 100%;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.nomeED {
-  margin-top: 4px;
-  font-size: 15px;
-  padding-left: 10px;
-}
-
-.descriptionED {
-  /*margin-top: 8px;
-  margin-bottom: 8px;
-  padding-left: 10px;*/
-  padding: .5rem; /*ADDED THIS (equals 8px) - COMMENTED ABOVE*/
-  font-size: 15px;
-}
-
-.descricaoEunice {
-  margin: 20px 13px;
-}
-
-/* Program Cards Styles */
-.cardsPrograma {
-  box-shadow: 0 0 0 0.25px #54595e;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  padding: 16px 24px;
-  margin-top: 10px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  background-color: #F1F1F1; /* Light background */
-  color: #565656; /* Light text color */
-}
-
-.cardsPrograma h6, .cardsPrograma h3, .cardsPrograma p {
-  color: #565656;
-}
-
-
-/* Accessibility Bar Styles */
+/*===== MENUS =====*/
 #accessibilityBar {
   position: absolute;
-  top: 95%; /*ADDED THIS - COMMENTED ABOVE*/
+  top: 95%;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -417,12 +560,11 @@ footer {
   display: block;
 }
 
-/* Hamburger Menu Styles */
 #hamburgerMenu {
-  /* display: none; */
+
   position: absolute;
-  /* top: 105px; */
-  top: 95%; /*ADDED THIS - COMMENTED ABOVE*/
+
+  top: 95%; 
   left: 0;
   width: 100%;
   background-color: #f4f4f4;
@@ -455,238 +597,89 @@ footer {
   color: #000;
 }
 
-/* Date Button Styles */
-.date-buttons {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
 
-.date-button {
-  width: 70px;
-  height: 30px;
-  border: 1px solid #ccc;
-  color: #54595E;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 16px;
-}
-
-.date-button:hover {
-  background-color: #ddd;
-}
-
-.date-button.selected {
-  background-color: #54595E;
-  color: white;
-}
-
-/* Perguntar ao prof fred */
-/* Button Group Styles */
-.button-group {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: .5rem;  
-}
-
-.containerInfoTravel_Touch {
-  margin: 0 1rem; 
-}
-
-.containerInfoTravel_Desktop {
-  display: none;
-}
-
-.location-button {
-  display: inline-block;
-  font-size: 15px;
-  width: 49%;
-  height: 37px;
-}
-
-.location-button:last-child,
-.travel-button:last-child {
-  margin-right: 0;
-}
-
-.button-container {
-  text-align: center; /* Center the buttons and text */
-  width: 100%; /* Ensure the container takes full width */
-}
-
-.travel-button {
-  display: inline-block;
-  height: 35px;
-  font-size: 15px;
-  width: calc(50% - 30px);
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.travel-buttonDesktop {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  height: 35px;
-  width: 150px;
-  background-color: #54595E;
-  color: white;
-  margin-bottom: 1rem;
-}
-.travel-buttonLaptop {
-  display: none;
-}
-
-.location-button,
-.travel-button {
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #54595E;
-  line-height: normal;
-}
-
-  .location-button.selected,
-  .travel-button.selected {
-    background-color: #54595E;
-    color: white;
-    font-weight: bold;
-  }
-
-.or-text {
-  display: inline-block;
-  vertical-align: middle; /* Align the text vertically with the buttons */
-  margin: 0 .1rem;
-}
-
-/* Travel Info Styles */
-/* Travel Info Styles */
-.PortoBus,
-.LisboaBus,
-.PortoTransfer,
-.LisboaTransfer {
-  text-align: left;
-  margin: 20px 1rem;;
-}
-
-.PortoBus p,
-.LisboaBus p,
-.PortoTransfer p,
-.LisboaTransfer p {
-  margin-top: 4px;
-  margin-bottom: 4px;
-  display: block;
-  align-items: center;
-  min-height: 40px;
-  line-height: 1.5; /* Adjust the line height as needed */
-}
-
-.PortoBus p img,
-.LisboaBus p img,
-.PortoTransfer p img,
-.LisboaTransfer p img {
-  vertical-align: middle;
-  margin-right: 8px; /* Adjust the spacing between the icon and the text */
-}
-
-.MetroWarning {
-  font-style: italic;
-  font-size: 12px;
-  margin-bottom: 1rem;
-}
-
-/* Link Styles */
-.link {
-  color: #54595E;
-  text-decoration: underline;
-}
-
-/* Utility Classes */
 .hide {
   display: none;
 }
 
-.cards-container {
-  text-align: center;
-}
+/*===== fim MENUS =====*/
 
+/* ================== media queries ==================*/
 @media only screen and (min-width: 320px) {
-  body{
+  body {
     padding-bottom: calc(197px + 1rem);
   }
 
-  .text {
+  .event {
     padding: 0 1rem;
   }
-  .location-button {
+
+  .event__location-button {
     width: 43%;
     margin-right: 1rem;
   }
-  
-  .speakercard{
+
+  .event__speaker-card {
     width: calc(50% - .7rem);
     margin: 1rem .25rem;
   }
 
-  .travel-button {
+  .event__travel-button {
     width: 45%;
   }
 
-  .descriptionED{
-    min-height: 192px; /*ADDED THIS - NEEDS MEDIA QUERY*/
-    /* min-height: 153px; */
+  .event__speaker-card__description {
+    min-height: 192px;
   }
 }
 
 @media only screen and (min-width: 576px) {
-  body{
+  body {
     padding-bottom: calc(164px + 1rem);
   }
 
-  .text {
+  .event {
     padding: 0 2rem;
   }
 
-  .location-button {
+  .event__location-button {
     width: 45%;
     margin-right: 1rem;
   }
-  
-  .speakercard{
+
+  .event__speaker-card {
     width: calc(33% - .7rem);
     margin: 1rem .25rem;
   }
 
-  .or-text{
+  .event__or-text {
     margin: 0 .6rem;
   }
 
-  .cardsVisit {
+  .event__cards-visit {
     margin-right: 5px;
   }
-  
-  .descriptionED{
+
+  .event__speaker-card__description {
     min-height: 114px;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  body{
+  body {
     padding-top: calc(62px + 1rem);
     padding-bottom: calc(156px + 1rem);
   }
 
-  .location-button {
+  .event__location-button {
     width: 45%;
   }
 
-  .or-text{
+  .event__or-text {
     margin: 0 .5rem;
   }
 
-  .search{
+  .header__search {
     width: 50%;
     position: absolute;
     top: 50%;
@@ -694,72 +687,61 @@ footer {
     transform: translate(-50%, -50%);
   }
 
-  .search-container {
-    width: 100%; 
-    /* margin: 20px auto;  */
-    margin: 0; /*ADDED THIS - COMMENTED ABOVE*/
-    box-shadow: unset; /*ADDED THIS*/
-    background: transparent; /*ADDED THIS*/
+  .header__search-container {
+    width: 100%;
+    margin: 0;
+    box-shadow: unset;
+    background: transparent;
   }
 
-  .searchbar {
-    width: calc(100% - 40px); 
-    padding-left: 10px; 
+  .header__searchbar {
+    width: calc(100% - 40px);
+    padding-left: 10px;
   }
 
-  .search-container img {
+  .header__search-container img {
     right: 15px;
   }
 
-
-  .speakercard {
+  .event__speaker-card {
     display: inline-block;
-    /* margin-top: 16px;
-    margin-bottom: 16px;
-    margin-right: 8px; */
-    margin: 1rem .25rem; /*ADDED THIS (equals 16px 4px) - COMMENTED ABOVE*/
+    margin: 1rem .25rem;
     text-align: left;
     box-shadow: 0 0 0 0.25px #54595E;
     border-radius: 4px 4px;
-    width: calc(25% - .7rem); /*CHAGED THIS FROM 176px*/
-    /* padding-bottom: 8px; */ /*COMMENTED THIS*/
+    width: calc(25% - .7rem);
     vertical-align: top;
   }
 
-  .containerParagrafo {
+  .event__container-paragrafo {
     margin-top: 16px;
-    margin-left:16px;
+    margin-left: 16px;
   }
 
-
-  .cards-container{
+  .event__cards-container {
     text-align: center;
   }
-
 }
 
 @media only screen and (min-width: 992px) {
-  body{
+  body {
     padding-bottom: calc(243px + 1rem);
   }
-  
-  .containerInfoTravel_Touch {
+
+  .event__container-info-travel-touch {
     display: none;
   }
 
-
-  .containerInfoTravel_Desktop {
+  .event__container-info-travel-desktop {
     display: inline-block;
     margin: 0 4rem;
   }
 
-  
-
-  .travel-buttonLaptop {
+  .event__travel-button-laptop {
     display: inline-block;
   }
-  
-  .travel-buttonLaptop {
+
+  .event__travel-button-laptop {
     display: inline-block;
     width: 150px;
     height: 35px;
@@ -769,82 +751,77 @@ footer {
     color: white;
   }
 
-  .containerInfoTravel_Touch {
+  .event__container-info-travel-touch {
     margin: 0 4rem;
   }
 
-  .button-group {
-      display: inline-block;
-      width: 350px;
+  .event__button-group {
+    display: inline-block;
+    width: 350px;
   }
 
-  .button-groupContainer {
+  .event__button-group-container {
     text-align: center;
     height: fit-content;
   }
 
-  .speakercard {
+  .event__speaker-card {
     width: 250px;
   }
 
-  .descriptionED{
+  .event__speaker-card__description {
     min-height: 113px;
   }
-  .imgfooter {
+
+  .footer__img {
     display: inline-block;
     vertical-align: middle;
     padding: 32px 32px 20px 0;
     transform: scale(1.2);
-  
   }
-  .iconat {
+
+  .footer__icon {
     vertical-align: middle;
     margin-right: 4px;
     transform: scale(1.1);
   }
-  
-  .iconphone  {
+
+  .footer__icon--phone {
     margin-left: 26px;
     margin-right: 4px;
     transform: scale(1.1);
   }
-  
-  .iconsocial {
+
+  .footer__social-icon {
     margin-top: 16px;
     margin-right: 4px;
     height: 23px;
   }
 
-  .cardsPrograma{
+  .event__cards-programa {
     font-size: 18px;
   }
 
-  .cardsPrograma h3 {
+  .event__cards-programa h3 {
     font-size: 20px;
   }
 
-  .descricaoEunice{
+  .event__descricao-eunice {
     font-size: 18px;
   }
 
-  .descricaoEunice strong{
+  .event__descricao-eunice strong {
     font-size: 18px;
   }
 }
 
-/*
+/* ================== fim media queries ================== */
 
-
-
-
-
-*/
-
-/* Dark Mode Styles */
+/* ====== Inicio Dark Mode ===== */
 
 body.dark-mode {
   background-color: #191B19;
-  color: #f0f0f0;
+  color: #f1f1f1;
 }
 
 body.dark-mode #accessibilityBar {
@@ -856,12 +833,24 @@ body.dark-mode #accessibilityBar button {
   color: white;
 }
 
-body.dark-mode .date-button.selected {
+/*botões datas programa*/
+body.dark-mode .date-buttons__button--selected {
   border-radius: 4px;
-  border: 0.25px solid #4B4F4B;
-  background: #F5F5F5;
-  color: #000;
+  border: 0.25px solid #4B4F4B !important;
+  background-color: #F5F5F5 !important;
+  color: #000 !important;
 }
+
+body.dark-mode .date-buttons__button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .date-button__button:hover {
+  background-color: lightgrey;
+}
+
 
 body.dark-mode .location-button.selected {
   background-color: white;
@@ -898,32 +887,22 @@ body.dark-mode .travel-buttonDesktop {
 }
 
 
-body.dark-mode .date-button {
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid #555555;
-}
-
-body.dark-mode .date-button:hover {
-  background-color: lightgrey;
-}
-
 body.dark-mode header {
-  background-color: #191B19; /* Dark background for header */
-  color: #f0f0f0; /* Light text color for header */
+  background-color: #191B19; 
+  color: #f0f0f0; 
 }
 
 body.dark-mode header a {
-  color: #f0f0f0; /* Light text color for links in header */
+  color: #f0f0f0; 
 }
 
-body.dark-mode .search-container {
-  background: white; /* Dark background for search container */
+body.dark-mode .header__search-container {
+  background: white; 
   border: 0.5px solid #4B4F4B;
 }
 
 body.dark-mode .search-result {
-  color: #191B19; /* Dark text color for search bar */
+  color: #191B19; 
 }
 
 body.dark-mode #hamburgerMenu {
@@ -940,8 +919,8 @@ body.dark-mode #hamburgerMenu button:hover {
 
 body.dark-mode .cardsPrograma {
   box-shadow: 0 0 0 0.25px #ffffff;
-  background-color: #191B19; /* Dark background */
-  color: #ffffff; /* Dark text color */
+  background-color: #191B19; 
+  color: #ffffff; 
 }
 
 body.dark-mode .cardsPrograma h6, .dark-mode .cardsPrograma h3, .dark-mode .cardsPrograma p {
@@ -959,7 +938,9 @@ body.dark-mode .PortoBus p img, .dark-mode .LisboaBus p img, .dark-mode .PortoTr
 body.dark-mode .link {
   color: #f0f0f0;
 }
+/* ====== Inicio Dark Mode ===== */
 
+/*Apenas para avaliação em Aplicações para a Internet I */
 /*CSS REACT (AI)*/
 #formulario-container {
   width: 600px;
