@@ -72,8 +72,8 @@ function toggleDarkMode() {
 
 // Atualiza os ícones baseado no modo
 function updateInterface() {
-    currentSize = parseInt(getComputedStyle(domElements.body).getPropertyValue('font-size').trim());
-    var isIncreasedFont = currentSize === 24;
+
+    var isIncreasedFont =  localStorage.getItem('fontSize') === '24';
     var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
     var isDarkMode = domElements.body.classList.contains('dark-mode');
 
@@ -240,15 +240,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (isDarkMode) {
         domElements.body.classList.add('dark-mode');
-        updateInterface();
     }
 
     var isIncreasedFont = localStorage.getItem('fontSize') === '24'; 
 
     if(isIncreasedFont) {
         setFontSizeForAllElements('24px');
-        updateInterface();
     }
+    updateInterface();
 });
 
 // Menus
