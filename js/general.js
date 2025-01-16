@@ -12,7 +12,8 @@ var domElements = {
     darkModeButton: document.getElementById("darkModeButton"),
     fontSizeButton: document.getElementById("fontSizeButton"),
     scrollContainer: document.querySelector('.scroll-horizontal-imagens'),
-    hero__image: document.querySelector('.hero__image')  
+    hero__image: document.querySelector('.hero__image'), 
+    hero__description: document.querySelector('.hero__description') 
 };
 
 // =================== FUNÇÕES BÁSICAS ===================
@@ -90,18 +91,30 @@ function updateInterface(isDarkMode, isPortuguese) {
 }
 
 // =================== ACESSIBILIDADE ===================
-// Mudar tamanho da letra
+var originalFontSize = '16px';
+
 function toggleFontSize() {
-    var currentSize = getComputedStyle(domElements.root).getPropertyValue('--base-font-size').trim();
+    var currentSize = parseInt(getComputedStyle(domElements.body).getPropertyValue('font-size').trim());
     
-    if (currentSize === '16px') {
-        domElements.root.style.setProperty('--base-font-size', '24px');
-        domElements.fontSizeButton.textContent = "Resize Font";
-    } else {
-        domElements.root.style.setProperty('--base-font-size', '16px');
+    if (currentSize === parseInt(originalFontSize) || currentSize === 18) {
+        setFontSizeForAllElements('24px');
+        domElements.fontSizeButton.textContent = "Revert Font Size";
+    } else if (currentSize === 24) {
+        setFontSizeForAllElements(originalFontSize);
         domElements.fontSizeButton.textContent = "Increase Font";
+    } else {
+        console.error('Erro: Tamanho de fonte desconhecido');
     }
 }
+
+function setFontSizeForAllElements(size) {
+    var elements = document.querySelectorAll('*');
+    elements.forEach(function(element) {
+        element.style.fontSize = size;
+    });
+}
+
+
 
 // =================== MENUS ===================
 // Abrir e fechar menus
