@@ -58,14 +58,16 @@ function toggleDarkMode() {
     // Adiciona ou remove a classe dark-mode
     if (domElements.body.classList.contains('dark-mode')) {
         domElements.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', false);
         updateInterface();
     } else {
         domElements.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', true);
         updateInterface();
     }
     
     // Guarda a preferência
-    localStorage.setItem('darkMode', domElements.body.classList.contains('dark-mode'));
+
 }
 
 // Atualiza os ícones baseado no modo
@@ -107,10 +109,12 @@ function toggleFontSize() {
     
     if (currentSize === parseInt(originalFontSize) || currentSize === 18) {
         setFontSizeForAllElements('24px');
+        localStorage.setItem('fontSize', '24');
         updateInterface();
 
     } else if (currentSize === 24) {
         setFontSizeForAllElements(originalFontSize);
+        localStorage.setItem('fontSize', '16');
         updateInterface();
 
     } else {
@@ -232,11 +236,18 @@ document.getElementById('searchbar').addEventListener('input', function() {
 // =================== EVENT LISTENERS ===================
 // Quando a página carrega
 document.addEventListener('DOMContentLoaded', function() {
-    var isDarkMode = domElements.body.classList.contains('dark-mode');
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
 
     if (isDarkMode) {
         domElements.body.classList.add('dark-mode');
-        updateInterface(true, isPortuguese);
+        updateInterface();
+    }
+
+    var isIncreasedFont = localStorage.getItem('fontSize') === '24'; 
+
+    if(isIncreasedFont) {
+        setFontSizeForAllElements('24px');
+        updateInterface();
     }
 });
 
