@@ -78,6 +78,7 @@ function updateInterface(isDarkMode, isPortuguese) {
             domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
             domElements.darkModeButton.textContent = "Light Mode";
             domElements.hero__image.src = "images/hero-dark.png";
+            domElements.hero__image.src = "images/hero-dark.png";
         } else {
             domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
             domElements.accessibilityIcon.src = "svg/Accesibility.svg";
@@ -85,23 +86,36 @@ function updateInterface(isDarkMode, isPortuguese) {
             domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
             domElements.darkModeButton.textContent = "Dark Mode";
             domElements.hero__image.src = "images/1920banner.png";
+            domElements.hero__image.src = "images/1920banner.png";
         }
     
 }
 
 // =================== ACESSIBILIDADE ===================
-// Mudar tamanho da letra
+var originalFontSize = '16px';
+
 function toggleFontSize() {
-    var currentSize = getComputedStyle(domElements.root).getPropertyValue('--base-font-size').trim();
+    var currentSize = parseInt(getComputedStyle(domElements.body).getPropertyValue('font-size').trim());
     
-    if (currentSize === '16px') {
-        domElements.root.style.setProperty('--base-font-size', '24px');
-        domElements.fontSizeButton.textContent = "Resize Font";
-    } else {
-        domElements.root.style.setProperty('--base-font-size', '16px');
+    if (currentSize === parseInt(originalFontSize) || currentSize === 18) {
+        setFontSizeForAllElements('24px');
+        domElements.fontSizeButton.textContent = "Revert Font Size";
+    } else if (currentSize === 24) {
+        setFontSizeForAllElements(originalFontSize);
         domElements.fontSizeButton.textContent = "Increase Font";
+    } else {
+        console.error('Erro: Tamanho de fonte desconhecido');
     }
 }
+
+function setFontSizeForAllElements(size) {
+    var elements = document.querySelectorAll('*');
+    elements.forEach(function(element) {
+        element.style.fontSize = size;
+    });
+}
+
+
 
 // =================== MENUS ===================
 // Abrir e fechar menus
