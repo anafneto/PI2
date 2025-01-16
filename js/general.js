@@ -13,7 +13,7 @@ var domElements = {
     fontSizeButton: document.getElementById("fontSizeButton"),
     scrollContainer: document.querySelector('.scroll-horizontal-imagens'),
     hero__image: document.querySelector('.hero__image'), 
-    hero__description: document.querySelector('.hero__description') 
+    hero__description: document.querySelector('.hero__description')
 };
 
 // =================== FUNÇÕES BÁSICAS ===================
@@ -54,15 +54,14 @@ function getTranslatedPage(currentPage) {
 // =================== DARK MODE ===================
 // Mudar entre modo claro e escuro
 function toggleDarkMode() {
-    var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
-    
+
     // Adiciona ou remove a classe dark-mode
     if (domElements.body.classList.contains('dark-mode')) {
         domElements.body.classList.remove('dark-mode');
-        updateInterface(false, isPortuguese);
+        updateInterface();
     } else {
         domElements.body.classList.add('dark-mode');
-        updateInterface(true, isPortuguese);
+        updateInterface();
     }
     
     // Guarda a preferência
@@ -70,26 +69,34 @@ function toggleDarkMode() {
 }
 
 // Atualiza os ícones baseado no modo
-function updateInterface(isDarkMode, isPortuguese) {
+function updateInterface() {
+    currentSize = parseInt(getComputedStyle(domElements.body).getPropertyValue('font-size').trim());
+    var isIncreasedFont = currentSize === 24;
+    var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
+    var isDarkMode = domElements.body.classList.contains('dark-mode');
+
 
         if (isDarkMode) {
             domElements.logo.src = isPortuguese ? "svg/Logotipo_brancopt.svg" : "svg/Logotipo_branco.svg";
             domElements.accessibilityIcon.src = "svg/AccesibilityWhite.svg";
             domElements.hamburgerIcon.src = "svg/hamburgerWhite.svg";
             domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
-            domElements.darkModeButton.textContent = "Light Mode";
-            domElements.hero__image.src = "images/hero-dark.png";
+            domElements.darkModeButton.textContent = isPortuguese ? "Modo Claro" : "Light Mode";
+            domElements.fontSizeButton.textContent = isIncreasedFont ? 
+                (isPortuguese ? "Reverter Fonte" : "Revert Font Size") : 
+                (isPortuguese ? "Aumentar Fonte" : "Increase Font");    
             domElements.hero__image.src = "images/hero-dark.png";
         } else {
             domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
             domElements.accessibilityIcon.src = "svg/Accesibility.svg";
             domElements.hamburgerIcon.src = "svg/hamburger.svg";
             domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
-            domElements.darkModeButton.textContent = "Dark Mode";
+            domElements.darkModeButton.textContent = isPortuguese ? "Modo Escuro" : "Dark Mode";
+            domElements.fontSizeButton.textContent = isIncreasedFont ? 
+                (isPortuguese ? "Reverter Fonte" : "Revert Font Size") : 
+                (isPortuguese ? "Aumentar Fonte" : "Increase Font");
             domElements.hero__image.src = "images/1920banner.png";
-            domElements.hero__image.src = "images/1920banner.png";
-        }
-    
+        } 
 }
 
 // =================== ACESSIBILIDADE ===================
@@ -100,10 +107,12 @@ function toggleFontSize() {
     
     if (currentSize === parseInt(originalFontSize) || currentSize === 18) {
         setFontSizeForAllElements('24px');
-        domElements.fontSizeButton.textContent = "Revert Font Size";
+        updateInterface();
+
     } else if (currentSize === 24) {
         setFontSizeForAllElements(originalFontSize);
-        domElements.fontSizeButton.textContent = "Increase Font";
+        updateInterface();
+
     } else {
         console.error('Erro: Tamanho de fonte desconhecido');
     }
@@ -223,9 +232,8 @@ document.getElementById('searchbar').addEventListener('input', function() {
 // =================== EVENT LISTENERS ===================
 // Quando a página carrega
 document.addEventListener('DOMContentLoaded', function() {
-    var isDarkMode = localStorage.getItem('darkMode') === 'true';
-    var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
-    
+    var isDarkMode = domElements.body.classList.contains('dark-mode');
+
     if (isDarkMode) {
         domElements.body.classList.add('dark-mode');
         updateInterface(true, isPortuguese);
