@@ -12,9 +12,50 @@ var domElements = {
     darkModeButton: document.getElementById("darkModeButton"),
     fontSizeButton: document.getElementById("fontSizeButton"),
     scrollContainer: document.querySelector('.scroll-horizontal-imagens'),
-    hero__image: document.querySelector('.hero__image'), 
+    hero__image: document.querySelector('.hero__image'),
     hero__description: document.querySelector('.hero__description')
 };
+
+// Quando a página carrega
+document.addEventListener('DOMContentLoaded', function () {
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    var pendingEvent = sessionStorage.getItem('pendingEvent');
+
+    if (isDarkMode) {
+        domElements.body.classList.add('dark-mode');
+    }
+
+    var isIncreasedFont = localStorage.getItem('fontSize') === '24';
+
+    if (isIncreasedFont) {
+        setFontSizeForAllElements('24px');
+    }
+    updateInterface();
+
+    if (pendingEvent) {
+        var eventData = JSON.parse(pendingEvent);
+        var targetButton = document.querySelector('.date-buttons__button[data-day="' + eventData.day + '"]');
+        
+        if (targetButton) {
+            targetButton.click();
+            
+            setTimeout(function() {
+                var eventCards = document.querySelectorAll('.cardsPrograma');
+                var targetCard = Array.from(eventCards).find(function(card) {
+                    return card.textContent.includes(eventData.name);
+                });
+                
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+        
+        // Clear stored event
+        sessionStorage.removeItem('pendingEvent');
+    }
+});
+
 
 // =================== FUNÇÕES BÁSICAS ===================
 // Mudar de página
@@ -38,9 +79,9 @@ function getTranslatedPage(currentPage) {
     if (!currentPage) {
         return 'index.html';
     }
-    
+
     var pageName = currentPage.replace('.html', '');
-    
+
     // indexOf retorna -1 se não encontrar (Procura o index da primeira instância de "pt")
     if (pageName.indexOf('pt') !== -1) {
         // Se tem 'pt', remove para versão inglesa
@@ -65,7 +106,7 @@ function toggleDarkMode() {
         localStorage.setItem('darkMode', true);
         updateInterface();
     }
-    
+
     // Guarda a preferência
 
 }
@@ -73,32 +114,32 @@ function toggleDarkMode() {
 // Atualiza os ícones baseado no modo
 function updateInterface() {
 
-    var isIncreasedFont =  localStorage.getItem('fontSize') === '24';
+    var isIncreasedFont = localStorage.getItem('fontSize') === '24';
     var isPortuguese = getCurrentPage().indexOf('pt') !== -1;
     var isDarkMode = domElements.body.classList.contains('dark-mode');
 
 
-        if (isDarkMode) {
-            domElements.logo.src = isPortuguese ? "svg/Logotipo_brancopt.svg" : "svg/Logotipo_branco.svg";
-            domElements.accessibilityIcon.src = "svg/AccesibilityWhite.svg";
-            domElements.hamburgerIcon.src = "svg/hamburgerWhite.svg";
-            domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
-            domElements.darkModeButton.textContent = isPortuguese ? "Modo Claro" : "Light Mode";
-            domElements.fontSizeButton.textContent = isIncreasedFont ? 
-                (isPortuguese ? "Reverter Fonte" : "Revert Font Size") : 
-                (isPortuguese ? "Aumentar Fonte" : "Increase Font");    
-            domElements.hero__image.src = "images/hero-dark.png";
-        } else {
-            domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
-            domElements.accessibilityIcon.src = "svg/Accesibility.svg";
-            domElements.hamburgerIcon.src = "svg/hamburger.svg";
-            domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
-            domElements.darkModeButton.textContent = isPortuguese ? "Modo Escuro" : "Dark Mode";
-            domElements.fontSizeButton.textContent = isIncreasedFont ? 
-                (isPortuguese ? "Reverter Fonte" : "Revert Font Size") : 
-                (isPortuguese ? "Aumentar Fonte" : "Increase Font");
-            domElements.hero__image.src = "images/1920banner.png";
-        } 
+    if (isDarkMode) {
+        domElements.logo.src = isPortuguese ? "svg/Logotipo_brancopt.svg" : "svg/Logotipo_branco.svg";
+        domElements.accessibilityIcon.src = "svg/AccesibilityWhite.svg";
+        domElements.hamburgerIcon.src = "svg/hamburgerWhite.svg";
+        domElements.languageIcon.src = isPortuguese ? "svg/ENGWhite.svg" : "svg/PTWhite.svg";
+        domElements.darkModeButton.textContent = isPortuguese ? "Modo Claro" : "Light Mode";
+        domElements.fontSizeButton.textContent = isIncreasedFont ?
+            (isPortuguese ? "Reverter Fonte" : "Revert Font Size") :
+            (isPortuguese ? "Aumentar Fonte" : "Increase Font");
+        domElements.hero__image.src = "images/hero-dark.png";
+    } else {
+        domElements.logo.src = isPortuguese ? "svg/Logotipopt.svg" : "svg/Logotipo.svg";
+        domElements.accessibilityIcon.src = "svg/Accesibility.svg";
+        domElements.hamburgerIcon.src = "svg/hamburger.svg";
+        domElements.languageIcon.src = isPortuguese ? "svg/ENG.svg" : "svg/PT.svg";
+        domElements.darkModeButton.textContent = isPortuguese ? "Modo Escuro" : "Dark Mode";
+        domElements.fontSizeButton.textContent = isIncreasedFont ?
+            (isPortuguese ? "Reverter Fonte" : "Revert Font Size") :
+            (isPortuguese ? "Aumentar Fonte" : "Increase Font");
+        domElements.hero__image.src = "images/1920banner.png";
+    }
 }
 
 // =================== ACESSIBILIDADE ===================
@@ -106,7 +147,7 @@ var originalFontSize = '16px';
 
 function toggleFontSize() {
     var currentSize = parseInt(getComputedStyle(domElements.body).getPropertyValue('font-size').trim());
-    
+
     if (currentSize === parseInt(originalFontSize) || currentSize === 18) {
         setFontSizeForAllElements('24px');
         localStorage.setItem('fontSize', '24');
@@ -124,7 +165,7 @@ function toggleFontSize() {
 
 function setFontSizeForAllElements(size) {
     var elements = document.querySelectorAll('*');
-    elements.forEach(function(element) {
+    elements.forEach(function (element) {
         element.style.fontSize = size;
     });
 }
@@ -138,7 +179,7 @@ function toggleMenu(menuToToggle, menuToClose) {
     if (menuToClose && menuToClose.classList.contains("open")) {
         menuToClose.classList.remove("open");
     }
-    
+
     // Abre ou fecha menu selecionado
     if (menuToToggle) {
         menuToToggle.classList.toggle("open");
@@ -175,95 +216,172 @@ function handleMouseMove(event) {
 // =================== SEARCH BAR ===================
 // Função para lidar com a pesquisa
 
-document.getElementById('searchbar').addEventListener('input', function() {
+
+document.getElementById('searchbar').addEventListener('input', function () {
     var query = this.value.toLowerCase();
     var resultsContainer = document.getElementById('searchResults');
-    var accessibilityMenu = document.getElementById('accessibilityMenu'); // Assuming the menu has this ID
-    var hamburgerMenu = document.getElementById('hamburgerMenu'); // Assuming the menu has this ID
+    var searchbar = this;
+    var isPortuguese = localStorage.getItem('language') === 'pt';
 
-
-    // Close accessibility and hamburger menus if they are open
-    if (accessibilityMenu && accessibilityMenu.classList.contains('open')) {
-        accessibilityMenu.classList.remove('open');
+    // Fecha menus se estiverem abertos
+    if (domElements.accessibilityBar.classList.contains('open')) {
+        domElements.accessibilityBar.classList.remove('open');
     }
-    if (hamburgerMenu && hamburgerMenu.classList.contains('open')) {
-        hamburgerMenu.classList.remove('open');
+    if (domElements.hamburgerMenu.classList.contains('open')) {
+        domElements.hamburgerMenu.classList.remove('open');
     }
 
-    resultsContainer.innerHTML = ''; // Clear previous results
+    resultsContainer.innerHTML = '';
 
     if (query) {
         var results = searchItems(query);
+        
+        // Cria elementos para cada item encontrado
         results.forEach(function (result) {
             var resultElement = document.createElement('div');
             resultElement.classList.add('header__search-result');
             resultElement.textContent = result.name;
+            
+            // Adiciona click handler para cada resultado
             resultElement.addEventListener('click', function () {
-                window.location = result.url;
+                searchbar.value = '';
+                resultsContainer.style.display = 'none';
+                
+                if (result.onClick) {
+                    result.onClick();
+                } else {
+                    window.location.href = result.url;
+                }
             });
             resultsContainer.appendChild(resultElement);
         });
-        resultsContainer.style.display = 'block'; // Mostrar container de resultados
+        resultsContainer.style.display = 'block';
     } else {
-        resultsContainer.style.display = 'none'; // Ocultar container de resultados
+        resultsContainer.style.display = 'none';
     }
-    
-    
+
     function searchItems(query) {
-        var items = [
+        var allEvents = isPortuguese ? eventsPT : eventsEN;
+        var eventSearchItems = [];
+
+        // Converte objeto de eventos num array pesquisável
+        // Object.entries() transforma objeto em array de pares [chave, valor]
+        Object.entries(allEvents).forEach(function([day, events]) {
+            events.forEach(function(event) {
+                eventSearchItems.push({
+                    name: event.title,
+                    url: 'index' + (isPortuguese ? 'pt' : '') + '.html',
+                    day: isPortuguese ? parseInt(day) - 4 : parseInt(day)
+                });
+            });
+        });
+
+        // Define itens adicionais baseado no idioma
+        var OtherItems = getOtherSearchItems(isPortuguese);
+
+        // Concatena eventos com outros itens
+        var items = eventSearchItems.concat(OtherItems);
+
+        // Filtra itens baseado na pesquisa (query)
+        var results = items.filter(function(item) {
+            return item.name.toLowerCase().includes(query.toLowerCase());
+        });
+
+        // Adiciona handlers para eventos do programa
+        results.forEach(function(result) {
+            if (result.day) {
+                result.onClick = createEventClickHandler(result);
+            }
+        });
+
+        return results;
+    }
+});
+
+// Função helper para criar handler de click em eventos
+function createEventClickHandler(result) {
+    return function() {
+        var currentUrl = window.location.href;
+        var isOnCorrectPage = currentUrl.includes('indexpt.html') || currentUrl.includes('index.html');
+        var targetButton = document.querySelector('.date-buttons__button[data-day="' + result.day + '"]');
+        
+        function handleDayButton() {
+            if (targetButton) {
+                targetButton.click();
+                
+                // Atualiza antes de dar scroll
+                setTimeout(function() {
+                    var eventCards = document.querySelectorAll('.cardsPrograma');
+                    var targetCard = Array.from(eventCards).find(function(card) {
+                        return card.textContent.includes(result.name);
+                    });
+                    
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        }
+
+        if (!isOnCorrectPage) {
+            sessionStorage.setItem('pendingEvent', JSON.stringify({
+                day: result.day,
+                name: result.name
+            }));
+            window.location.href = result.url;
+        } else {
+            handleDayButton();
+        }
+    };
+}
+
+// Helper para items de pesquisa baseado no idioma
+function getOtherSearchItems(isPortuguese) {
+    return isPortuguese ? 
+        [
+            { name: 'Viajar do Porto e de Lisboa', url: 'indextravelpt.html#porto' },
+            { name: 'EUNICE Universidade Europeia', url: 'indexpt.html#eunice' },
+            { name: 'Assembleia Geral', url: 'indexpt.html#assembly' },
+            { name: 'Descrição de evento', url: 'indexEventpt.html#event' },
+            { name: 'Instagram', url: 'https://www.instagram.com/eunice_uni_/' },
+            { name: 'LinkedIn', url: 'https://www.linkedin.com/company/74565706/' },
+            { name: 'YouTube', url: 'https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg' },
+            { name: 'Transporte', url: 'indextravelpt.html#transfer' },
+            { name: 'Contactos', url: 'indexpt.html#Contactos' },
+            { name: 'Redes Sociais', url: 'indexpt.html#redes-sociais' },
+            { name: 'Programa Eunice', url: 'indexpt.html#Programa' }
+        ] : 
+        [
             { name: 'Travel From Porto & Lisbon', url: 'indextravel.html#porto' },
             { name: 'EUNICE European University', url: 'index.html#eunice' },
             { name: 'General Assembly', url: 'index.html#assembly' },
-            { name: 'Event Description', url: 'indexEventDescription.html#event' },
+            { name: 'Event Description', url: 'indexEvent.html#event' },
             { name: 'Instagram', url: 'https://www.instagram.com/eunice_uni_/' },
             { name: 'LinkedIn', url: 'https://www.linkedin.com/company/74565706/' },
             { name: 'YouTube', url: 'https://www.youtube.com/channel/UCXmj6Fg2Nev0Y12MbtcvFqg' },
             { name: 'Transport', url: 'indextravel.html#transfer' },
-            { name: 'Contactos', url: '#Contactos' },
-            { name: 'Redes Sociais', url: '#redes-sociais' },
-            { name: 'Programa Eunice', url: 'index.html#Programa' }
+            { name: 'Contacts', url: 'index.html#Contactos' },
+            { name: 'Socials', url: 'index.html#redes-sociais' },
+            { name: 'Eunice Program', url: 'index.html#Programa' }
         ];
-        
-        return items.filter(function (item) {
-            return item.name.toLowerCase().includes(query.toLowerCase());
-        });
-    }
-    
-    
+}
 
-});
-
-// =================== EVENT LISTENERS ===================
-// Quando a página carrega
-document.addEventListener('DOMContentLoaded', function() {
-    var isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-    if (isDarkMode) {
-        domElements.body.classList.add('dark-mode');
-    }
-
-    var isIncreasedFont = localStorage.getItem('fontSize') === '24'; 
-
-    if(isIncreasedFont) {
-        setFontSizeForAllElements('24px');
-    }
-    updateInterface();
-});
+// =================== OTHER EVENT LISTENERS ===================
 
 // Menus
-domElements.hamburgerIcon.addEventListener("click", function() {
+domElements.hamburgerIcon.addEventListener("click", function () {
     toggleMenu(domElements.hamburgerMenu, domElements.accessibilityBar);
 });
 
-domElements.accessibilityIcon.addEventListener("click", function() {
+domElements.accessibilityIcon.addEventListener("click", function () {
     toggleMenu(domElements.accessibilityBar, domElements.hamburgerMenu);
 });
 
 // Idioma
-domElements.languageIcon.addEventListener("click", function() {
+domElements.languageIcon.addEventListener("click", function () {
     var currentPage = getCurrentPage();
     var isPortuguese = currentPage.indexOf('pt') !== -1;
-    
+
     localStorage.setItem('language', isPortuguese ? 'en' : 'pt');
     redirectTo(getTranslatedPage(currentPage));
 });
@@ -273,4 +391,5 @@ domElements.scrollContainer.addEventListener('mousedown', handleMouseDown);
 domElements.scrollContainer.addEventListener('mouseleave', handleMouseUp);
 domElements.scrollContainer.addEventListener('mouseup', handleMouseUp);
 domElements.scrollContainer.addEventListener('mousemove', handleMouseMove);
+
 

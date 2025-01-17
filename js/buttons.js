@@ -172,7 +172,7 @@ function changeInfo() {
 function createEventCard(event, isPortuguese) {
     var targetPage = isPortuguese ? 'indexEventpt.html' : 'indexEvent.html';
     return `
-        <div onclick="redirectTo('${targetPage}')" class="cardsPrograma">
+        <div onclick="redirectTo('${targetPage}')" class="cardsPrograma" id="Programa">
             <p>${event.time}</p>
             <h3>${event.title}</h3>
             <p>${event.location} <img src="svg/local.svg"></p>

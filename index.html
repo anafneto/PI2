@@ -25,8 +25,7 @@
             <img onclick="redirectTo('index.html')" id="logo" class="header__logo" src="svg/Logotipo.svg" alt="logo">
             <div class="header__icons">
                 <img id="accessibilityIcon" class="header__icon" src="svg/Accesibility.svg" alt="Icon Accessibility">
-                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon"
-                    onclick="redirectTo('indexpt.html')">
+                <img id="languageIcon" class="header__icon" src="svg/PT.svg" alt="Language Icon">
                 <img id="hamburgerIcon" class="header__icon" src="svg/hamburger.svg" alt="Menu Hamburger">
             </div>
         </div>
@@ -151,10 +150,10 @@
     </div>
 
     <div class="date-buttons">
-    <button class="date-buttons__button date-buttons__button--selected" onclick="changeContent(1, this)">31 Mar</button>
-    <button class="date-buttons__button" onclick="changeContent(2, this)">01 Apr</button>
-    <button class="date-buttons__button" onclick="changeContent(3, this)">02 Apr</button>
-    <button class="date-buttons__button" onclick="changeContent(4, this)">03 Apr</button>
+    <button class="date-buttons__button date-buttons__button--selected" data-day="1" onclick="changeContent(1, this)">31 Mar</button>
+    <button class="date-buttons__button" data-day="2" onclick="changeContent(2, this)">01 Apr</button>
+    <button class="date-buttons__button" data-day="3" onclick="changeContent(3, this)">02 Apr</button>
+    <button class="date-buttons__button" data-day="4" onclick="changeContent(4, this) ">03 Apr</button>
 </div>
     <div id="content">
         <div>
