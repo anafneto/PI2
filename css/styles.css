@@ -270,6 +270,7 @@ p {
     right: 24px;
     top: 36%;
     transition: transform 0.3s ease;
+    fill: #656765;
 }
 
 .hide {
@@ -633,6 +634,7 @@ footer {
   display: block;
 }
 
+
 #hamburgerMenu {
 
   position: absolute;
@@ -745,7 +747,7 @@ footer {
 
   .cardsPrograma__arrowDown {
     max-width: 20px;
-    max-height: 20px
+    max-height: 20px;
   }
 
   .scroll-horizontal-imagens__event-card img {
@@ -1052,4 +1054,8 @@ body.dark-mode .info--travel--icon {
 
 body.dark-mode .header__search-results {
   color: #191B19;
+}
+
+body.dark-mode .cardsPrograma__arrowDown {
+  fill: #f1f1f1;
 }

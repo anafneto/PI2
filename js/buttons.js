@@ -223,7 +223,9 @@ function createEventCard(event, isPortuguese) {
                             <h3>${event.title}</h3>
                             <p>${event.location} <img src="svg/local.svg" alt="location icon"></p>
                         </div>
-                        <img src="svg/arrowDown.svg" class="cardsPrograma__arrowDown" alt="arrow down">
+                        <svg viewBox="0 0 256 256" class="cardsPrograma__arrowDown">
+                        <path class="st0" d="M254.3,69.5c0-2.5-1-5-2.9-7-3.8-3.8-10.1-3.8-13.9,0l-109.7,109.7L18.2,62.6c-3.8-3.8-10.1-3.8-13.9,0-3.8,3.8-3.8,10.1,0,13.9l116.6,116.6c3.8,3.8,10.1,3.8,13.9,0l116.6-116.6c1.9-1.9,2.9-4.4,2.9-7Z"/>
+                        </svg>
                     </div>
                     <div class="cardsPrograma__separator hide"></div>
                     <div class="cardsPrograma__parallel hide">
