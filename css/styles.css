@@ -235,7 +235,54 @@ p {
   cursor: pointer;
   background-color: #F1F1F1; 
   color: #565656;
+  position: relative;
 }
+
+/* separaçao */
+.cardsPrograma__separator {
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+/* parallel sessions */
+.cardsPrograma__main {
+    position: relative;
+    cursor: pointer;
+}
+
+.cardsPrograma__parallel {
+    margin-top: 1rem;
+}
+
+.cardsPrograma__session {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cardsPrograma__session:last-child {
+    border-bottom: none;
+}
+
+.cardsPrograma__arrowDown {
+    max-width: 16px;
+    max-height: 16px;
+    position: absolute;
+    right: 24px;
+    top: 36%;
+    transition: transform 0.3s ease;
+}
+
+.hide {
+    display: none;
+}
+
+.link-style {
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 .cardsPrograma h6, .cardsPrograma h3, .cardsPrograma p {
   color: #565656;
 }
@@ -696,6 +743,11 @@ footer {
     padding-bottom: calc(156px + 1rem);
   }
 
+  .cardsPrograma__arrowDown {
+    max-width: 20px;
+    max-height: 20px
+  }
+
   .scroll-horizontal-imagens__event-card img {
     height: 213px;
   }
@@ -1000,67 +1052,4 @@ body.dark-mode .info--travel--icon {
 
 body.dark-mode .header__search-results {
   color: #191B19;
-}
-
-/*Apenas para avaliação em Aplicações para a Internet I */
-/*CSS REACT (AI)*/
-#formulario-container {
-  width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 12px;
-  background: #f0f0f3;
-  box-shadow: 5px 5px 15px #d1d1d1, -5px -5px 15px #ffffff;
-}
-
-#formulario-container h1 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-}
-
-#formulario-container form {
-  padding: 0;
-}
-
-
-#formulario-container input[type="email"],
-#formulario-container input[type="text"],
-#formulario-container textarea {
-  width: 100%;
-  margin: 10px 0; /* Espaçamento vertical entre os campos */
-  padding: 10px;
-  border: none;
-  background: none; /* Remove fundo */
-  box-shadow: none; /* Remove sombras */
-  font-size: 14px;
-  color: #333;
-}
-
-#formulario-container textarea {
-  height: 100px;
-}
-
-#formulario-container input::placeholder,
-#formulario-container textarea::placeholder {
-  color: #aaa;
-}
-
-#formulario-container button {
-  display: inline-block; 
-  margin-top: 20px;
-  padding: 10px 40px;
-  border: none;
-  border-radius: 50px;
-  background: #f0f0f3;
-  box-shadow: 5px 5px 15px #d1d1d1, -5px -5px 15px #ffffff;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-#formulario-container button:hover {
-  box-shadow: 3px 3px 8px #d1d1d1, -3px -3px 8px #ffffff;
 }

@@ -3,7 +3,8 @@ var contentDiv = document.getElementById('content');
 var buttons = document.querySelectorAll('.date-buttons__button');
 var scrollContainer = document.querySelector('.scroll-horizontal-imagens');
 
-// Dados dos eventos - EN
+// Dados dos eventos - EN 
+// IN PARALLEL SECTIONS, TIME CAN BE USED FOR LINK. CHANGE FOR RELEASE :)
 var eventsEN = {
     1: [
         { time: '20:00', title: 'Welcome Dinner', location: 'Pousada de Viseu' }
@@ -13,17 +14,45 @@ var eventsEN = {
         { time: '9:00', title: 'Campus Tour', location: 'ESTGV' },
         { time: '10:00', title: 'Welcome and Opening', location: 'Aula Magna' },
         { time: '11:00', title: 'General Assembly', location: 'CAFAC' },
-        { time: '11:00', title: 'Parallel Sessions', location: 'ESTGV' },
+        { 
+            time: '11:00', 
+            title: 'Parallel Sessions', 
+            location: 'ESTGV',
+            parallel: [
+                { time: 'More info', title: 'Session B: Web Dev', location: 'Room B1' },
+                { time: 'More info', title: 'Session C: Mobile', location: 'Room C1' }
+            ]
+        },
         { time: '13:00', title: 'Lunch', location: 'CAFAC' },
         { time: '14:30', title: 'General Assembly', location: 'Aula Magna' },
         { time: '16:00', title: 'Coffee Break', location: 'CAFAC' },
-        { time: '16:30', title: 'Parallel Sessions', location: 'ESTGV' },
+        { 
+            time: '16:30', 
+            title: 'Parallel Sessions', 
+            location: 'ESTGV',
+            parallel: [
+                { time: '', title: 'Session 2A – EUNICE General Assembly', location: 'Senate Hall 4.40 | Main Building (HG)' },
+                { time: '', title: 'Session 2B | REUNICE Meeting', location: '7th floor | IKMZ' },
+                { time: '', title: 'Session 2C | PMT Meeting', location: 'Room 4.04 | Main Building (HG)' },
+                { time: '', title: 'Session 2D | MTF & WP3 Meeting', location: 'Room 4.29 | Main Building (HG)' },
+                { time: '', title: 'Session 2E | Language Group Meeting', location: 'Room 0.16 | Main Building (HG)' }
+            ]
+        },
         { time: '19:00', title: 'Reception', location: 'Câmara Municipal de Viseu' },
         { time: '19:00', title: 'Dinner', location: 'LUSOVINI - Nelas' }
     ],
     3: [
         { time: '8:30', title: 'Registration & Coffee', location: 'Foyer Central Services' },
-        { time: '9:00', title: 'Parallel Sessions', location: 'ESTGV' },
+        { 
+            time: '9:00', 
+            title: 'Parallel Sessions', 
+            location: 'ESTGV',
+            parallel: [
+                { time: '', title: 'Sample Session A', location: 'Room A1' },
+                { time: '', title: 'Sample Session B', location: 'Room B1' },
+                { time: '', title: 'Sample Session C', location: 'Room C1' }
+            ]
+        },
         { time: '10:30', title: 'Coffee Break', location: 'CAFAC' },
         { time: '11:00', title: 'Parallel Sessions', location: 'ESTGV' },
         { time: '13:00', title: 'Lunch', location: 'ESTGV' },
@@ -51,7 +80,18 @@ var eventsPT = {
         { time: '11:00', title: 'Sessões Paralelas', location: 'ESTGV' },
         { time: '13:00', title: 'Almoço', location: 'CAFAC' },
         { time: '14:30', title: 'Assembleia Geral', location: 'Aula Magna' },
-        { time: '16:00', title: 'Pausa para Café', location: 'CAFAC' },
+        { 
+            time: '16:30', 
+            title: 'Sessões Paralelas', 
+            location: 'ESTGV',
+            parallel: [
+                { time: '', title: 'Sessão 2A – Assembleia Geral EUNICE', location: 'Sala do Senado 4.40 | Edifício Principal (HG)' },
+                { time: '', title: 'Sessão 2B | Reunião REUNICE', location: '7º andar | IKMZ' },
+                { time: '', title: 'Sessão 2C | Reunião PMT', location: 'Sala 4.04 | Edifício Principal (HG)' },
+                { time: '', title: 'Sessão 2D | Reunião MTF & WP3', location: 'Sala 4.29 | Edifício Principal (HG)' },
+                { time: '', title: 'Sessão 2E | Reunião do Grupo de Línguas', location: 'Sala 0.16 | Edifício Principal (HG)' }
+            ]
+        },
         { time: '16:30', title: 'Sessões Paralelas', location: 'ESTGV' },
         { time: '19:00', title: 'Receção', location: 'Câmara Municipal de Viseu' },
         { time: '19:00', title: 'Jantar', location: 'LUSOVINI - Nelas' }
@@ -171,13 +211,56 @@ function changeInfo() {
 // Função para criar carta 
 function createEventCard(event, isPortuguese) {
     var targetPage = isPortuguese ? 'indexEventpt.html' : 'indexEvent.html';
-    return `
-        <div onclick="redirectTo('${targetPage}')" class="cardsPrograma" id="Programa">
-            <p>${event.time}</p>
-            <h3>${event.title}</h3>
-            <p>${event.location} <img src="svg/local.svg"></p>
-        </div>
-    `;
+    var isParallel = event.title.toLowerCase().includes('parallel') || 
+                     event.title.toLowerCase().includes('paralela');
+
+        if(isParallel) {
+            return `
+                <div class="cardsPrograma" id="Programa">
+                    <div class="cardsPrograma__main" onclick="toggleParallel(this, '.cardsPrograma__separator, .cardsPrograma__parallel')">
+                        <div class="cardsPrograma__content">
+                            <p>${event.time}</p>
+                            <h3>${event.title}</h3>
+                            <p>${event.location} <img src="svg/local.svg" alt="location icon"></p>
+                        </div>
+                        <img src="svg/arrowDown.svg" class="cardsPrograma__arrowDown" alt="arrow down">
+                    </div>
+                    <div class="cardsPrograma__separator hide"></div>
+                    <div class="cardsPrograma__parallel hide">
+                        ${event.parallel ? event.parallel.map(session => `
+                            <div class="cardsPrograma__session">
+                                <p class="link-style" onclick="redirectTo('${targetPage}')">${session.time}</p>
+                                <h4>${session.title}</h4>
+                                <p>${session.location}</p>
+                            </div>
+                        `).join('') : ''}
+                    </div>
+                </div>`;
+        } else {
+        return `
+            <div onclick="redirectTo('${targetPage}')" class="cardsPrograma" id="Programa">
+                <p>${event.time}</p>
+                <h3>${event.title}</h3>
+                <p>${event.location} <img src="svg/local.svg"></p>
+            </div>
+        `; 
+    }
+}
+
+function toggleParallel(element, selectors) {
+    var parent = element.closest('.cardsPrograma');
+    var arrow = element.querySelector('.cardsPrograma__arrowDown');
+    var elementsToToggle = parent.querySelectorAll(selectors);
+    
+    elementsToToggle.forEach(function(el) {
+        if(el.classList.contains('hide')) {
+            el.classList.remove('hide');
+            arrow.style.transform = 'rotate(180deg)';
+        } else {
+            el.classList.add('hide');
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    });
 }
 
 function changeContent(day, button) {
